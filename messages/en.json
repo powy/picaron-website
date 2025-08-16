@@ -1,0 +1,108 @@
+{
+  "navigation": {
+    "home": "Home",
+    "boucaniers": "Boucaniers",
+    "team": "Team",
+    "contact": "Contact",
+    "shop": "Shop"
+  },
+  "home": {
+    "hero": {
+      "title": "The Boucaniers board game is coming this year!",
+      "subtitle": "The Panache of simultaneous strategy - 2 to 5 players",
+      "cta": "Discover Boucaniers"
+    },
+    "preview": {
+      "title": "Boucaniers",
+      "description": "Sail in a changing archipelago filled with cannibals, corrupt trading posts and voodoo mysteries",
+      "players": "2-5 players",
+      "duration": "30-60 minutes",
+      "age": "10+ years",
+      "moreInfo": "More info on Boucaniers"
+    },
+    "social": {
+      "title": "Follow us",
+      "description": "Stay informed about the latest news"
+    },
+    "newsletter": {
+      "title": "Message in a bottle",
+      "placeholder": "Your email address",
+      "submit": "Send",
+      "success": "Thank you for subscribing!"
+    }
+  },
+  "boucaniers": {
+    "title": "BOUCANIERS",
+    "tagline": "Embark on a simultaneous treasure hunt!",
+    "price": "€69",
+    "description": "Sail in a changing archipelago filled with cannibals, corrupt trading posts and voodoo mysteries. Arm your ship, recruit, plunder and trade while watching out for the East India Companies. The outcome is never certain and each turn gives you thrills!",
+    "features": {
+      "simultaneous": {
+        "title": "Play simultaneously",
+        "description": "Secret navigation with compass rose - Simultaneous actions (no waiting for turns)"
+      },
+      "fluid": {
+        "title": "Fluid mechanics",
+        "description": "Dice combat system - Boarding and cannon fire"
+      },
+      "epic": {
+        "title": "An epic",
+        "description": "Two epic objectives: Armand's treasure or 25 gold pieces - The Rougeaud passage (15 bonus pieces!)"
+      },
+      "depth": {
+        "title": "Game depth",
+        "description": "Islands with unique actions - Infinite combos - Asymmetrical ships"
+      },
+      "playability": {
+        "title": "Playability and replayability",
+        "description": "Modular board (10 ships, 24 unique buccaneers) - Each game is unique"
+      },
+      "immersive": {
+        "title": "Immersive universe",
+        "description": "Clues forming a continuous frieze - Hidden story of Armand the Storyteller"
+      }
+    }
+  },
+  "team": {
+    "title": "The Corsairs of Picaron",
+    "members": {
+      "vincent": {
+        "name": "Vincent Tellier",
+        "role": "Captain & Creator",
+        "description": "Game and mechanics designer, illustrator, figurine modeler. History enthusiast."
+      },
+      "thierry": {
+        "name": "Thierry Durand",
+        "role": "Quartermaster",
+        "description": "Original idea designer, eternally unsatisfied, who strips the game of every flaw."
+      },
+      "remi": {
+        "name": "Rémi Durand",
+        "role": "Master Carpenter",
+        "description": "Figurine manufacturer. Seasoned and meticulous engineer. 3D printing expert, ensures manufacturing quality."
+      },
+      "maxime": {
+        "name": "Maxime Richard",
+        "role": "Navigator",
+        "description": "Director of the Galactic Orbit Circle that oversees the project."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send by carrier pigeon",
+      "success": "Message sent successfully!",
+      "error": "Error sending message"
+    }
+  },
+  "shop": {
+    "title": "Treasure chamber under construction",
+    "description": "Our shop will be available soon. Subscribe to our newsletter to be notified of the opening!",
+    "comingSoon": "Coming soon"
+  }
+}

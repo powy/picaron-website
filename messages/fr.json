@@ -1,0 +1,108 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "boucaniers": "Boucaniers",
+    "team": "L'équipe",
+    "contact": "Contact",
+    "shop": "Boutique"
+  },
+  "home": {
+    "hero": {
+      "title": "Le jeu de société Boucaniers arrive cette année !",
+      "subtitle": "Le Panache de la stratégie en simultané - 2 à 5 joueurs",
+      "cta": "Découvrir Boucaniers"
+    },
+    "preview": {
+      "title": "Boucaniers",
+      "description": "Voguez dans un archipel changeant truffé de cannibales, de comptoirs corrompus et de mystères vaudous",
+      "players": "2-5 joueurs",
+      "duration": "30-60 minutes",
+      "age": "10 ans et +",
+      "moreInfo": "Plus d'info sur Boucaniers"
+    },
+    "social": {
+      "title": "Suivez nous",
+      "description": "Restez informés des dernières nouvelles"
+    },
+    "newsletter": {
+      "title": "Message dans une bouteille",
+      "placeholder": "Votre adresse email",
+      "submit": "Envoyer",
+      "success": "Merci pour votre inscription !"
+    }
+  },
+  "boucaniers": {
+    "title": "BOUCANIERS",
+    "tagline": "Embarquez dans une chasse au trésor en simultané !",
+    "price": "69 €",
+    "description": "Voguez dans un archipel changeant truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau, recrutez, pillez et commercez en prenant garde aux Compagnies des Indes. Le dénouement n'est jamais certain et chaque tour donne le frisson !",
+    "features": {
+      "simultaneous": {
+        "title": "Jouez en simultané",
+        "description": "Navigation secrète avec rose des vents - Actions simultanées (no waiting for turns)"
+      },
+      "fluid": {
+        "title": "Mécanique fluide",
+        "description": "Système de combat par dés - Abordages et tirs de canons"
+      },
+      "epic": {
+        "title": "Une épopée",
+        "description": "Deux objectifs épiques: trésor d'Armand ou 25 pièces d'or - Le passage du Rougeaud (15 pièces bonus!)"
+      },
+      "depth": {
+        "title": "Profondeur de jeu",
+        "description": "Îles aux actions uniques - Combos infinis - Navires asymétriques"
+      },
+      "playability": {
+        "title": "Jouabilité et rejouabilité",
+        "description": "Plateau modulable (10 navires, 24 boucaniers uniques) - Chaque partie est unique"
+      },
+      "immersive": {
+        "title": "Univers immersif",
+        "description": "Indices formant une frise continue - Histoire d'Armand le Baratineur cachée"
+      }
+    }
+  },
+  "team": {
+    "title": "Les Corsaires de Picaron",
+    "members": {
+      "vincent": {
+        "name": "Vincent Tellier",
+        "role": "Capitaine & Créateur",
+        "description": "Concepteur du jeu et des mécaniques, auteur des illustrations, modéleur des figurines. Mordu d'histoire."
+      },
+      "thierry": {
+        "name": "Thierry Durand",
+        "role": "Quartier-maître",
+        "description": "Concepteur de l'idée première, éternel insatisfait, qui dépouille le jeu de chaque défaut."
+      },
+      "remi": {
+        "name": "Rémi Durand",
+        "role": "Maître Charpentier",
+        "description": "Fabricant des figurines. Ingénieur chevronné et pointilleux. Expert en impression 3D, assure la qualité de fabrication."
+      },
+      "maxime": {
+        "name": "Maxime Richard",
+        "role": "Navigateur",
+        "description": "Directeur du Cercle de l'Orbite Galactique qui chapeaute le projet."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "form": {
+      "name": "Nom",
+      "email": "Courriel",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer par pigeon voyageur",
+      "success": "Message envoyé avec succès !",
+      "error": "Erreur lors de l'envoi du message"
+    }
+  },
+  "shop": {
+    "title": "Chambre au trésor en construction",
+    "description": "Notre boutique sera bientôt disponible. Inscrivez-vous à notre newsletter pour être informé de l'ouverture !",
+    "comingSoon": "Bientôt disponible"
+  }
+}
