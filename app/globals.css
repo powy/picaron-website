@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'OldStyle';
+  src: url('/hinted-OldStyle1HPLHS.woff2') format('woff2'),
+       url('/hinted-OldStyle1HPLHS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-ink: #0c0c0d;
+  --color-parchment: #f2e8d5;
+  --color-pirate-red: #8b2020;
+  --color-gold: #d4a574;
+  --color-sea-mist: #1e3a3a;
+  --color-navy: #1a2332;
+  --color-bone: #faf8f3;
+  --color-wood: #3e2f2a;
+  --color-copper: #4e7c7b;
+}
+
+body {
+  font-family: var(--font-oldstyle), 'EB Garamond', Georgia, serif;
+  color: var(--color-ink);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+button, .btn {
+  font-family: var(--font-oldstyle), serif;
+}
+
+nav a {
+  font-family: var(--font-oldstyle), serif;
+}
+
+.font-oldstyle {
+  font-family: var(--font-oldstyle), 'OldStyle', serif;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-wood);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-pirate-red);
+}

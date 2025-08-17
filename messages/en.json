@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Picaron",
+    "game": "Boucaniers",
+    "team": "Team",
+    "shop": "Shop"
+  },
+  "home": {
+    "title": "The Boucaniers board game is coming this year!",
+    "cta": "Discover Boucaniers",
+    "subtitle": "A pirate strategy game in the Caribbean",
+    "description": "Embody a pirate captain and navigate the tumultuous waters of the Caribbean. Explore islands, trade, fight and become the legend of the seas!",
+    "followUs": "Follow us",
+    "features": {
+      "exploration": {
+        "title": "Exploration",
+        "description": "Discover mysterious islands and their hidden treasures"
+      },
+      "commerce": {
+        "title": "Trade", 
+        "description": "Negotiate with ports and enrich your crew"
+      },
+      "combat": {
+        "title": "Combat",
+        "description": "Face your rivals in epic naval battles"
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Stay informed",
+    "placeholder": "Your email",
+    "submit": "Subscribe"
+  }
+}

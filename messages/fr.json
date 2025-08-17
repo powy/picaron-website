@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Picaron",
+    "game": "Boucaniers",
+    "team": "Équipe",
+    "shop": "Boutique"
+  },
+  "home": {
+    "title": "Boucaniers disponible cette année !",
+    "cta": "Découvrir Boucaniers",
+    "subtitle": "Un jeu de stratégie pirates dans les Caraïbes",
+    "description": "Incarnez un capitaine pirate et naviguez dans les eaux tumultueuses des Caraïbes. Explorez les îles, commercez, combattez et devenez la légende des mers !",
+    "followUs": "Suivez-nous",
+    "features": {
+      "exploration": {
+        "title": "Exploration",
+        "description": "Découvrez des îles mystérieuses et leurs trésors cachés"
+      },
+      "commerce": {
+        "title": "Commerce", 
+        "description": "Négociez avec les ports et enrichissez votre équipage"
+      },
+      "combat": {
+        "title": "Combat",
+        "description": "Affrontez vos rivaux dans des batailles navales épiques"
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Restez informé",
+    "placeholder": "Votre email",
+    "submit": "S'inscrire"
+  }
+}
