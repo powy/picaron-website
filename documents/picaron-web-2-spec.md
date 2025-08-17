@@ -60,8 +60,8 @@
 
 **Primary Colors:**
 
-- **Ink Black Ocean:** #0c0c0d (main background)
-- **Aged Parchment:** #f2e8d5 (content areas, maps)
+- **Ink Black:** #0c0c0d (main written)
+- **Aged Parchment:** #f2e8d5 (main background)
 - **Pirate Red:** #8b2020 (CTAs, important accents)
 - **Treasure Gold:** #d4a574 (highlights, premium features)
 
@@ -75,8 +75,7 @@
 
 **Special Effects:**
 
-- **Magical Glow:** #00ffcc with opacity for hover states
-- **Candlelight:** Warm orange (#ff8c42) for ambient lighting
+- **Magical Glow:** #003322 with opacity for hover states
 
 ### Typography
 
@@ -88,8 +87,8 @@
 --font-display: "hinted-OldStyle1HPLHS", "Pirata One", "Cinzel", serif; /* Headers */
 --font-secondary: "hinted-OldStyle1HPLHS", "Crimson Text", "Playfair Display",
   serif; /* Subheaders */
---font-body: "EB Garamond", "Georgia", serif; /* Body text */
---font-script: "Kalam", "Dancing Script", cursive; /* Annotations */
+--font-body: "hinted-OldStyle1HPLHS", "EB Garamond", "Georgia", serif; /* Body text */
+--font-script: "hinted-OldStyle1HPLHS", "Kalam", "Dancing Script", cursive; /* Annotations */
 ```
 
 **Font Sizes:**
@@ -114,39 +113,10 @@
 
 ### 1. Homepage (Accueil)
 
-Complete Homepage using the most content of picaron.fr webpage. Including video
+Complete Homepage using the most content of "picaron.fr" webpage. Including the video player.
 assets from this webpage are in assets/assets_old_web
 
-**Hero Section:**
-
-```typescript
-<HeroSection>
-  - Full-screen treasure map background with Caribbean archipelago - Animated
-  title: "Le jeu de société Boucaniers arrive cette année !" - Subtitle: "Le
-  Panache de la stratégie en simultané - 2 à 5 joueurs" - Floating compass
-  pointing to CTA - Fog animation revealing content
-</HeroSection>
-```
-
-**Content Blocks:**
-
-. **Social Follow Section**
-
-- "Suivez nous" in decorative frame
-- Social icons as nautical instruments
-- Hover: glow effect
-
-. **Newsletter Signup**
-
-- Styled as "Message in a Bottle"
-- Input field with quill pen icon
-- Success animation: bottle floating away
-
-. **Video Section**
-
-- Embedded video from assets showing gameplay (same than picaron.fr)
-- Custom player controls (ship wheel for play)
-- Link to Tabletop Simulator demo
+This include a component to follow socials and subscribe newsletter
 
 ### 2. Boucaniers Page
 
@@ -261,27 +231,6 @@ const scrollVariants = {
 };
 ```
 
-### Hover Effects
-
-- **Cards:** Lift with shadow, slight rotation
-- **Buttons:** Glow effect, scale 1.05
-- **Images:** Reveal caption on old paper
-- **Links:** Underline animates like rope
-
-### Loading States
-
-- Ship's wheel spinning
-- "Charting course..." text
-- Progress shown as ship journey
-
-### Easter Eggs
-
-- Hidden treasure clickables
-- Konami code reveals special content
-- Shake device: storm effect
-
----
-
 ## Multilingual Implementation
 
 ### Using next-intl
@@ -386,10 +335,7 @@ export const metadata: Metadata = {
 ### Mobile Adaptations
 
 - Top menu replaced by a foldable menu.
-- Simplified animations
 - Touch-friendly buttons (min 44px)
-- Vertical card layouts
-- Reduced parallax effects
 
 ---
 
