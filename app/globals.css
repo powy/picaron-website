@@ -24,28 +24,145 @@
 }
 
 body {
-  font-family: var(--font-oldstyle), 'EB Garamond', Georgia, serif;
+  font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
   color: var(--color-ink);
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1.6;
 }
 
 .text-shadow {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* text-shadow removed */
 }
 
-h1, h2, h3 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-granjon), serif;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: 2.6rem;
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: 2.2rem;
+  line-height: 1.3;
+}
+
+h6 {
+  font-size: 1.8rem;
+  line-height: 1.4;
 }
 
 button, .btn {
-  font-family: var(--font-oldstyle), serif;
+  font-family: var(--font-granjon), serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  padding: 1rem 2rem;
 }
 
 nav a {
-  font-family: var(--font-oldstyle), serif;
+  font-family: var(--font-granjon), serif;
+  font-size: 2rem;
+  font-weight: 900;
 }
 
-.font-oldstyle {
-  font-family: var(--font-oldstyle), 'OldStyle', serif;
+.font-granjon {
+  font-family: var(--font-granjon), serif;
+}
+
+.font-garamond {
+  font-family: var(--font-garamond), serif;
+}
+
+/* Paragraph and text sizing */
+p {
+  font-family: var(--font-garamond), serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* List styling */
+ul, ol {
+  font-family: var(--font-garamond), serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1.7;
+}
+
+li {
+  margin-bottom: 0.6rem;
+  font-weight: 900;
+}
+
+/* Link styling */
+a {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+/* Menu items - extra large */
+.menu-item {
+  font-size: 2.2rem;
+  font-weight: 900;
+  padding: 1.2rem 2rem;
+}
+
+/* Mobile menu items - even bigger */
+.mobile-menu-item {
+  font-size: 2.6rem;
+  font-weight: 900;
+  padding: 1.5rem 1.5rem;
+}
+
+/* Text content styling */
+div, span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 900;
+}
+
+/* Label styling */
+label {
+  font-family: var(--font-granjon), serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+/* Input styling */
+input, textarea, select {
+  font-family: var(--font-garamond), serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Strong emphasis */
+strong, b {
+  font-weight: 900;
+}
+
+/* All text should be maximum bold */
+* {
+  font-weight: 900;
 }
 
 ::-webkit-scrollbar {

@@ -3,11 +3,12 @@
     "home": "Picaron",
     "game": "Boucaniers",
     "team": "Équipe",
-    "shop": "Boutique"
+    "shop": "Boutique",
+    "contact": "Contact"
   },
   "home": {
-    "title": "Boucaniers disponible cette année !",
-    "cta": "Découvrir Boucaniers",
+    "title": "",
+    "cta": "",
     "subtitle": "Un jeu de stratégie pirates dans les Caraïbes",
     "description": "Incarnez un capitaine pirate et naviguez dans les eaux tumultueuses des Caraïbes. Explorez les îles, commercez, combattez et devenez la légende des mers !",
     "followUs": "Suivez-nous",
@@ -30,5 +31,54 @@
     "title": "Restez informé",
     "placeholder": "Votre email",
     "submit": "S'inscrire"
+  },
+  "shop": {
+    "title": "Boutique",
+    "gameTitle": "Boucaniers",
+    "price": "69,00 € TTC",
+    "gameDescription": "Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.",
+    "fullDescription": "Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau, recrutez, pillez et commercez en prenant garde aux Compagnies des Indes. Le dénouement n'est jamais certain et chaque tour donne le frisson !",
+    "shipping": {
+      "title": "Informations de livraison",
+      "france": "Livraison uniquement en France métropolitaine",
+      "cost": "Frais de port: Calculés lors de la commande",
+      "delivery": "Livraison prévue: {date}",
+      "international": "International: Nous contacter directement"
+    },
+    "quantity": "Quantité:",
+    "buyNow": "Acheter maintenant",
+    "loading": "Chargement...",
+    "securePayment": "Paiement sécurisé par Stripe",
+    "guarantees": {
+      "secure": "Paiement 100% sécurisé",
+      "return": "Satisfait ou remboursé sous 14 jours",
+      "support": "Service client réactif"
+    },
+    "legalNotice": "En commandant, vous acceptez nos {cgv} et notre {privacy}",
+    "cgvLink": "Conditions Générales de Vente",
+    "privacyLink": "Politique de Confidentialité"
+  },
+  "success": {
+    "title": "Commande confirmée !",
+    "thanks": "Merci pour votre achat de Boucaniers !",
+    "nextSteps": "Prochaines étapes :",
+    "steps": {
+      "email": "Vous allez recevoir un email de confirmation",
+      "preparation": "Votre commande sera préparée dans les 48h",
+      "delivery": "Livraison prévue pour mi-décembre",
+      "tracking": "Vous recevrez un email avec le suivi de livraison"
+    },
+    "orderRef": "Référence de commande: {ref}",
+    "backHome": "Retour à l'accueil",
+    "contact": "Des questions ? Contactez-nous à {email}"
+  },
+  "cancel": {
+    "title": "Commande annulée",
+    "message": "Votre commande a été annulée. Aucun montant n'a été débité.",
+    "encouragement": "Vous avez changé d'avis ? Boucaniers vous attend toujours !",
+    "tip": "Astuce : L'aventure pirate n'attend que vous pour commencer",
+    "backShop": "Retourner à la boutique",
+    "backHome": "Retour à l'accueil",
+    "needHelp": "Besoin d'aide ? Contactez-nous à {email}"
   }
 }

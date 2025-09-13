@@ -10,10 +10,10 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
-    { href: '/', label: t('home') },
-    { href: '/boucaniers', label: t('game') },
-    { href: '/equipe', label: t('team') },
-    { href: '/boutique', label: t('shop') }
+    { href: '/', label: t('game') },
+    { href: '/equipe', label: 'Picaron' },
+    { href: '/boutique', label: t('shop') },
+    { href: '/contact', label: t('contact') }
   ]
 
   return (
@@ -35,7 +35,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="text-[#0c0c0d] hover:text-[#8b2020] font-oldstyle text-lg text-shadow"
+                className="text-[#0c0c0d] hover:text-[#8b2020] font-granjon menu-item"
               >
                 {item.label}
               </Link>
@@ -59,7 +59,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="block py-2 text-[#0c0c0d] hover:text-[#8b2020] font-oldstyle text-shadow"
+                className="block text-[#0c0c0d] hover:text-[#8b2020] font-granjon mobile-menu-item"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

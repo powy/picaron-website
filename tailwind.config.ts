@@ -9,7 +9,23 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        oldstyle: ['var(--font-oldstyle)', 'serif'],
+        garamond: ['var(--font-garamond)', 'serif'],
+        granjon: ['var(--font-granjon)', 'serif'],
+        oldstyle: ['var(--font-granjon)', 'serif'], // Map oldstyle to granjon for backwards compatibility
+      },
+      fontSize: {
+        // Custom large font sizes
+        'huge': '6rem',
+        '5xl': '4rem',
+        '4xl': '3.5rem',
+        '3xl': '2.8rem',
+        '2xl': '2.2rem',
+        'xl': '1.8rem',
+        'lg': '1.5rem',
+        'base': '1.25rem',
+        'sm': '1.1rem',
+        'menu': '2rem',
+        'menu-mobile': '2.4rem',
       },
       colors: {
         ink: '#0c0c0d',

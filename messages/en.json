@@ -3,11 +3,12 @@
     "home": "Picaron",
     "game": "Boucaniers",
     "team": "Team",
-    "shop": "Shop"
+    "shop": "Shop",
+    "contact": "Contact"
   },
   "home": {
-    "title": "The Boucaniers board game is coming this year!",
-    "cta": "Discover Boucaniers",
+    "title": "",
+    "cta": "",
     "subtitle": "A pirate strategy game in the Caribbean",
     "description": "Embody a pirate captain and navigate the tumultuous waters of the Caribbean. Explore islands, trade, fight and become the legend of the seas!",
     "followUs": "Follow us",
@@ -30,5 +31,54 @@
     "title": "Stay informed",
     "placeholder": "Your email",
     "submit": "Subscribe"
+  },
+  "shop": {
+    "title": "Shop",
+    "gameTitle": "Boucaniers",
+    "price": "€69.00 incl. VAT",
+    "gameDescription": "Simultaneous strategy game. For 2 to 5 players from 10 years old with games lasting 30 to 60 minutes.",
+    "fullDescription": "Embark on a simultaneous treasure hunt! Sail in a changing archipelago full of cannibals, corrupt trading posts and voodoo mysteries. Arm your boat, recruit, plunder and trade while watching out for the East India Companies. The outcome is never certain and each turn gives you thrills!",
+    "shipping": {
+      "title": "Shipping Information",
+      "france": "Delivery only in mainland France",
+      "cost": "Shipping costs: Calculated during checkout",
+      "delivery": "Expected delivery: {date}",
+      "international": "International: Contact us directly"
+    },
+    "quantity": "Quantity:",
+    "buyNow": "Buy now",
+    "loading": "Loading...",
+    "securePayment": "Secure payment by Stripe",
+    "guarantees": {
+      "secure": "100% secure payment",
+      "return": "Satisfied or refunded within 14 days",
+      "support": "Responsive customer service"
+    },
+    "legalNotice": "By ordering, you accept our {cgv} and our {privacy}",
+    "cgvLink": "Terms and Conditions",
+    "privacyLink": "Privacy Policy"
+  },
+  "success": {
+    "title": "Order confirmed!",
+    "thanks": "Thank you for your purchase of Boucaniers!",
+    "nextSteps": "Next steps:",
+    "steps": {
+      "email": "You will receive a confirmation email",
+      "preparation": "Your order will be prepared within 48 hours",
+      "delivery": "Delivery scheduled for mid-December",
+      "tracking": "You will receive an email with delivery tracking"
+    },
+    "orderRef": "Order reference: {ref}",
+    "backHome": "Back to home",
+    "contact": "Questions? Contact us at {email}"
+  },
+  "cancel": {
+    "title": "Order cancelled",
+    "message": "Your order has been cancelled. No amount has been charged.",
+    "encouragement": "Changed your mind? Boucaniers is still waiting for you!",
+    "tip": "Tip: The pirate adventure is just waiting for you to begin",
+    "backShop": "Back to shop",
+    "backHome": "Back to home",
+    "needHelp": "Need help? Contact us at {email}"
   }
 }

@@ -1,18 +1,15 @@
-import localFont from 'next/font/local'
+import { Cormorant_Garamond, Cormorant } from 'next/font/google'
 
-export const oldStyleFont = localFont({
-  src: [
-    {
-      path: '../public/hinted-OldStyle1HPLHS.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/hinted-OldStyle1HPLHS.woff',
-      weight: '400', 
-      style: 'normal',
-    }
-  ],
-  variable: '--font-oldstyle',
+export const garamondFont = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-garamond',
+  display: 'swap',
+})
+
+export const granjonFont = Cormorant({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-granjon',
   display: 'swap',
 })
