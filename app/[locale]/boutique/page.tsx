@@ -104,6 +104,14 @@ export default function BoutiquePage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl font-oldstyle text-[#8b2020] mb-2">Boucaniers</h2>
+
+              {/* Stock status */}
+              <div className="mb-3">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-base font-semibold bg-orange-100 text-orange-800">
+                  Précommande
+                </span>
+              </div>
+
               <p className="text-2xl font-semibold text-[#0c0c0d] mb-4">69,00 € TTC</p>
               <p className="text-lg text-[#0c0c0d] mb-4">
                 Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.
@@ -120,20 +128,20 @@ export default function BoutiquePage() {
             </div>
 
             <div className="p-4">
-              <h3 className="font-oldstyle font-semibold text-[#8b2020] mb-2">
+              <h3 className="font-oldstyle font-semibold text-[#8b2020] text-xl mb-2">
                 Informations de livraison
               </h3>
-              <ul className="space-y-1 text-sm text-[#0c0c0d]">
-                <li>📍 Livraison uniquement en France métropolitaine</li>
-                <li>📦 Frais de port: Calculés lors de la commande</li>
-                <li>📅 Livraison prévue: {formatDeliveryDate()}</li>
-                <li>🌍 International: Nous contacter directement</li>
+              <ul className="space-y-1 text-lg text-[#0c0c0d]">
+                <li>Livraison uniquement en France métropolitaine</li>
+                <li>Frais de port: Calculés lors de la commande</li>
+                <li>Livraison prévue: {formatDeliveryDate()}</li>
+                <li>International: Nous contacter directement</li>
               </ul>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-center gap-4">
-                <label htmlFor="quantity" className="font-medium text-[#0c0c0d]">
+                <label htmlFor="quantity" className="font-medium text-[#0c0c0d] text-lg">
                   Quantité:
                 </label>
                 <input
@@ -152,27 +160,18 @@ export default function BoutiquePage() {
                 disabled={loading}
                 className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {loading ? 'Chargement...' : 'Acheter maintenant'}
+                {loading ? 'Chargement...' : 'Précommander maintenant'}
               </button>
 
-              <p className="text-xs text-gray-500 text-center">
+              <p className="text-sm text-gray-500 text-center">
                 Paiement sécurisé par Stripe
               </p>
             </div>
 
-            <div className="text-sm text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
-              <p className="flex items-center gap-2">
-                <span className="text-green-600">✓</span>
-                Paiement 100% sécurisé
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-green-600">✓</span>
-                Satisfait ou remboursé sous 14 jours
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="text-green-600">✓</span>
-                Service client réactif
-              </p>
+            <div className="text-base text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
+              <p>Paiement 100% sécurisé</p>
+              <p>Satisfait ou remboursé sous 14 jours</p>
+              <p>Service client réactif</p>
             </div>
 
             {/* Liens vers les pages légales */}

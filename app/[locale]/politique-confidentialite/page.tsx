@@ -67,15 +67,7 @@ export default function PolitiqueConfidentialite() {
 
           <section>
             <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">7. Contact</h2>
-            <p>Pour toute question concernant vos données personnelles, contactez-nous :</p>
-            <div className="bg-[#f2e8d5]/20 p-4 rounded-lg">
-              <p>
-                Email :{' '}
-                <a href="mailto:contact@picaron.fr" className="text-[#8b2020] hover:underline">
-                  contact@picaron.fr
-                </a>
-              </p>
-            </div>
+            <p>Pour toute question concernant vos données personnelles, utilisez le formulaire de contact sur le site picaron.fr</p>
           </section>
 
           <section>

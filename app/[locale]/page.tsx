@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import SocialLinks from '@/components/SocialLinks'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HomePage() {
   const t = useTranslations('home')
@@ -9,25 +10,30 @@ export default function HomePage() {
   return (
     <div className="mt-8">
       {/* Hero Section with Title from Front Page */}
+      {/* Commented out - waiting for new title picture
       <section className="text-center py-8">
         <h1 className="text-6xl font-oldstyle text-[#0c0c0d] mb-8 leading-tight">
           {t('title')}
         </h1>
       </section>
+      */}
 
-      {/* Game Description and Main Image - Moved to Top */}
-      <div className="max-w-4xl mx-auto mb-16">
+      {/* Announcement Banner */}
+      <section className="text-center py-8 mb-8">
+        <Link href="/fr/boutique" className="block mb-6">
+          <p className="text-3xl md:text-4xl font-oldstyle text-[#0c0c0d] leading-relaxed px-4 hover:opacity-80 transition-opacity">
+            Le jeu Boucanier en précommande dans la boutique !
+          </p>
+        </Link>
+        <Link
+          href="/fr/boutique"
+          className="inline-block bg-[#8b2020] hover:bg-[#a02525] text-[#faf8f3] font-oldstyle text-xl md:text-2xl px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
+        >
+          Aller à la boutique
+        </Link>
+      </section>
 
-        <div className="w-full mb-12">
-          <Image
-            src="/Présentation-KS2-transparent.png"
-            alt="Présentation Boucaniers"
-            width={1200}
-            height={900}
-            className="w-full h-auto max-w-none"
-          />
-        </div>
-      </div>
+      {/* Game Description */}
       <div className="text-center mb-8">
           <p className="text-xl font-bold text-[#0c0c0d] mb-6">
             Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans. Parties de 30 à 60 minutes.
@@ -85,6 +91,19 @@ export default function HomePage() {
         {/* Newsletter Section */}
         <div className="mb-16">
           <NewsletterSection />
+        </div>
+
+        {/* Main Presentation Image - Moved from Top */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="w-full">
+            <Image
+              src="/Présentation-KS2-transparent.png"
+              alt="Présentation Boucaniers"
+              width={1200}
+              height={900}
+              className="w-full h-auto max-w-none"
+            />
+          </div>
         </div>
       </div>
 

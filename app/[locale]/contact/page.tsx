@@ -1,7 +1,6 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
-import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -12,7 +11,22 @@ export default function ContactPage() {
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errors, setErrors] = useState<{[key: string]: string}>({})
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
+
+  // Math CAPTCHA state
+  const [mathQuestion, setMathQuestion] = useState({ num1: 0, num2: 0, answer: 0 })
+  const [userAnswer, setUserAnswer] = useState('')
+
+  // Generate random math question
+  const generateMathQuestion = () => {
+    const num1 = Math.floor(Math.random() * 10) + 1
+    const num2 = Math.floor(Math.random() * 10) + 1
+    setMathQuestion({ num1, num2, answer: num1 + num2 })
+    setUserAnswer('')
+  }
+
+  useEffect(() => {
+    generateMathQuestion()
+  }, [])
 
   const validateForm = () => {
     const newErrors: {[key: string]: string} = {}
@@ -58,10 +72,12 @@ export default function ContactPage() {
       newErrors.message = 'Le message ne peut pas dépasser 1000 caractères'
     }
 
-    // Validate reCAPTCHA
-    const captchaValue = recaptchaRef.current?.getValue()
-    if (!captchaValue) {
-      newErrors.recaptcha = 'Veuillez compléter le reCAPTCHA'
+    // Validate math CAPTCHA
+    const answerNum = parseInt(userAnswer.trim(), 10)
+    if (!userAnswer.trim()) {
+      newErrors.captcha = 'Veuillez répondre à la question'
+    } else if (isNaN(answerNum) || answerNum !== mathQuestion.answer) {
+      newErrors.captcha = 'Réponse incorrecte, veuillez réessayer'
     }
 
     setErrors(newErrors)
@@ -84,8 +100,8 @@ export default function ContactPage() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
         {
-          from_name: formData.name.trim(),
-          from_email: formData.email.trim(),
+          name: formData.name.trim(),
+          email: formData.email.trim(),
           subject: formData.subject.trim(),
           message: formData.message.trim(),
         },
@@ -95,7 +111,7 @@ export default function ContactPage() {
       setStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
       setErrors({})
-      recaptchaRef.current?.reset()
+      generateMathQuestion() // Generate new question for next submission
     } catch (error) {
       console.error('EmailJS error:', error)
       setStatus('error')
@@ -178,14 +194,21 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <div className="flex justify-center">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || 'YOUR_RECAPTCHA_SITE_KEY'}
-            />
-          </div>
-          {errors.recaptcha && (
-            <p className="text-red-500 text-sm mt-2 text-center">{errors.recaptcha}</p>
+          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+            Question de sécurité: Combien font {mathQuestion.num1} + {mathQuestion.num2} ?
+          </label>
+          <input
+            type="text"
+            inputMode="numeric"
+            value={userAnswer}
+            onChange={(e) => setUserAnswer(e.target.value)}
+            placeholder="Votre réponse"
+            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
+              errors.captcha ? 'border-red-500' : 'border-[#3e2f2a]'
+            }`}
+          />
+          {errors.captcha && (
+            <p className="text-red-500 text-sm mt-1">{errors.captcha}</p>
           )}
         </div>
 

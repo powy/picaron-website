@@ -14,7 +14,7 @@ export default function MentionsLegales() {
                 [Adresse du siège social]<br />
                 RCS [Ville] [Numéro]<br />
                 TVA Intracommunautaire: [Numéro]<br />
-                Email: contact@picaron.fr<br />
+                Formulaire de contact disponible sur le site picaron.fr<br />
                 Téléphone: [Numéro]
               </p>
             </div>
@@ -52,10 +52,7 @@ export default function MentionsLegales() {
             <p>
               Conformément au Règlement Général sur la Protection des Données (RGPD),
               vous disposez d&apos;un droit d&apos;accès, de rectification et de suppression des
-              données vous concernant. Pour exercer ce droit, contactez-nous à :{' '}
-              <a href="mailto:contact@picaron.fr" className="text-[#8b2020] hover:underline">
-                contact@picaron.fr
-              </a>
+              données vous concernant. Pour exercer ce droit, utilisez le formulaire de contact sur le site picaron.fr
             </p>
           </section>
 
