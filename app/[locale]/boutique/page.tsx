@@ -1,17 +1,11 @@
 'use client';
 
-import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import { loadStripe } from '@stripe/stripe-js';
 import NewsletterSection from '@/components/NewsletterSection';
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-
 export default function BoutiquePage() {
-  const [loading, setLoading] = useState(false);
-  const [quantity, setQuantity] = useState(1);
   const params = useParams();
   const locale = params.locale as string;
 
@@ -36,38 +30,9 @@ export default function BoutiquePage() {
     });
   };
 
-  const handleCheckout = async () => {
-    setLoading(true);
-
-    try {
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          quantity,
-          locale,
-        }),
-      });
-
-      const { sessionId } = await response.json();
-      const stripe = await stripePromise;
-
-      const { error } = await stripe!.redirectToCheckout({
-        sessionId,
-      });
-
-      if (error) {
-        console.error('Erreur Stripe:', error);
-        alert('Une erreur est survenue. Veuillez réessayer.');
-      }
-    } catch (error) {
-      console.error('Erreur:', error);
-      alert('Une erreur est survenue. Veuillez réessayer.');
-    } finally {
-      setLoading(false);
-    }
+  const handleCheckout = () => {
+    // Direct redirect to Stripe payment link
+    window.location.href = 'https://buy.stripe.com/test_9B67sK38I5Zi5wp9xQ48000';
   };
 
   return (
@@ -140,27 +105,11 @@ export default function BoutiquePage() {
             </div>
 
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <label htmlFor="quantity" className="font-medium text-[#0c0c0d] text-lg">
-                  Quantité:
-                </label>
-                <input
-                  type="number"
-                  id="quantity"
-                  min="1"
-                  max="10"
-                  value={quantity}
-                  onChange={(e) => setQuantity(parseInt(e.target.value))}
-                  className="w-20 px-3 py-2 border rounded text-[#0c0c0d]"
-                />
-              </div>
-
               <button
                 onClick={handleCheckout}
-                disabled={loading}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
               >
-                {loading ? 'Chargement...' : 'Précommander maintenant'}
+                Précommander maintenant
               </button>
 
               <p className="text-sm text-gray-500 text-center">
