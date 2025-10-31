@@ -42,30 +42,19 @@ export default function HomePage() {
 
       {/* Main Content Area from Front Page */}
       <div className="max-w-7xl mx-auto relative">
-        {/* ImageA - Top Left */}
-        <div className="absolute top-0 left-0 z-10">
+        {/* LAdy picture - ImageA - Top Left */}
+        {/* <div className="absolute top-0 left-0 z-10">
           <Image
             src="/assets/assets_old_web/imageA.png"
             alt="Game Image A"
             width={300}
             height={200}
           />
-        </div>
-
-        {/* ImageB - Middle Right */}
-        <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-10">
-          <Image
-            src="/assets/assets_old_web/imageB.png"
-            alt="Game Image B"
-            width={300}
-            height={200}
-          />
-        </div>
-
+        </div> */}
 
         {/* YouTube Video - Center */}
         <section className="text-center mb-12 pt-32 relative z-20">
-          <div className="mb-8 mx-auto max-w-4xl">
+          <div className="mb-8 mx-auto">
             <div className="relative aspect-video rounded-lg overflow-hidden ">
               <iframe
                 width="100%"
