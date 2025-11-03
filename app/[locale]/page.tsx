@@ -22,14 +22,14 @@ export default function HomePage() {
       <section className="text-center py-8 mb-8">
         <Link href="/fr/boutique" className="block mb-6">
           <p className="text-3xl md:text-4xl font-oldstyle text-[#0c0c0d] leading-relaxed px-4 hover:opacity-80 transition-opacity">
-            Le jeu Boucanier en précommande dans la boutique !
+            Le jeu Boucaniers disponible dans la boutique !
           </p>
         </Link>
         <Link
           href="/fr/boutique"
           className="inline-block bg-[#8b2020] hover:bg-[#a02525] text-[#faf8f3] font-oldstyle text-xl md:text-2xl px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
         >
-          Aller à la boutique
+          Naviguer vers boutique
         </Link>
       </section>
 

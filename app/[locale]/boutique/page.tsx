@@ -77,8 +77,8 @@ export default function BoutiquePage() {
 
               {/* Stock status */}
               <div className="mb-3">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-base font-semibold bg-orange-100 text-orange-800">
-                  Précommande
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-base font-semibold bg-green-100 text-green-800">
+                  Stock limités
                 </span>
               </div>
 
@@ -102,37 +102,10 @@ export default function BoutiquePage() {
                 Informations de livraison
               </h3>
               <ul className="space-y-1 text-lg text-[#0c0c0d]">
-                <li>Livraison uniquement en France métropolitaine</li>
-                <li>Frais de port: Calculés lors de la commande</li>
-                <li>Livraison prévue: {formatDeliveryDate()}</li>
+                <li>Livraison dans l&apos;Union Européenne</li>
+                <li>Livraison prévue sous 15 jours</li>
                 <li>International: Nous contacter directement</li>
               </ul>
-            </div>
-
-            <div className="space-y-4">
-              <button
-                onClick={handleCheckout}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
-              >
-                Précommander (France)
-              </button>
-
-              <button
-                onClick={handleCheckoutEU}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
-              >
-                Précommander (Union Européenne)
-              </button>
-
-              <p className="text-sm text-gray-500 text-center">
-                Paiement sécurisé par Stripe
-              </p>
-            </div>
-
-            <div className="text-base text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
-              <p>Paiement 100% sécurisé</p>
-              <p>Satisfait ou remboursé sous 14 jours</p>
-              <p>Service client réactif</p>
             </div>
 
             {/* Liens vers les pages légales */}
@@ -147,6 +120,32 @@ export default function BoutiquePage() {
                   Politique de Confidentialité
                 </a>
               </p>
+            </div>
+
+            <div className="space-y-4">
+              <button
+                onClick={handleCheckout}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Commander (France)
+              </button>
+
+              <button
+                onClick={handleCheckoutEU}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Commander (Union Européenne)
+              </button>
+
+              <p className="text-sm text-gray-500 text-center">
+                Paiement sécurisé par Stripe
+              </p>
+            </div>
+
+            <div className="text-base text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
+              <p>Paiement 100% sécurisé</p>
+              <p>Satisfait ou remboursé sous 14 jours</p>
+              <p>Service client réactif</p>
             </div>
           </div>
         </div>
