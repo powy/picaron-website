@@ -31,8 +31,13 @@ export default function BoutiquePage() {
   };
 
   const handleCheckout = () => {
-    // Direct redirect to Stripe payment link
-    window.location.href = 'https://buy.stripe.com/test_9B67sK38I5Zi5wp9xQ48000';
+    // Direct redirect to Stripe payment link (France)
+    window.location.href = 'https://buy.stripe.com/dRmdR8fVY9T31pw45W67S01';
+  };
+
+  const handleCheckoutEU = () => {
+    // Direct redirect to Stripe payment link (European Union)
+    window.location.href = 'https://buy.stripe.com/28EaEWfVY6GR6JQ31S67S00';
   };
 
   return (
@@ -109,7 +114,14 @@ export default function BoutiquePage() {
                 onClick={handleCheckout}
                 className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
               >
-                Précommander maintenant
+                Précommander (France)
+              </button>
+
+              <button
+                onClick={handleCheckoutEU}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Précommander (Union Européenne)
               </button>
 
               <p className="text-sm text-gray-500 text-center">
