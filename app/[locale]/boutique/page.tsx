@@ -97,24 +97,29 @@ export default function BoutiquePage() {
               </p>
             </div>
 
-            <div className="prose max-w-none">
-              <p className="text-[#0c0c0d] text-lg leading-relaxed">
-                Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant
-                truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau,
-                recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
-                Le dénouement n&apos;est jamais certain et chaque tour donne le frisson !
-              </p>
-            </div>
+            <div className="space-y-3">
+              <div className="prose max-w-none">
+                <p className="text-[#0c0c0d] text-lg leading-relaxed">
+                  Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant
+                  truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau,
+                  recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
+                  Le dénouement n&apos;est jamais certain et chaque tour donne le frisson !
+                </p>
+              </div>
 
-            <div className="p-4">
-              <h3 className="font-oldstyle font-semibold text-[#8b2020] text-xl mb-2">
-                Informations de livraison
-              </h3>
-              <ul className="space-y-1 text-lg text-[#0c0c0d]">
-                <li>Livraison dans l&apos;Union Européenne</li>
-                <li>Livraison prévue sous 15 jours</li>
-                <li>International: Nous contacter directement</li>
-              </ul>
+              <div>
+                <ul className="space-y-1 text-base text-[#0c0c0d]">
+                  <li>Livraison en France, prévue sous 15 jours.</li>
+                  <li>International: Nous contacter directement</li>
+                </ul>
+              </div>
+
+              {/* Avertissement */}
+              <div>
+                <p className="text-base text-[#8b2020] font-semibold">
+                  Attention, vérifiez si la nouvelle illustrée complémentaire est ou non sélectionnée lors de la commande.
+                </p>
+              </div>
             </div>
 
             {/* Liens vers les pages légales */}
