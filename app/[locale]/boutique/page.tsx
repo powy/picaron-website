@@ -139,12 +139,13 @@ export default function BoutiquePage() {
                 Commander (France)
               </button>
 
-              <button
+              {/* FIXME: EU delivery button temporarily disabled */}
+              {/* <button
                 onClick={handleCheckoutEU}
                 className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
               >
                 Commander (Union Européenne)
-              </button>
+              </button> */}
 
               <p className="text-sm text-gray-500 text-center">
                 Paiement sécurisé par Stripe
