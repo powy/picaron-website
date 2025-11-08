@@ -39,6 +39,11 @@ export default function BoutiquePage() {
     window.location.href = 'https://buy.stripe.com/dRmdR8fVY9T31pw45W67S01';
   };
 
+  const handleCheckout_nouvelle = () => {
+    // Direct redirect to Stripe payment link (France)
+    window.location.href = 'https://buy.stripe.com/6oUfZgh028OZ0ls45W67S02';
+  };
+
   const handleCheckoutEU = () => {
     // Direct redirect to Stripe payment link (European Union)
     window.location.href = 'https://buy.stripe.com/28EaEWfVY6GR6JQ31S67S00';
@@ -151,7 +156,14 @@ export default function BoutiquePage() {
               >
                 Commander (Union Européenne)
               </button> */}
+              <button
+                onClick={handleCheckout_nouvelle}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Commander la nouvelle
+              </button>
 
+              
               <p className="text-sm text-gray-500 text-center">
                 Paiement sécurisé par Stripe
               </p>
