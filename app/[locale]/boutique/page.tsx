@@ -34,7 +34,8 @@ export default function BoutiquePage() {
     });
   };
 
-  const handleCheckout = () => {
+
+  const handleCheckout_boucanier_nouvellOPTIONEL = () => {
     // Direct redirect to Stripe payment link (France)
     window.location.href = 'https://buy.stripe.com/dRmdR8fVY9T31pw45W67S01';
   };
@@ -44,9 +45,9 @@ export default function BoutiquePage() {
     window.location.href = 'https://buy.stripe.com/6oUfZgh028OZ0ls45W67S02';
   };
 
-  const handleCheckoutEU = () => {
-    // Direct redirect to Stripe payment link (European Union)
-    window.location.href = 'https://buy.stripe.com/28EaEWfVY6GR6JQ31S67S00';
+  const handleCheckout_boucanier_nouvelle = () => {
+    // Direct redirect to Stripe payment link (France)
+    window.location.href = 'https://buy.stripe.com/eVqdR84dg2qB0ls6e467S04';
   };
 
   // Gérer la fermeture du lightbox avec la touche Escape
@@ -114,16 +115,9 @@ export default function BoutiquePage() {
 
               <div>
                 <ul className="space-y-1 text-base text-[#0c0c0d]">
-                  <li>Livraison en France, prévue sous 15 jours.</li>
+                  <li  className="text-[#8b2020]">Livraison en France, prévue sous 15 jours.</li>
                   <li>International: Nous contacter directement</li>
                 </ul>
-              </div>
-
-              {/* Avertissement */}
-              <div>
-                <p className="text-base text-[#8b2020] font-semibold">
-                  Attention, vérifiez si la nouvelle illustrée complémentaire est ou non sélectionnée lors de la commande.
-                </p>
               </div>
             </div>
 
@@ -143,27 +137,12 @@ export default function BoutiquePage() {
 
             <div className="space-y-4">
               <button
-                onClick={handleCheckout}
+                onClick={handleCheckout_boucanier_nouvellOPTIONEL}
                 className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
               >
-                Commander (France)
+                Commander<br />(Jeu seul)
               </button>
 
-              {/* FIXME: EU delivery button temporarily disabled */}
-              {/* <button
-                onClick={handleCheckoutEU}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
-              >
-                Commander (Union Européenne)
-              </button> */}
-              <button
-                onClick={handleCheckout_nouvelle}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
-              >
-                Commander la nouvelle
-              </button>
-
-              
               <p className="text-sm text-gray-500 text-center">
                 Paiement sécurisé par Stripe
               </p>
@@ -171,7 +150,6 @@ export default function BoutiquePage() {
 
             <div className="text-base text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
               <p>Paiement 100% sécurisé</p>
-              <p>Satisfait ou remboursé sous 14 jours</p>
               <p>Service client réactif</p>
             </div>
           </div>
@@ -225,8 +203,25 @@ export default function BoutiquePage() {
               <p className="text-[#0c0c0d] text-lg leading-relaxed">
                 Armand ou Les Rêveurs du Nouveau Monde se plonge dans la vie et les pensées des contemporains du siècle des Lumières, sentant les préludes des chamboulements de l&apos;Ancien Monde quand le Nouveau éclot déjà. Cette nouvelle illustrée introduit le jeu de société Boucaniers. Texte et illustrations par VINCENT TELLIER.
               </p>
-              <p className="text-[#8b2020] text-xl leading-relaxed font-semibold mt-6">
-                Sélectionnez-la en complément lors de l&apos;achat du jeu.
+            </div>
+
+            <div className="space-y-4">
+              <button
+                onClick={handleCheckout_boucanier_nouvelle}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Commander<br />(Jeu + nouvelle)
+              </button>
+
+              <button
+                onClick={handleCheckout_nouvelle}
+                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              >
+                Commander<br />(Nouvelle seule)
+              </button>
+              
+              <p className="text-sm text-gray-500 text-center">
+                Paiement sécurisé par Stripe
               </p>
             </div>
           </div>
