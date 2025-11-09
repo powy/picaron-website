@@ -219,7 +219,7 @@ export default function BoutiquePage() {
               >
                 Commander<br />(Nouvelle seule)
               </button>
-              
+
               <p className="text-sm text-gray-500 text-center">
                 Paiement sécurisé par Stripe
               </p>
