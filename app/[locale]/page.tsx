@@ -27,9 +27,9 @@ export default function HomePage() {
         </Link>
         <Link
           href="/fr/boutique"
-          className="inline-block bg-[#8b2020] hover:bg-[#a02525] text-[#faf8f3] font-oldstyle text-xl md:text-2xl px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
+          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-xl md:text-2xl px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
         >
-          Naviguer vers boutique
+          Commander
         </Link>
       </section>
 

@@ -17,12 +17,12 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50">
+    <nav className="fixed top-0 w-full z-50 bg-[#842c0d]">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-32 py-2">
           <Link href="/" className="flex items-center">
             <Image
-              src="/assets/PICARON_LOGO.png"
+              src="/assets/LogoPICARONJ1Pour_Fond_Sombre2.png"
               alt="Picaron"
               width={180}
               height={90}
@@ -35,7 +35,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="text-[#0c0c0d] hover:text-[#8b2020] font-granjon menu-item"
+                className="text-[#ffdaa6] font-granjon menu-item"
               >
                 {item.label}
               </Link>
@@ -59,7 +59,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="block text-[#0c0c0d] hover:text-[#8b2020] font-granjon mobile-menu-item"
+                className="block text-[#ffdaa6] font-granjon mobile-menu-item"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

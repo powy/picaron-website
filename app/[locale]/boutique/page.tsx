@@ -98,6 +98,28 @@ export default function BoutiquePage() {
               </div>
 
               <p className="text-2xl font-semibold text-[#0c0c0d] mb-4">69,00 € TTC</p>
+
+              {/* Boutons de commande */}
+              <div className="space-y-4 mb-6">
+                <button
+                  onClick={handleCheckout_boucanier_nouvellOPTIONEL}
+                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                >
+                  Commander le Jeu seul
+                </button>
+
+                <button
+                  onClick={handleCheckout_boucanier_nouvelle}
+                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                >
+                  Commander le jeu et la nouvelle
+                </button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  Paiement sécurisé par Stripe
+                </p>
+              </div>
+
               <p className="text-lg text-[#0c0c0d] mb-4">
                 Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.
               </p>
@@ -132,19 +154,6 @@ export default function BoutiquePage() {
                 <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
                   Politique de Confidentialité
                 </a>
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <button
-                onClick={handleCheckout_boucanier_nouvellOPTIONEL}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
-              >
-                Commander<br />(Jeu seul)
-              </button>
-
-              <p className="text-sm text-gray-500 text-center">
-                Paiement sécurisé par Stripe
               </p>
             </div>
 
@@ -208,16 +217,16 @@ export default function BoutiquePage() {
             <div className="space-y-4">
               <button
                 onClick={handleCheckout_boucanier_nouvelle}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+                className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
               >
-                Commander<br />(Jeu + nouvelle)
+                  Commander le jeu et la nouvelle
               </button>
 
               <button
                 onClick={handleCheckout_nouvelle}
-                className="w-full bg-[#8b2020] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+                className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
               >
-                Commander<br />(Nouvelle seule)
+                  Commander la nouvelle seule
               </button>
 
               <p className="text-sm text-gray-500 text-center">

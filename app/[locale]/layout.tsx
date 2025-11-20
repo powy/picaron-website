@@ -20,7 +20,7 @@ export default async function LocaleLayout({
         <div 
           className="fixed inset-0 z-0"
           style={{
-            backgroundImage: 'url(/background7.jpg)',
+            backgroundImage: 'url(/background-lumineux.webp)',
             backgroundSize: '100% 100%',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
