@@ -12,6 +12,7 @@ const config: Config = {
         garamond: ['var(--font-garamond)', 'serif'],
         granjon: ['var(--font-granjon)', 'serif'],
         oldstyle: ['var(--font-granjon)', 'serif'], // Map oldstyle to granjon for backwards compatibility
+        caravagesque: ['Caravagesque', 'serif'],
       },
       fontSize: {
         // Custom large font sizes

@@ -27,8 +27,8 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <div className="mt-8">
-      <h1 className="text-5xl font-oldstyle text-[#0c0c0d] mb-8 text-center">
-        L'équipage de Picaron
+      <h1 className="text-5xl font-caravagesque text-[#0c0c0d] mb-8 text-center">
+        L'équipage de PicaRon
       </h1>
 
       <div className="max-w-4xl mx-auto mb-12 text-center">

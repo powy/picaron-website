@@ -30,7 +30,7 @@ export default async function LocaleLayout({
         
         <div className="relative z-10">
           <Navigation />
-          <main className="container mx-auto px-4 pt-36">
+          <main className="container mx-auto px-4 pt-24">
             {children}
           </main>
         </div>

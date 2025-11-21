@@ -11,7 +11,7 @@ export default function Navigation() {
 
   const navItems = [
     { href: '/', label: t('game') },
-    { href: '/equipe', label: 'Picaron' },
+    { href: '/equipe', label: 'PicaRon' },
     { href: '/boutique', label: t('shop') },
     { href: '/contact', label: t('contact') }
   ]
@@ -30,12 +30,12 @@ export default function Navigation() {
             />
           </Link>
 
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden lg:flex space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="text-[#ffdaa6] font-granjon menu-item"
+                className="text-[#ffdaa6] font-caravagesque menu-item"
               >
                 {item.label}
               </Link>
@@ -43,23 +43,23 @@ export default function Navigation() {
           </div>
 
           <button
-            className="md:hidden"
+            className="lg:hidden text-[#ffdaa6]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                 d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t bg-[#f2e8d5]/90">
+          <div className="lg:hidden py-4 border-t border-[#ffdaa6] bg-[#842c0d]">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="block text-[#ffdaa6] font-granjon mobile-menu-item"
+                className="block text-[#ffdaa6] font-caravagesque mobile-menu-item"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

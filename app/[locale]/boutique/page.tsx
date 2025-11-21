@@ -64,7 +64,7 @@ export default function BoutiquePage() {
 
   return (
     <div className="mt-8">
-      <h1 className="text-5xl font-oldstyle text-[#0c0c0d] mb-8 text-center">
+      <h1 className="text-5xl font-caravagesque text-[#0c0c0d] mb-8 text-center">
         Boutique
       </h1>
 
@@ -125,24 +125,6 @@ export default function BoutiquePage() {
               </p>
             </div>
 
-            <div className="space-y-3">
-              <div className="prose max-w-none">
-                <p className="text-[#0c0c0d] text-lg leading-relaxed">
-                  Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant
-                  truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau,
-                  recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
-                  Le dénouement n&apos;est jamais certain et chaque tour donne le frisson !
-                </p>
-              </div>
-
-              <div>
-                <ul className="space-y-1 text-base text-[#0c0c0d]">
-                  <li  className="text-[#8b2020]">Livraison en France, prévue sous 15 jours.</li>
-                  <li>International: Nous contacter directement</li>
-                </ul>
-              </div>
-            </div>
-
             {/* Liens vers les pages légales */}
             <div className="text-sm text-[#0c0c0d] space-y-1">
               <p>
@@ -155,11 +137,6 @@ export default function BoutiquePage() {
                   Politique de Confidentialité
                 </a>
               </p>
-            </div>
-
-            <div className="text-base text-[#0c0c0d] space-y-1 bg-[#f2e8d5]/20 p-4 rounded-lg">
-              <p>Paiement 100% sécurisé</p>
-              <p>Service client réactif</p>
             </div>
           </div>
         </div>
@@ -206,31 +183,31 @@ export default function BoutiquePage() {
               </div>
 
               <p className="text-2xl font-semibold text-[#0c0c0d] mb-4">10,00 € TTC</p>
+
+              <div className="space-y-4 mb-6">
+                <button
+                  onClick={handleCheckout_boucanier_nouvelle}
+                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                >
+                    Commander le jeu et la nouvelle
+                </button>
+
+                <button
+                  onClick={handleCheckout_nouvelle}
+                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                >
+                    Commander la nouvelle seule
+                </button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  Paiement sécurisé par Stripe
+                </p>
+              </div>
             </div>
 
             <div className="prose max-w-none">
               <p className="text-[#0c0c0d] text-lg leading-relaxed">
                 Armand ou Les Rêveurs du Nouveau Monde se plonge dans la vie et les pensées des contemporains du siècle des Lumières, sentant les préludes des chamboulements de l&apos;Ancien Monde quand le Nouveau éclot déjà. Cette nouvelle illustrée introduit le jeu de société Boucaniers. Texte et illustrations par VINCENT TELLIER.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <button
-                onClick={handleCheckout_boucanier_nouvelle}
-                className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
-              >
-                  Commander le jeu et la nouvelle
-              </button>
-
-              <button
-                onClick={handleCheckout_nouvelle}
-                className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
-              >
-                  Commander la nouvelle seule
-              </button>
-
-              <p className="text-sm text-gray-500 text-center">
-                Paiement sécurisé par Stripe
               </p>
             </div>
           </div>

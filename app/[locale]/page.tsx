@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import SocialLinks from '@/components/SocialLinks'
+// FIXME: import BggRatingBadge from '@/components/BggRatingBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -9,33 +10,25 @@ export default function HomePage() {
 
   return (
     <div className="mt-8">
-      {/* Hero Section with Title from Front Page */}
-      {/* Commented out - waiting for new title picture
-      <section className="text-center py-8">
-        <h1 className="text-6xl font-oldstyle text-[#0c0c0d] mb-8 leading-tight">
-          {t('title')}
-        </h1>
-      </section>
-      */}
 
       {/* Announcement Banner */}
-      <section className="text-center py-8 mb-8">
-        <Link href="/fr/boutique" className="block mb-6">
-          <p className="text-3xl md:text-4xl font-oldstyle text-[#0c0c0d] leading-relaxed px-4 hover:opacity-80 transition-opacity">
+      <section className="text-center pb-4 mb-4 md:py-8 md:mb-8">
+        <Link href="/fr/boutique" className="block mb-4 md:mb-6">
+          <p className="text-xl md:text-4xl font-caravagesque text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity">
             Le jeu Boucaniers disponible dans la boutique !
           </p>
         </Link>
         <Link
           href="/fr/boutique"
-          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-xl md:text-2xl px-8 py-4 rounded-lg transition-colors duration-200 shadow-lg"
+          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-lg transition-colors duration-200 shadow-lg"
         >
           Commander
         </Link>
       </section>
 
       {/* Game Description */}
-      <div className="text-center mb-8">
-          <p className="text-xl font-bold text-[#0c0c0d] mb-6">
+      <div className="text-center mb-4 md:mb-8">
+          <p className="text-base md:text-xl font-bold text-[#0c0c0d] mb-4 md:mb-6">
             Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans. Parties de 30 à 60 minutes.
           </p>
       </div>
@@ -52,8 +45,14 @@ export default function HomePage() {
           />
         </div> */}
 
+        {/* FIXME: Badge BoardGameGeek - API ne fonctionne pas correctement, à investiguer
+        <div className="text-center mb-8">
+          <BggRatingBadge gameId={434117} gameName="Boucaniers" />
+        </div>
+        */}
+
         {/* YouTube Video - Center */}
-        <section className="text-center mb-12 pt-32 relative z-20">
+        <section className="text-center mb-6 pt-4 md:mb-12 md:pt-8 relative z-20">
           <div className="mb-8 mx-auto">
             <div className="relative aspect-video rounded-lg overflow-hidden ">
               <iframe

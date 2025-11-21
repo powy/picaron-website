@@ -11,6 +11,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Caravagesque';
+  src: url('/fonts/CARAVAGESQUE.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-ink: #0c0c0d;
   --color-parchment: #f2e8d5;

@@ -12,6 +12,7 @@
     "@emailjs/browser": "^4.4.1",
     "@types/nodemailer": "^7.0.0",
     "autoprefixer": "^10.4.21",
+    "boardgamegeekclient": "^1.9.1",
     "framer-motion": "^12.23.12",
     "next": "^14.2.33",
     "next-intl": "^4.3.4",
