@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 import { locales } from '@/i18n'
 
 export default async function LocaleLayout({
@@ -28,11 +29,12 @@ export default async function LocaleLayout({
           }}
         />
         
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
-          <main className="container mx-auto px-4 pt-24">
+          <main className="container mx-auto px-4 pt-24 flex-grow">
             {children}
           </main>
+          <Footer locale={locale} />
         </div>
       </div>
     </NextIntlClientProvider>

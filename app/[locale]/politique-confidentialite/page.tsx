@@ -6,76 +6,102 @@ export default function PolitiqueConfidentialite() {
 
         <div className="prose prose-lg max-w-none text-[#0c0c0d] space-y-8">
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">1. Collecte des données</h2>
-            <p>Nous collectons les données suivantes lors de votre commande :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Nom et prénom</li>
-              <li>Adresse email</li>
-              <li>Adresse de livraison</li>
-              <li>Numéro de téléphone (optionnel)</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">2. Utilisation des données</h2>
-            <p>Vos données personnelles sont utilisées pour :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Traiter et livrer votre commande</li>
-              <li>Vous envoyer des confirmations de commande</li>
-              <li>Communiquer sur le statut de votre livraison</li>
-              <li>Répondre à vos demandes de service client</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">3. Paiement sécurisé</h2>
-            <p>
-              Les informations de paiement sont traitées directement par Stripe,
-              notre prestataire de paiement certifié PCI DSS. Nous ne stockons jamais
-              vos informations de carte bancaire sur nos serveurs.
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">1. Responsable du traitement</h2>
+            <p>Le responsable du traitement des données personnelles est :</p>
+            <p className="ml-4">
+              Picaron SARL<br />
+              15 rue Georges Pitard, 75015 Paris<br />
+              SIREN 940441843
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">4. Conservation des données</h2>
-            <p>
-              Nous conservons vos données personnelles pendant la durée nécessaire
-              au traitement de votre commande et conformément aux obligations légales.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">5. Vos droits</h2>
-            <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">2. Données que nous collectons</h2>
+            <p>Nous collectons uniquement les données strictement nécessaires aux finalités suivantes :</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
-              <li>Droit d&apos;accès à vos données</li>
-              <li>Droit de rectification</li>
-              <li>Droit à l&apos;effacement</li>
-              <li>Droit à la portabilité</li>
-              <li>Droit d&apos;opposition</li>
+              <li>Inscription à la newsletter : adresse email.</li>
+              <li>Traitement des paiements : nom, email, adresse de facturation, informations de paiement (via Stripe).</li>
             </ul>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">6. Cookies</h2>
-            <p>
-              Notre site utilise des cookies essentiels pour le fonctionnement du
-              panier et du processus de commande. Ces cookies sont nécessaires et
-              ne peuvent être désactivés.
+            <p className="mt-4">
+              Aucune autre donnée personnelle n&apos;est collectée lors de la navigation sur le site.
+              Nous ne réalisons aucune analyse comportementale, aucun suivi publicitaire, et aucun profilage.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">7. Contact</h2>
-            <p>Pour toute question concernant vos données personnelles, utilisez le formulaire de contact sur le site picaron.fr</p>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">3. Finalités des traitements</h2>
+            <p>Les données personnelles sont utilisées pour :</p>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>envoyer la newsletter à la demande de l&apos;utilisateur ;</li>
+              <li>traiter et sécuriser les paiements via Stripe ;</li>
+              <li>envoyer les emails de confirmation de commande.</li>
+            </ul>
+            <p className="mt-4">
+              Nous n&apos;utilisons pas les données personnelles à des fins publicitaires ou pour de la revente de données.
+            </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">8. Modifications</h2>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">4. Sous-traitants</h2>
+            <p>Nous utilisons les prestataires suivants :</p>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>
+                Stripe Payments Europe : traitement des paiements. Politique de confidentialité :{' '}
+                <a href="https://stripe.com/fr/privacy" className="text-[#8b2020] underline" target="_blank" rel="noopener noreferrer">
+                  https://stripe.com/fr/privacy
+                </a>
+              </li>
+            </ul>
+            <p className="mt-4">
+              Aucun autre prestataire externe n&apos;est utilisé pour la gestion de la newsletter. Les emails sont traités via notre messagerie (Gmail) uniquement pour l&apos;envoi manuel d&apos;informations aux personnes inscrites.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">5. Cookies</h2>
             <p>
-              Nous nous réservons le droit de modifier cette politique de confidentialité
-              à tout moment. Les modifications entrent en vigueur dès leur publication
-              sur le site.
+              Notre site utilise uniquement des cookies techniques nécessaires à son fonctionnement.
+              Aucun cookie publicitaire ou analytique n&apos;est déposé.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">6. Durée de conservation</h2>
+            <ul className="list-disc list-inside space-y-1 ml-4">
+              <li>Email de newsletter : conservé tant que vous êtes inscrit. Vous pouvez vous désinscrire à tout moment en nous contactant via le formulaire.</li>
+              <li>Données de paiement : conservées uniquement par Stripe conformément à leurs obligations légales.</li>
+            </ul>
+            <p className="mt-4">Picaron ne conserve aucune donnée de paiement.</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">7. Vos droits</h2>
+            <p>
+              Conformément au RGPD, vous disposez des droits d&apos;accès, de rectification, d&apos;effacement, de limitation et d&apos;opposition.
+            </p>
+            <p className="mt-4">
+              Pour exercer vos droits, vous pouvez nous contacter via notre formulaire dédié :{' '}
+              <a href="https://picaron.fr/fr/contact" className="text-[#8b2020] underline">
+                https://picaron.fr/fr/contact
+              </a>
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">8. Sécurité</h2>
+            <p>
+              Nous ne stockons aucune donnée sensible sur nos serveurs. Les paiements sont traités exclusivement via Stripe, certifié PCI-DSS.
+              Les informations relatives à la newsletter sont gérées de façon sécurisée via notre messagerie.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">9. Contact</h2>
+            <p>
+              Pour toute question concernant cette politique de confidentialité, vous pouvez nous écrire via :{' '}
+              <a href="https://picaron.fr/fr/contact" className="text-[#8b2020] underline">
+                https://picaron.fr/fr/contact
+              </a>
             </p>
           </section>
 

@@ -69,9 +69,9 @@ export default function BoutiquePage() {
       </h1>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Galerie d'images */}
-          <div className="space-y-4">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Galerie d'images - Deuxième sur mobile, gauche sur desktop */}
+          <div className="order-2 md:order-1 md:w-1/2 space-y-4">
             {/* Image du matériel */}
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
@@ -85,9 +85,10 @@ export default function BoutiquePage() {
             </div>
           </div>
 
-          {/* Informations produit */}
-          <div className="space-y-6">
-            <div>
+          {/* Wrapper info - contents sur mobile pour permettre le réordonnancement */}
+          <div className="contents md:block md:w-1/2 md:space-y-4">
+            {/* Header (nom + commande) - Premier sur mobile */}
+            <div className="order-1">
               <h2 className="text-3xl font-oldstyle text-[#8b2020] mb-2">Boucaniers</h2>
 
               {/* Stock status */}
@@ -119,32 +120,43 @@ export default function BoutiquePage() {
                   Paiement sécurisé par Stripe
                 </p>
               </div>
+            </div>
 
+            {/* Description - Troisième sur mobile */}
+            <div className="order-3 space-y-6">
               <p className="text-lg text-[#0c0c0d] mb-4">
                 Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.
               </p>
-            </div>
 
-            {/* Liens vers les pages légales */}
-            <div className="text-sm text-[#0c0c0d] space-y-1">
-              <p>
-                En commandant, vous acceptez nos{' '}
-                <a href={`/${locale}/cgv`} className="text-[#8b2020] hover:underline">
-                  Conditions Générales de Vente
-                </a>
-                {' '}et notre{' '}
-                <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
-                  Politique de Confidentialité
-                </a>
+              <p className="text-lg text-[#0c0c0d] mb-4">
+                Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant
+                truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau,
+                recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
+                Le dénouement n&apos;est jamais certain et chaque tour donne le frisson !
               </p>
+              <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
+
+              {/* Liens vers les pages légales */}
+              <div className="text-sm text-[#0c0c0d] space-y-1">
+                <p>
+                  En commandant, vous acceptez nos{' '}
+                  <a href={`/${locale}/cgv`} className="text-[#8b2020] hover:underline">
+                    Conditions Générales de Vente
+                  </a>
+                  {' '}et notre{' '}
+                  <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
+                    Politique de Confidentialité
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Deuxième produit - Armand */}
-        <div className="grid md:grid-cols-2 gap-8 mt-8 pt-8 border-t-2 border-[#f2e8d5]">
-          {/* Galerie d'images - Armand */}
-          <div className="space-y-4">
+        <div className="flex flex-col md:flex-row gap-8 mt-8 pt-8 border-t-2 border-[#f2e8d5]">
+          {/* Galerie d'images - Armand - Deuxième sur mobile, gauche sur desktop */}
+          <div className="order-2 md:order-1 md:w-1/2 space-y-4">
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
                 src="/assets/Nouvelle-illustrée.png"
@@ -170,9 +182,10 @@ export default function BoutiquePage() {
             </div>
           </div>
 
-          {/* Informations produit - Armand */}
-          <div className="space-y-6">
-            <div>
+          {/* Wrapper info - contents sur mobile pour permettre le réordonnancement */}
+          <div className="contents md:block md:w-1/2 md:space-y-4">
+            {/* Header (nom + commande) - Premier sur mobile */}
+            <div className="order-1">
               <h2 className="text-3xl font-oldstyle text-[#8b2020] mb-2">Armand ou Les Rêveurs du Nouveau Monde</h2>
 
               {/* Stock status */}
@@ -189,14 +202,14 @@ export default function BoutiquePage() {
                   onClick={handleCheckout_boucanier_nouvelle}
                   className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
                 >
-                    Commander le jeu et la nouvelle
+                  Commander le jeu et la nouvelle
                 </button>
 
                 <button
                   onClick={handleCheckout_nouvelle}
                   className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
                 >
-                    Commander la nouvelle seule
+                  Commander la nouvelle seule
                 </button>
 
                 <p className="text-sm text-gray-500 text-center">
@@ -205,10 +218,27 @@ export default function BoutiquePage() {
               </div>
             </div>
 
-            <div className="prose max-w-none">
+            {/* Description - Troisième sur mobile */}
+            <div className="order-3 prose max-w-none">
               <p className="text-[#0c0c0d] text-lg leading-relaxed">
                 Armand ou Les Rêveurs du Nouveau Monde se plonge dans la vie et les pensées des contemporains du siècle des Lumières, sentant les préludes des chamboulements de l&apos;Ancien Monde quand le Nouveau éclot déjà. Cette nouvelle illustrée introduit le jeu de société Boucaniers. Texte et illustrations par VINCENT TELLIER.
               </p>
+
+               <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
+
+              {/* Liens vers les pages légales */}
+              <div className="text-sm text-[#0c0c0d] space-y-1">
+                <p>
+                  En commandant, vous acceptez nos{' '}
+                  <a href={`/${locale}/cgv`} className="text-[#8b2020] hover:underline">
+                    Conditions Générales de Vente
+                  </a>
+                  {' '}et notre{' '}
+                  <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
+                    Politique de Confidentialité
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

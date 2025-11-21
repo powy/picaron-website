@@ -71,8 +71,7 @@ export default function HomePage() {
         </section>
 
         {/* Social Media Links */}
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-oldstyle text-[#0c0c0d] mb-6">{t('followUs')}</h3>
+        <div className="mb-8">
           <SocialLinks />
         </div>
 
@@ -415,8 +414,7 @@ export default function HomePage() {
 
         {/* Second Social Media and Newsletter Section */}
         <div className="mt-16 pt-8 border-t-2 border-[#d4a574]">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-oldstyle text-[#0c0c0d] mb-6">{t('followUs')}</h3>
+          <div className="mb-8">
             <SocialLinks />
           </div>
 

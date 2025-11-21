@@ -1,4 +1,4 @@
-export default function SocialLinks() {
+export default function SocialLinks({ title }: { title?: string }) {
   const socials = [
     {
       name: 'Facebook',
@@ -21,12 +21,13 @@ export default function SocialLinks() {
   ]
 
   return (
-    <section className="flex justify-center gap-6 my-8">
+    <section className="flex justify-center items-center gap-4 my-8">
+      {title && <span className="text-xl font-oldstyle text-[#0c0c0d]">{title}</span>}
       {socials.map((social) => (
         <a
           key={social.name}
           href={social.url}
-          className="w-12 h-12 bg-[#3e2f2a] text-[#faf8f3] rounded-full flex items-center justify-center hover:bg-[#8b2020] transition"
+          className="w-10 h-10 bg-[#3e2f2a] text-[#faf8f3] rounded-full flex items-center justify-center hover:bg-[#8b2020] transition"
           aria-label={social.name}
         >
           {social.icon}
