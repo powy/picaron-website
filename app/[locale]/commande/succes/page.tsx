@@ -20,7 +20,7 @@ export default function SuccessPage() {
             </svg>
           </div>
 
-          <h1 className="text-4xl font-oldstyle text-[#8b2020] mb-4">Commande confirmée !</h1>
+          <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-4">Commande confirmée !</h1>
 
           <p className="text-xl text-[#0c0c0d] mb-6">
             Merci pour votre achat de Boucaniers !

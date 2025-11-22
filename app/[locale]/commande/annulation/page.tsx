@@ -17,7 +17,7 @@ export default function CancelPage() {
             </svg>
           </div>
 
-          <h1 className="text-4xl font-oldstyle text-[#8b2020] mb-4">Commande annulée</h1>
+          <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-4">Commande annulée</h1>
 
           <p className="text-xl text-[#0c0c0d] mb-6">
             Votre commande a été annulée. Aucun montant n&apos;a été débité.

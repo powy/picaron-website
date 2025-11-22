@@ -120,7 +120,7 @@ export default function ContactPage() {
 
   return (
     <div className="mt-8 max-w-2xl mx-auto">
-      <h1 className="text-5xl font-caravagesque text-[#0c0c0d] mb-8 text-center">
+      <h1 className="text-5xl font-caravagesque font-normal text-[#0c0c0d] mb-8 text-center">
         Contact
       </h1>
 

@@ -2,7 +2,7 @@ export default function PolitiqueConfidentialite() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-oldstyle text-[#8b2020] mb-6">Politique de Confidentialité</h1>
+        <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-6">Politique de Confidentialité</h1>
 
         <div className="prose prose-lg max-w-none text-[#0c0c0d] space-y-8">
           <section>

@@ -1,10 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
-import NewsletterSection from '@/components/NewsletterSection';
 
 export default function BoutiquePage() {
   const params = useParams();
@@ -64,7 +62,7 @@ export default function BoutiquePage() {
 
   return (
     <div className="mt-8">
-      <h1 className="text-5xl font-caravagesque text-[#0c0c0d] mb-8 text-center">
+      <h1 className="text-5xl font-caravagesque font-normal text-[#0c0c0d] mb-8 text-center">
         Boutique
       </h1>
 
@@ -94,7 +92,7 @@ export default function BoutiquePage() {
               {/* Stock status */}
               <div className="mb-3">
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-base font-semibold bg-green-100 text-green-800">
-                  Stock limités
+                  Stocks limités
                 </span>
               </div>
 

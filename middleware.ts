@@ -9,11 +9,11 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Redirect /boucaniers to home page (preserving locale)
-  if (pathname === '/boucaniers' || pathname === '/fr/boucaniers' || pathname === '/en/boucaniers') {
-    const locale = pathname.startsWith('/en') ? 'en' : 'fr'
+  // Redirect root to /boucaniers (preserving locale)
+  if (pathname === '/' || pathname === '/fr' || pathname === '/en') {
+    const locale = pathname === '/en' ? 'en' : 'fr'
     const url = request.nextUrl.clone()
-    url.pathname = `/${locale}`
+    url.pathname = `/${locale}/boucaniers`
     return NextResponse.redirect(url, 301)
   }
 

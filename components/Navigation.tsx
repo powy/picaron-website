@@ -17,7 +17,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#842c0d]">
+    <nav className="fixed top-0 w-full z-50 bg-[#842c0d] font-normal">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-32 py-2">
           <Link href="/" className="flex items-center">
@@ -35,7 +35,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="text-[#ffdaa6] font-caravagesque menu-item"
+                className="text-[#ffdaa6] font-caravagesque font-normal menu-item"
               >
                 {item.label}
               </Link>
@@ -59,7 +59,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="block text-[#ffdaa6] font-caravagesque mobile-menu-item"
+                className="block text-[#ffdaa6] font-caravagesque font-normal mobile-menu-item"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
