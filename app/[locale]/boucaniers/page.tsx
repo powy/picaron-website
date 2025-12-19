@@ -14,13 +14,14 @@ export default function HomePage() {
       {/* Announcement Banner */}
       <section className="text-center pb-4 mb-4 md:py-8 md:mb-8">
         <Link href="/fr/boutique" className="block mb-4 md:mb-6">
-          <p className="text-xl md:text-4xl font-caravagesque font-normal text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity">
-            Le jeu Boucaniers disponible dans la boutique !
+          <p className="md:text-2xl font-normal text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity" style={{'letter-spacing': "0.12em"}}>
+            LE JEU BOUCANIERS DISPONIBLE DANS LA BOUTIQUE !
           </p>
         </Link>
         <Link
           href="/fr/boutique"
-          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-lg transition-colors duration-200 shadow-lg"
+          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-full transition-colors duration-200 shadow-lg"
+		  style={{'box-shadow': "0px 30px 5px 0px rgba(0, 0, 0, 0.18)" }}
         >
           Commander
         </Link>
@@ -108,9 +109,10 @@ export default function HomePage() {
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Jouez en simultané</h3>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">JOUEZ EN SIMULTANÉ</h3>
             <p className="text-[#0c0c0d] mb-6 text-lg">
-              Pour des parties pleines de bluff et de suspense ! Choisissez votre navigation en secret puis bougez tous en même temps.
+              Pour des parties pleines de bluff et de suspense !<br />
+              Choisissez votre navigation en secret puis bougez tous en même temps.
               On n'attend pas les tours des autres !
             </p>
             <div className="mb-6">
@@ -122,10 +124,11 @@ export default function HomePage() {
                 className="rounded-lg  mx-auto"
               />
             </div>
-            <p className="font-bold text-[#0c0c0d] mb-2">Mécanique fluide</p>
+            <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">MÉCANIQUE FLUIDE</p>
             <p className="text-[#0c0c0d] mb-6">
-              Après la navigation, selon si des bateaux sont au contact ou à 1 de distance, il y a abordage ou tirs de canons.
-              Ensuite, tout le monde joue ses actions en même temps.
+              Si des bateaux sont en contact, À L'ABORDAGE !<br />
+              À un de distance? AUX CANONS !<br />
+              Puis, tout le monde joue ses actions en même temps.
             </p>
             <Image
               src="/boucanier3/boucaniers 3_fichiers/image003.gif"
@@ -137,12 +140,10 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Une épopée</h3>
-            <p className="text-[#0c0c0d] mb-6 text-lg">Pour gagner, 2 objectifs épiques différents :</p>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">UNE ÉPOPÉE À DEUX OBJECTIFS</h3>
             <p className="text-[#0c0c0d] mb-6">
-              Déterrez le trésor caché d'Armand le baratineur avant les autres OU amassez 25 pièces d'or.
-              Le passage du Rougeaud des Compagnies des Indes au Bastion Rouge est un événement à ne pas manquer
-              car sa prise rapporte alors 15 pièces.
+              Déterrez le trésor d'Armand le baratineur avant les autres OU amassez 25 pièces d'or.<br />
+              Le passage du Rougeaud au Bastion Rouge est à ne pas manquer... sa prise rapportera alors 15 pièces.
             </p>
             <Image
               src="/boucanier3/boucaniers 3_fichiers/image004.gif"
@@ -154,9 +155,10 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Profondeur de jeu</h3>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">PROFONDEUR DE JEU</h3>
             <p className="text-[#0c0c0d] mb-6 text-lg">
-              Des îles aux actions uniques, des combos infinis, des navires asymétriques. Les joueurs explorent des tactiques insolites et personnelles.
+              Des îles aux actions uniques, des combos infinis, des navires asymétriques.<br />
+              Explorez des tactiques insolites et personnelles.
             </p>
             <Image
               src="/boucanier3/boucaniers 3_fichiers/image005.png"
@@ -168,7 +170,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Jouabilité et rejouabilité</h3>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">JOUABILITÉ ET REJOUABILITÉ</h3>
             <p className="text-[#0c0c0d] mb-6 text-lg">
               Chaque partie est unique grâce au plateau modulable, à l'asymétrie des 10 navires et aux 24 boucaniers uniques.
               Aussi palpitant à 2 joueurs qu'à 3, 4 ou 5, les experts comme les plus jeunes seront dans leur élément.
@@ -196,10 +198,11 @@ export default function HomePage() {
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Univers immersif</h3>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">UNIVERS IMMERSIF</h3>
             <p className="text-[#0c0c0d] mb-6 text-lg">
-              Les indices forment une frise continue. Elle permet de déterminer l'emplacement du trésor avant la partie, sur une île au hasard.
-              Ce système innovant d'indices et de caches permet à la fois la mise en place et la vérification des tentatives de fouille du trésor.
+              Les indices forment une frise continue.<br />
+              Elle permet de placer le trésor sur une île au hasard avant la partie.<br />
+              Un système innovant fait d'indices et de caches pour la mise en place et la vérification des tentatives de fouille du trésor.
             </p>
             <div className="space-y-6">
               <Image
@@ -233,14 +236,14 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Gameplay recherché</h3>
+            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">GAMEPLAY SOPHISTIQUÉ</h3>
             <p className="text-[#0c0c0d] mb-6">
               Affinées pendant des années, les mécaniques offrent une aventure pour tous : Un débutant pourra triompher,
               et un expert chevronné exploitera toute la richesse stratégique.
             </p>
             <p className="text-[#0c0c0d] mb-6">
               Le jeu mêle stratégie de placement, planification sur plusieurs tours, combinaisons infinies et combos ingénieux,
-              sens du sacrifice, gestion de ressources, des combats et surtout... du BLUFF !
+              sens du sacrifice, gestion de ressources, des combats et surtout... du BLUFF!
             </p>
             <p className="text-[#0c0c0d] mb-8">
               Ici, ce sont vos décisions, et non le hasard, qui dictent l'issue de la partie.
@@ -248,9 +251,9 @@ export default function HomePage() {
 
             <div className="space-y-8">
               <div>
-                <p className="font-bold text-[#0c0c0d] mb-4">Figurines faites maison</p>
+                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">FIGURINES FAITES MAISON</p>
                 <p className="text-[#0c0c0d] mb-6">
-                  Sculptées en réalité virtuelle et imprimées en 3D avec deux couleurs de PLA, les figurines sont entièrement réalisées par nos soins.
+                  Sculptées en réalité virtuelle et imprimées en 3D avec en PLA, les figurines sont entièrement réalisées dans notre atelier.
                 </p>
                 <Image
                   src="/boucanier3/boucaniers 3_fichiers/image011.gif"
@@ -262,10 +265,10 @@ export default function HomePage() {
               </div>
 
               <div>
-                <p className="font-bold text-[#0c0c0d] mb-4">Un regard documenté sur l'Histoire</p>
+                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">FIDÉLITÉ HISTORIQUE</p>
                 <p className="text-[#0c0c0d] mb-6">
-                  Apprenez-en plus sur l'Histoire de la marine et de la boucane aux Caraïbes. Le dos des fiches de bateaux porte leur description historique.
-                  Des vêtements aux gréements, des rôles d'équipage aux statuettes amérindiennes, tout est passé au peigne fin de la justesse historique.
+                  Apprenez-en plus sur l'Histoire de la marine et de la boucane aux Caraïbes.<br/>
+	              Les bateaux portent leur description historique sur leurs fiches. Des vêtements aux gréements, des rôles d'équipage aux statuettes amérindiennes, tout est documenté.
                 </p>
                 <Image
                   src="/boucanier3/boucaniers 3_fichiers/image012.gif"
@@ -277,9 +280,10 @@ export default function HomePage() {
               </div>
 
               <div>
-                <p className="font-bold text-[#0c0c0d] mb-4">Des drapeaux personnalisables</p>
+                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">DRAPEAUX PERSONNALISABLES</p>
                 <p className="text-[#0c0c0d] mb-6">
-                  Les fanions de couleur seront livrés vierges. Vous pourrez dessiner sur les pavillons ou en imprimer d'autres !
+                  Les fanions de couleur seront livrés vierges.<br/>
+	              Vous pourrez dessiner sur les pavillons ou en imprimer d'autres ! <br />
                   Vos couleurs révéleront la vraie nature de votre témérité.
                 </p>
                 <Image
