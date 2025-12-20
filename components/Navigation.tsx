@@ -13,11 +13,12 @@ export default function Navigation() {
     { href: '/', label: t('game') },
     { href: '/equipe', label: 'PicaRon' },
     { href: '/boutique', label: t('shop') },
+    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: t('contact') }
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#842c0d] font-normal">
+    <nav className="fixed top-0 w-full z-50 bg-copper-dark font-normal">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-32 py-2">
           <Link href="/" className="flex items-center">
@@ -35,7 +36,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="text-[#ffdaa6] font-caravagesque font-normal menu-item"
+                className="text-sand font-caravagesque font-normal menu-item"
               >
                 {item.label}
               </Link>
@@ -43,7 +44,7 @@ export default function Navigation() {
           </div>
 
           <button
-            className="lg:hidden text-[#ffdaa6]"
+            className="lg:hidden text-sand"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor">
@@ -54,12 +55,12 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[#ffdaa6] bg-[#842c0d]">
+          <div className="lg:hidden py-4 border-t border-sand bg-copper-dark">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={`/${locale}${item.href}`}
-                className="block text-[#ffdaa6] font-caravagesque font-normal mobile-menu-item"
+                className="block text-sand font-caravagesque font-normal mobile-menu-item"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}

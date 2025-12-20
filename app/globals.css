@@ -19,21 +19,9 @@
   font-display: swap;
 }
 
-:root {
-  --color-ink: #0c0c0d;
-  --color-parchment: #f2e8d5;
-  --color-pirate-red: #8b2020;
-  --color-gold: #d4a574;
-  --color-sea-mist: #1e3a3a;
-  --color-navy: #1a2332;
-  --color-bone: #faf8f3;
-  --color-wood: #3e2f2a;
-  --color-copper: #4e7c7b;
-}
-
 body {
   font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
-  color: var(--color-ink);
+  color: #0c0c0d; /* ink */
   font-size: 24px;
   font-weight: 900;
   line-height: 1.6;
@@ -178,14 +166,111 @@ strong, b {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-parchment);
+  background: #f2e8d5; /* parchment */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-wood);
+  background: #3e2f2a; /* wood */
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-pirate-red);
+  background: #8b2020; /* pirate-red */
+}
+
+/* ============================================
+   COMPONENT UTILITY CLASSES
+   ============================================ */
+
+@layer components {
+  /* Headings */
+  .heading-section {
+    @apply text-5xl font-caravagesque font-normal text-ink mb-8 text-center;
+  }
+
+  .heading-red-title {
+    @apply text-2xl font-oldstyle text-pirate-red mb-4;
+  }
+
+  .heading-subsection {
+    @apply text-3xl font-oldstyle text-pirate-red mb-8;
+  }
+
+  .heading-section-large {
+    @apply text-4xl font-oldstyle font-normal text-pirate-red mb-8 text-center mt-16;
+  }
+
+  .heading-product {
+    @apply text-3xl font-oldstyle text-pirate-red mb-2;
+  }
+
+  .heading-faq-question {
+    @apply text-xl font-bold text-ink mb-4;
+  }
+
+  .heading-feature {
+    @apply text-2xl font-oldstyle text-pirate-red mb-4;
+  }
+
+  .heading-team-member {
+    @apply text-2xl font-oldstyle text-ink mb-1;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-forest-green text-bone px-6 py-3 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-light transition;
+  }
+
+  /* Form Inputs */
+  .input-field {
+    @apply w-full px-4 py-2 border-2 border-wood rounded bg-bone;
+  }
+
+  .input-field-error {
+    @apply w-full px-4 py-2 border-2 border-red-500 rounded bg-bone;
+  }
+
+  /* Social/Badge Buttons */
+  .badge-social {
+    @apply bg-wood text-bone rounded-full flex items-center justify-center hover:bg-pirate-red transition;
+  }
+
+  .badge-info {
+    @apply bg-wood text-bone px-4 py-2 rounded-lg hover:bg-pirate-red transition-colors;
+  }
+
+  /* Section Dividers */
+  .divider-gold {
+    @apply border-t-2 border-gold;
+  }
+
+  .divider-parchment {
+    @apply border-t-2 border-parchment;
+  }
+
+  .divider-gold-border {
+    @apply border-b border-gold pb-6;
+  }
+
+  /* Text Styles */
+  .text-body {
+    @apply text-ink text-lg leading-relaxed;
+  }
+
+  .text-body-center {
+    @apply text-ink text-lg leading-relaxed text-center;
+  }
+
+  /* Link Styles */
+  .link-red {
+    @apply text-pirate-red hover:underline;
+  }
+
+  .link-red-transition {
+    @apply hover:text-pirate-red transition-colors;
+  }
 }

@@ -6,19 +6,19 @@ export default function Footer({ locale = 'fr' }: { locale?: string }) {
       <div className="container mx-auto px-4">
         <p className="mb-2">© 2025 Picaron. Tous droits réservés.</p>
         <p>
-          <Link href={`/${locale}/mentions-legales`} className="hover:text-[#8b2020] transition-colors">
+          <Link href={`/${locale}/mentions-legales`} className="link-red-transition">
             Mentions légales
           </Link>
           {' | '}
-          <Link href={`/${locale}/cgv`} className="hover:text-[#8b2020] transition-colors">
+          <Link href={`/${locale}/cgv`} className="link-red-transition">
             CGV
           </Link>
           {' | '}
-          <Link href={`/${locale}/politique-confidentialite`} className="hover:text-[#8b2020] transition-colors">
+          <Link href={`/${locale}/politique-confidentialite`} className="link-red-transition">
             Politique de confidentialité
           </Link>
           {' | '}
-          <Link href={`/${locale}/cookies`} className="hover:text-[#8b2020] transition-colors">
+          <Link href={`/${locale}/cookies`} className="link-red-transition">
             Cookies
           </Link>
         </p>

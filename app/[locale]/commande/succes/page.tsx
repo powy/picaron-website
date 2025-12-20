@@ -20,15 +20,15 @@ export default function SuccessPage() {
             </svg>
           </div>
 
-          <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-4">Commande confirmée !</h1>
+          <h1 className="text-4xl font-oldstyle font-normal text-pirate-red mb-4">Commande confirmée !</h1>
 
-          <p className="text-xl text-[#0c0c0d] mb-6">
+          <p className="text-xl text-ink mb-6">
             Merci pour votre achat de Boucaniers !
           </p>
 
-          <div className="bg-[#f2e8d5]/30 rounded-lg p-6 text-left mb-6">
-            <h2 className="font-oldstyle font-semibold text-[#8b2020] mb-3">Prochaines étapes :</h2>
-            <ul className="space-y-2 text-[#0c0c0d]">
+          <div className="bg-parchment/30 rounded-lg p-6 text-left mb-6">
+            <h2 className="font-oldstyle font-semibold text-pirate-red mb-3">Prochaines étapes :</h2>
+            <ul className="space-y-2 text-ink">
               <li className="flex items-start gap-2">
                 <span>✉️</span>
                 <span>Vous allez recevoir un email de confirmation</span>
@@ -57,14 +57,14 @@ export default function SuccessPage() {
           <div className="space-y-3">
             <Link
               href={`/${locale}`}
-              className="inline-block bg-[#8b2020] text-[#faf8f3] px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-[#a02525] transition-colors"
+              className="inline-block bg-[#8b2020] text-[#faf8f3] px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-light transition-colors"
             >
               Retour à l&apos;accueil
             </Link>
 
-            <p className="text-sm text-[#0c0c0d] pt-4">
+            <p className="text-sm text-ink pt-4">
               Des questions ? Contactez-nous à{' '}
-              <a href="mailto:contact@picaron.fr" className="text-[#8b2020] hover:underline">
+              <a href="mailto:contact@picaron.fr" className="text-pirate-red hover:underline">
                 contact@picaron.fr
               </a>
             </p>

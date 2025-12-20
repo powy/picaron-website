@@ -2,9 +2,9 @@ export default function Cookies() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-6">Cookies</h1>
+        <h1 className="heading-section">Cookies</h1>
 
-        <div className="prose prose-lg max-w-none text-[#0c0c0d] space-y-8">
+        <div className="prose prose-lg max-w-none text-ink space-y-8">
           <section>
             <p>
               Le site picaron.fr utilise uniquement des cookies strictement nécessaires à son fonctionnement technique.
@@ -26,7 +26,7 @@ export default function Cookies() {
             </p>
           </section>
 
-          <p className="mt-12 text-sm text-gray-600 bg-[#f2e8d5]/20 p-4 rounded-lg">
+          <p className="mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
         </div>

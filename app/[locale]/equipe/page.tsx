@@ -27,12 +27,10 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <div className="mt-8">
-      <h1 className="text-5xl font-caravagesque font-normal text-[#0c0c0d] mb-8 text-center">
-        L'équipage de PicaRon
-      </h1>
+      <h1 className="heading-section">L'équipage de PicaRon</h1>
 
       <div className="max-w-4xl mx-auto mb-12 text-center">
-        <p className="text-lg text-[#0c0c0d] leading-relaxed">
+        <p className="text-lg text-ink leading-relaxed">
           Depuis de nombreuses années, nous inventons, testons et affinons des jeux rien que pour le plaisir de créer.
           Boucaniers est le premier à quitter le port pour rencontrer les joueurs, mais certainement pas le dernier.
         </p>
@@ -49,13 +47,11 @@ export default function TeamPage() {
                 className="object-cover"
               />
             </div>
-            <h3 className="text-2xl font-oldstyle text-[#0c0c0d] mb-1">
-              {member.name}
-            </h3>
-            <p className="text-[#8b2020] font-oldstyle text-lg mb-3">
+            <h3 className="heading-team-member">{member.name}</h3>
+            <p className="text-pirate-red font-oldstyle text-lg mb-3">
               {member.role}
             </p>
-            <p className="text-[#0c0c0d]">
+            <p className="text-ink">
               {member.description}
             </p>
           </div>

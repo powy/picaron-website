@@ -2,11 +2,11 @@ export default function PolitiqueConfidentialite() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-6">Politique de Confidentialité</h1>
+        <h1 className="heading-section">Politique de Confidentialité</h1>
 
-        <div className="prose prose-lg max-w-none text-[#0c0c0d] space-y-8">
+        <div className="prose prose-lg max-w-none text-ink space-y-8">
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">1. Responsable du traitement</h2>
+            <h2 className="heading-red-title">1. Responsable du traitement</h2>
             <p>Le responsable du traitement des données personnelles est :</p>
             <p className="ml-4">
               Picaron SARL<br />
@@ -16,7 +16,7 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">2. Données que nous collectons</h2>
+            <h2 className="heading-red-title">2. Données que nous collectons</h2>
             <p>Nous collectons uniquement les données strictement nécessaires aux finalités suivantes :</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Inscription à la newsletter : adresse email.</li>
@@ -29,7 +29,7 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">3. Finalités des traitements</h2>
+            <h2 className="heading-red-title">3. Finalités des traitements</h2>
             <p>Les données personnelles sont utilisées pour :</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>envoyer la newsletter à la demande de l&apos;utilisateur ;</li>
@@ -42,12 +42,12 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">4. Sous-traitants</h2>
+            <h2 className="heading-red-title">4. Sous-traitants</h2>
             <p>Nous utilisons les prestataires suivants :</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>
                 Stripe Payments Europe : traitement des paiements. Politique de confidentialité :{' '}
-                <a href="https://stripe.com/fr/privacy" className="text-[#8b2020] underline" target="_blank" rel="noopener noreferrer">
+                <a href="https://stripe.com/fr/privacy" className="text-pirate-red underline" target="_blank" rel="noopener noreferrer">
                   https://stripe.com/fr/privacy
                 </a>
               </li>
@@ -58,7 +58,7 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">5. Cookies</h2>
+            <h2 className="heading-red-title">5. Cookies</h2>
             <p>
               Notre site utilise uniquement des cookies techniques nécessaires à son fonctionnement.
               Aucun cookie publicitaire ou analytique n&apos;est déposé.
@@ -66,7 +66,7 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">6. Durée de conservation</h2>
+            <h2 className="heading-red-title">6. Durée de conservation</h2>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>Email de newsletter : conservé tant que vous êtes inscrit. Vous pouvez vous désinscrire à tout moment en nous contactant via le formulaire.</li>
               <li>Données de paiement : conservées uniquement par Stripe conformément à leurs obligations légales.</li>
@@ -75,20 +75,20 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">7. Vos droits</h2>
+            <h2 className="heading-red-title">7. Vos droits</h2>
             <p>
               Conformément au RGPD, vous disposez des droits d&apos;accès, de rectification, d&apos;effacement, de limitation et d&apos;opposition.
             </p>
             <p className="mt-4">
               Pour exercer vos droits, vous pouvez nous contacter via notre formulaire dédié :{' '}
-              <a href="https://picaron.fr/fr/contact" className="text-[#8b2020] underline">
+              <a href="https://picaron.fr/fr/contact" className="text-pirate-red underline">
                 https://picaron.fr/fr/contact
               </a>
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">8. Sécurité</h2>
+            <h2 className="heading-red-title">8. Sécurité</h2>
             <p>
               Nous ne stockons aucune donnée sensible sur nos serveurs. Les paiements sont traités exclusivement via Stripe, certifié PCI-DSS.
               Les informations relatives à la newsletter sont gérées de façon sécurisée via notre messagerie.
@@ -96,16 +96,16 @@ export default function PolitiqueConfidentialite() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-oldstyle text-[#8b2020] mb-4">9. Contact</h2>
+            <h2 className="heading-red-title">9. Contact</h2>
             <p>
               Pour toute question concernant cette politique de confidentialité, vous pouvez nous écrire via :{' '}
-              <a href="https://picaron.fr/fr/contact" className="text-[#8b2020] underline">
+              <a href="https://picaron.fr/fr/contact" className="text-pirate-red underline">
                 https://picaron.fr/fr/contact
               </a>
             </p>
           </section>
 
-          <p className="mt-12 text-sm text-gray-600 bg-[#f2e8d5]/20 p-4 rounded-lg">
+          <p className="mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
         </div>

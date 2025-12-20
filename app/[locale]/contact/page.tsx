@@ -120,21 +120,19 @@ export default function ContactPage() {
 
   return (
     <div className="mt-8 max-w-2xl mx-auto">
-      <h1 className="text-5xl font-caravagesque font-normal text-[#0c0c0d] mb-8 text-center">
-        Contact
-      </h1>
+      <h1 className="heading-section">Contact</h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+          <label className="block text-ink font-oldstyle mb-2">
             Nom
           </label>
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
-              errors.name ? 'border-red-500' : 'border-[#3e2f2a]'
+            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+              errors.name ? 'border-red-500' : 'border-wood'
             }`}
           />
           {errors.name && (
@@ -143,15 +141,15 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+          <label className="block text-ink font-oldstyle mb-2">
             Courriel
           </label>
           <input
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
-              errors.email ? 'border-red-500' : 'border-[#3e2f2a]'
+            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+              errors.email ? 'border-red-500' : 'border-wood'
             }`}
           />
           {errors.email && (
@@ -160,15 +158,15 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+          <label className="block text-ink font-oldstyle mb-2">
             Sujet
           </label>
           <input
             type="text"
             value={formData.subject}
             onChange={(e) => setFormData({...formData, subject: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
-              errors.subject ? 'border-red-500' : 'border-[#3e2f2a]'
+            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+              errors.subject ? 'border-red-500' : 'border-wood'
             }`}
           />
           {errors.subject && (
@@ -177,15 +175,15 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+          <label className="block text-ink font-oldstyle mb-2">
             Message
           </label>
           <textarea
             rows={6}
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
-              errors.message ? 'border-red-500' : 'border-[#3e2f2a]'
+            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+              errors.message ? 'border-red-500' : 'border-wood'
             }`}
           />
           {errors.message && (
@@ -194,7 +192,7 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <label className="block text-[#0c0c0d] font-oldstyle mb-2">
+          <label className="block text-ink font-oldstyle mb-2">
             Question de sécurité: Combien font {mathQuestion.num1} + {mathQuestion.num2} ?
           </label>
           <input
@@ -203,8 +201,8 @@ export default function ContactPage() {
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             placeholder="Votre réponse"
-            className={`w-full px-4 py-2 border-2 rounded bg-[#faf8f3] ${
-              errors.captcha ? 'border-red-500' : 'border-[#3e2f2a]'
+            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+              errors.captcha ? 'border-red-500' : 'border-wood'
             }`}
           />
           {errors.captcha && (
@@ -215,7 +213,7 @@ export default function ContactPage() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-[#8b2020] text-[#faf8f3] py-3 rounded font-oldstyle text-xl hover:bg-[#a02525] transition disabled:opacity-50"
+          className="w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-light transition disabled:opacity-50"
         >
           {status === 'loading' ? 'Envoi...' : 'Envoyer votre message'}
         </button>

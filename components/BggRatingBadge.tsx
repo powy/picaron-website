@@ -34,7 +34,7 @@ export default function BggRatingBadge({ gameId, gameName = 'Boucaniers' }: BggR
 
   if (loading) {
     return (
-      <div className="inline-flex items-center gap-2 bg-[#3e2f2a] text-[#faf8f3] px-4 py-2 rounded-lg">
+      <div className="inline-flex items-center gap-2 bg-wood text-bone px-4 py-2 rounded-lg">
         <span className="text-sm">Chargement...</span>
       </div>
     );
@@ -49,7 +49,7 @@ export default function BggRatingBadge({ gameId, gameName = 'Boucaniers' }: BggR
       href={bggUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-3 bg-[#3e2f2a] text-[#faf8f3] px-4 py-2 rounded-lg hover:bg-[#8b2020] transition-colors"
+      className="inline-flex items-center gap-3 badge-info"
       title={`Voir ${gameName} sur BoardGameGeek`}
     >
       {/* BGG Logo */}

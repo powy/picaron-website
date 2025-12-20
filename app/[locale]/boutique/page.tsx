@@ -62,9 +62,7 @@ export default function BoutiquePage() {
 
   return (
     <div className="mt-8">
-      <h1 className="text-5xl font-caravagesque font-normal text-[#0c0c0d] mb-8 text-center">
-        Boutique
-      </h1>
+      <h1 className="heading-section">Boutique</h1>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
@@ -87,7 +85,7 @@ export default function BoutiquePage() {
           <div className="contents md:block md:w-1/2 md:space-y-4">
             {/* Header (nom + commande) - Premier sur mobile */}
             <div className="order-1">
-              <h2 className="text-3xl font-oldstyle text-[#8b2020] mb-2">Boucaniers</h2>
+              <h2 className="heading-product">Boucaniers</h2>
 
               {/* Stock status */}
               <div className="mb-3">
@@ -96,20 +94,20 @@ export default function BoutiquePage() {
                 </span>
               </div>
 
-              <p className="text-2xl font-semibold text-[#0c0c0d] mb-4">69,00 € TTC</p>
+              <p className="text-2xl font-semibold text-ink mb-4">69,00 € TTC</p>
 
               {/* Boutons de commande */}
               <div className="space-y-4 mb-6">
                 <button
                   onClick={handleCheckout_boucanier_nouvellOPTIONEL}
-                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
                 >
                   Commander le Jeu seul
                 </button>
 
                 <button
                   onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
                 >
                   Commander le jeu et la nouvelle
                 </button>
@@ -122,11 +120,11 @@ export default function BoutiquePage() {
 
             {/* Description - Troisième sur mobile */}
             <div className="order-3 space-y-6">
-              <p className="text-lg text-[#0c0c0d] mb-4">
+              <p className="text-lg text-ink mb-4">
                 Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.
               </p>
 
-              <p className="text-lg text-[#0c0c0d] mb-4">
+              <p className="text-lg text-ink mb-4">
                 Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant
                 truffé de cannibales, de comptoirs corrompus et de mystères vaudous. Armez votre bateau,
                 recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
@@ -135,14 +133,14 @@ export default function BoutiquePage() {
               <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
 
               {/* Liens vers les pages légales */}
-              <div className="text-sm text-[#0c0c0d] space-y-1">
+              <div className="text-sm text-ink space-y-1">
                 <p>
                   En commandant, vous acceptez nos{' '}
-                  <a href={`/${locale}/cgv`} className="text-[#8b2020] hover:underline">
+                  <a href={`/${locale}/cgv`} className="text-pirate-red hover:underline">
                     Conditions Générales de Vente
                   </a>
                   {' '}et notre{' '}
-                  <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
+                  <a href={`/${locale}/politique-confidentialite`} className="text-pirate-red hover:underline">
                     Politique de Confidentialité
                   </a>
                 </p>
@@ -152,7 +150,7 @@ export default function BoutiquePage() {
         </div>
 
         {/* Deuxième produit - Armand */}
-        <div className="flex flex-col md:flex-row gap-8 mt-8 pt-8 border-t-2 border-[#f2e8d5]">
+        <div className="flex flex-col md:flex-row gap-8 mt-8 pt-8 border-t-2 border-parchment">
           {/* Galerie d'images - Armand - Deuxième sur mobile, gauche sur desktop */}
           <div className="order-2 md:order-1 md:w-1/2 space-y-4">
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
@@ -184,7 +182,7 @@ export default function BoutiquePage() {
           <div className="contents md:block md:w-1/2 md:space-y-4">
             {/* Header (nom + commande) - Premier sur mobile */}
             <div className="order-1">
-              <h2 className="text-3xl font-oldstyle text-[#8b2020] mb-2">Armand ou Les Rêveurs du Nouveau Monde</h2>
+              <h2 className="heading-product">Armand ou Les Rêveurs du Nouveau Monde</h2>
 
               {/* Stock status */}
               <div className="mb-3">
@@ -193,19 +191,19 @@ export default function BoutiquePage() {
                 </span>
               </div>
 
-              <p className="text-2xl font-semibold text-[#0c0c0d] mb-4">10,00 € TTC</p>
+              <p className="text-2xl font-semibold text-ink mb-4">10,00 € TTC</p>
 
               <div className="space-y-4 mb-6">
                 <button
                   onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
                 >
                   Commander le jeu et la nouvelle
                 </button>
 
                 <button
                   onClick={handleCheckout_nouvelle}
-                  className="w-full bg-[#378536] text-[#faf8f3] py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-[#40933f] transition-colors"
+                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
                 >
                   Commander la nouvelle seule
                 </button>
@@ -218,21 +216,21 @@ export default function BoutiquePage() {
 
             {/* Description - Troisième sur mobile */}
             <div className="order-3 prose max-w-none">
-              <p className="text-[#0c0c0d] text-lg leading-relaxed">
+              <p className="text-ink text-lg leading-relaxed">
                 Armand ou Les Rêveurs du Nouveau Monde se plonge dans la vie et les pensées des contemporains du siècle des Lumières, sentant les préludes des chamboulements de l&apos;Ancien Monde quand le Nouveau éclot déjà. Cette nouvelle illustrée introduit le jeu de société Boucaniers. Texte et illustrations par VINCENT TELLIER.
               </p>
 
                <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
 
               {/* Liens vers les pages légales */}
-              <div className="text-sm text-[#0c0c0d] space-y-1">
+              <div className="text-sm text-ink space-y-1">
                 <p>
                   En commandant, vous acceptez nos{' '}
-                  <a href={`/${locale}/cgv`} className="text-[#8b2020] hover:underline">
+                  <a href={`/${locale}/cgv`} className="text-pirate-red hover:underline">
                     Conditions Générales de Vente
                   </a>
                   {' '}et notre{' '}
-                  <a href={`/${locale}/politique-confidentialite`} className="text-[#8b2020] hover:underline">
+                  <a href={`/${locale}/politique-confidentialite`} className="text-pirate-red hover:underline">
                     Politique de Confidentialité
                   </a>
                 </p>

@@ -13,15 +13,11 @@ export default function HomePage() {
 
       {/* Announcement Banner */}
       <section className="text-center pb-4 mb-4 md:py-8 md:mb-8">
-        <Link href="/fr/boutique" className="block mb-4 md:mb-6">
-          <p className="md:text-2xl font-normal text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity" style={{'letter-spacing': "0.12em"}}>
-            LE JEU BOUCANIERS DISPONIBLE DANS LA BOUTIQUE !
-          </p>
-        </Link>
+        <h1 className="heading-section">LE JEU BOUCANIERS DISPONIBLE DANS LA BOUTIQUE !</h1>
         <Link
           href="/fr/boutique"
-          className="inline-block bg-[#378536] hover:bg-[#40933f] text-[#faf8f3] font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-full transition-colors duration-200 shadow-lg"
-		  style={{'box-shadow': "0px 30px 5px 0px rgba(0, 0, 0, 0.18)" }}
+          className="inline-block bg-forest-green hover:bg-forest-green-light text-bone font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-full transition-colors duration-200 shadow-lg"
+		  style={{boxShadow: "0px 30px 5px 0px rgba(0, 0, 0, 0.18)" }}
         >
           Commander
         </Link>
@@ -99,7 +95,7 @@ export default function HomePage() {
       {/* Boucaniers Content Starts Here */}
       <div id="boucaniers" className="max-w-4xl mx-auto mt-16">
         <div className="mb-12">
-          <p className="text-[#0c0c0d] text-lg leading-relaxed text-center mb-8">
+          <p className="text-ink text-lg leading-relaxed text-center mb-8">
             Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant truffé de cannibales,
             de comptoirs corrompus et de mystères vaudous. Armez votre bateau, recrutez, pillez et commercez en prenant
             garde aux Compagnies des Indes. Le dénouement n'est jamais certain et chaque tour donne le frisson !
@@ -109,8 +105,8 @@ export default function HomePage() {
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">JOUEZ EN SIMULTANÉ</h3>
-            <p className="text-[#0c0c0d] mb-6 text-lg">
+            <h3 className="heading-feature">JOUEZ EN SIMULTANÉ</h3>
+            <p className="text-ink mb-6 text-lg">
               Pour des parties pleines de bluff et de suspense !<br />
               Choisissez votre navigation en secret puis bougez tous en même temps.
               On n'attend pas les tours des autres !
@@ -124,8 +120,8 @@ export default function HomePage() {
                 className="rounded-lg  mx-auto"
               />
             </div>
-            <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">MÉCANIQUE FLUIDE</p>
-            <p className="text-[#0c0c0d] mb-6">
+            <p className="text-2xl font-oldstyle text-pirate-red mb-4">MÉCANIQUE FLUIDE</p>
+            <p className="text-ink mb-6">
               Si des bateaux sont en contact, À L'ABORDAGE !<br />
               À un de distance? AUX CANONS !<br />
               Puis, tout le monde joue ses actions en même temps.
@@ -140,8 +136,8 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">UNE ÉPOPÉE À DEUX OBJECTIFS</h3>
-            <p className="text-[#0c0c0d] mb-6">
+            <h3 className="heading-feature">UNE ÉPOPÉE À DEUX OBJECTIFS</h3>
+            <p className="text-ink mb-6">
               Déterrez le trésor d'Armand le baratineur avant les autres OU amassez 25 pièces d'or.<br />
               Le passage du Rougeaud au Bastion Rouge est à ne pas manquer... sa prise rapportera alors 15 pièces.
             </p>
@@ -155,8 +151,8 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">PROFONDEUR DE JEU</h3>
-            <p className="text-[#0c0c0d] mb-6 text-lg">
+            <h3 className="heading-feature">PROFONDEUR DE JEU</h3>
+            <p className="text-ink mb-6 text-lg">
               Des îles aux actions uniques, des combos infinis, des navires asymétriques.<br />
               Explorez des tactiques insolites et personnelles.
             </p>
@@ -170,8 +166,8 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">JOUABILITÉ ET REJOUABILITÉ</h3>
-            <p className="text-[#0c0c0d] mb-6 text-lg">
+            <h3 className="heading-feature">JOUABILITÉ ET REJOUABILITÉ</h3>
+            <p className="text-ink mb-6 text-lg">
               Chaque partie est unique grâce au plateau modulable, à l'asymétrie des 10 navires et aux 24 boucaniers uniques.
               Aussi palpitant à 2 joueurs qu'à 3, 4 ou 5, les experts comme les plus jeunes seront dans leur élément.
             </p>
@@ -194,12 +190,12 @@ export default function HomePage() {
           </div>
         </div>
 
-        <h2 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-8 text-center mt-16">Fabrication d'excellence</h2>
+        <h2 className="heading-section-large">Fabrication d'excellence</h2>
 
         <div className="space-y-12">
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">UNIVERS IMMERSIF</h3>
-            <p className="text-[#0c0c0d] mb-6 text-lg">
+            <h3 className="heading-feature">UNIVERS IMMERSIF</h3>
+            <p className="text-ink mb-6 text-lg">
               Les indices forment une frise continue.<br />
               Elle permet de placer le trésor sur une île au hasard avant la partie.<br />
               Un système innovant fait d'indices et de caches pour la mise en place et la vérification des tentatives de fouille du trésor.
@@ -212,7 +208,7 @@ export default function HomePage() {
                 height={403}
                 className="rounded-lg  mx-auto"
               />
-              <p className="text-[#0c0c0d]">
+              <p className="text-ink">
                 Quand un joueur fouille sur une île, on vérifie si le trésor s'y trouve bien. Sinon, la partie continue.
               </p>
               <Image
@@ -222,7 +218,7 @@ export default function HomePage() {
                 height={340}
                 className="rounded-lg  mx-auto"
               />
-              <p className="text-[#0c0c0d]">
+              <p className="text-ink">
                 Les indices racontent également l'histoire d'Armand le Baratineur, dont on ne peut discerner ni le début ni la fin.
               </p>
               <Image
@@ -236,23 +232,23 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">GAMEPLAY SOPHISTIQUÉ</h3>
-            <p className="text-[#0c0c0d] mb-6">
+            <h3 className="heading-feature">GAMEPLAY SOPHISTIQUÉ</h3>
+            <p className="text-ink mb-6">
               Affinées pendant des années, les mécaniques offrent une aventure pour tous : Un débutant pourra triompher,
               et un expert chevronné exploitera toute la richesse stratégique.
             </p>
-            <p className="text-[#0c0c0d] mb-6">
+            <p className="text-ink mb-6">
               Le jeu mêle stratégie de placement, planification sur plusieurs tours, combinaisons infinies et combos ingénieux,
               sens du sacrifice, gestion de ressources, des combats et surtout... du BLUFF!
             </p>
-            <p className="text-[#0c0c0d] mb-8">
+            <p className="text-ink mb-8">
               Ici, ce sont vos décisions, et non le hasard, qui dictent l'issue de la partie.
             </p>
 
             <div className="space-y-8">
               <div>
-                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">FIGURINES FAITES MAISON</p>
-                <p className="text-[#0c0c0d] mb-6">
+                <p className="text-2xl font-oldstyle text-pirate-red mb-4">FIGURINES FAITES MAISON</p>
+                <p className="text-ink mb-6">
                   Sculptées en réalité virtuelle et imprimées en 3D avec en PLA, les figurines sont entièrement réalisées dans notre atelier.
                 </p>
                 <Image
@@ -265,8 +261,8 @@ export default function HomePage() {
               </div>
 
               <div>
-                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">FIDÉLITÉ HISTORIQUE</p>
-                <p className="text-[#0c0c0d] mb-6">
+                <p className="text-2xl font-oldstyle text-pirate-red mb-4">FIDÉLITÉ HISTORIQUE</p>
+                <p className="text-ink mb-6">
                   Apprenez-en plus sur l'Histoire de la marine et de la boucane aux Caraïbes.<br/>
 	              Les bateaux portent leur description historique sur leurs fiches. Des vêtements aux gréements, des rôles d'équipage aux statuettes amérindiennes, tout est documenté.
                 </p>
@@ -280,8 +276,8 @@ export default function HomePage() {
               </div>
 
               <div>
-                <p className="text-2xl font-oldstyle text-[#8b2020] mb-4">DRAPEAUX PERSONNALISABLES</p>
-                <p className="text-[#0c0c0d] mb-6">
+                <p className="text-2xl font-oldstyle text-pirate-red mb-4">DRAPEAUX PERSONNALISABLES</p>
+                <p className="text-ink mb-6">
                   Les fanions de couleur seront livrés vierges.<br/>
 	              Vous pourrez dessiner sur les pavillons ou en imprimer d'autres ! <br />
                   Vos couleurs révéleront la vraie nature de votre témérité.
@@ -298,8 +294,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <h2 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-8 text-center mt-16">Matériel</h2>
-        <p className="text-[#0c0c0d] text-center mb-8 text-lg">Qu'y a-t-il dans la boîte ?</p>
+        <h2 className="heading-section-large">Matériel</h2>
+        <p className="text-ink text-center mb-8 text-lg">Qu'y a-t-il dans la boîte ?</p>
         <div className="w-full mb-16">
           <Image
             src="/MatérielTransparent.png"
@@ -310,21 +306,21 @@ export default function HomePage() {
           />
         </div>
 
-        <h2 className="text-4xl font-oldstyle font-normal text-[#8b2020] mb-8 text-center mt-16">Comment jouer ?</h2>
+        <h2 className="heading-section-large">Comment jouer ?</h2>
 
         <div className="space-y-8">
-          <p className="text-[#0c0c0d] text-lg">
+          <p className="text-ink text-lg">
             Au début de la partie, chacun choisit un bateau et un boucanier. Grâce à la frise des indices, on détermine au hasard l'île au trésor
             sans la révéler. Les tuiles sont placées aléatoirement pour former le plateau de jeu.
           </p>
-          <p className="text-[#0c0c0d] text-lg">
+          <p className="text-ink text-lg">
             Chaque tour se divise en cinq phases que les joueurs jouent simultanément :
           </p>
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Navigation</h3>
-              <p className="text-[#0c0c0d] mb-6">
+              <h3 className="heading-feature">Navigation</h3>
+              <p className="text-ink mb-6">
                 En fonction de la rose des vents, choisissez votre cap et votre vitesse en secret sur vos compas. Toujours en ligne droite,
                 chaque navire ayant une vitesse maximum. Puis révélez vos compas tous en même temps. Vos navires sont ensuite déplacés comme prévu.
               </p>
@@ -338,42 +334,42 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Abordages</h3>
-              <p className="text-[#0c0c0d]">
+              <h3 className="heading-feature">Abordages</h3>
+              <p className="text-ink">
                 Si des bateaux sont au même point, il y a abordage. Chaque navire perd le nombre de cartes boucaniers que son adversaire possède.
                 Celui qui doit en éliminer plus que ce qu'il possède fait naufrage.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Tirs de canons</h3>
-              <p className="text-[#0c0c0d] mb-4">
+              <h3 className="heading-feature">Tirs de canons</h3>
+              <p className="text-ink mb-4">
                 Tous les canons sont tirés simultanément sur les navires à portée de 1 segment ou au contact. Les tirs de canon enlèvent des points de
                 coque aux adversaires. Si un navire n'a plus de points de coque, il fait naufrage.
               </p>
-              <p className="text-[#0c0c0d]">
+              <p className="text-ink">
                 À l'abordage ou aux canons, le navire peut faire naufrage. Le joueur prendra un nouveau départ à la fin du tour suivant.
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Actions</h3>
-              <p className="text-[#0c0c0d] mb-4">
+              <h3 className="heading-feature">Actions</h3>
+              <p className="text-ink mb-4">
                 Chaque navire peut faire l'action de l'île accostée, d'un boucanier ou de capitaine en dépensant une marchandise.
               </p>
-              <p className="text-[#0c0c0d] mb-4">
+              <p className="text-ink mb-4">
                 Chaque île offre des actions différentes : recruter un boucanier, piocher un indice, regarder un indice, réparer, améliorer son navire,
                 piller une marchandise (rhum, canne à sucre, poudre à canon), vendre des marchandises, acquérir des lettres de marque, protéger son butin,
                 ou encore sacrifier un boucanier pour gagner un fragment de carte au trésor.
               </p>
-              <p className="text-[#0c0c0d]">
+              <p className="text-ink">
                 On peut faire une action par tour. Les lettres de marque permettent de faire plusieurs actions dans le même tour et ainsi de réussir des combos !
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Compagnies des Indes</h3>
-              <p className="text-[#0c0c0d] mb-6">
+              <h3 className="heading-feature">Compagnies des Indes</h3>
+              <p className="text-ink mb-6">
                 Les navires des Compagnies des Indes voguent selon un itinéraire défini. Ils se déplacent de 1 à la fin du tour. Les couler rapporte
                 une marchandise et ils réapparaissent à l'opposé du plateau. Quand le Rougeaud passe au large du Bastion Rouge, sa prise vaut 15 pièces !
                 Un événement à ne pas manquer si l'on cherche la victoire aux 25 !
@@ -388,26 +384,26 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Fouiller à la recherche du trésor</h3>
-              <p className="text-[#0c0c0d] mb-4">
+              <h3 className="heading-feature">Fouiller à la recherche du trésor</h3>
+              <p className="text-ink mb-4">
                 Pour fouiller une île, il faut y rester 4 tours immobile. Chaque fragment acquis aux Cannibales réduit le temps de fouille d'un tour.
               </p>
-              <p className="text-[#0c0c0d]">
+              <p className="text-ink">
                 On utilise alors le cache de l'île et les indices mis de côté à la mise en place pour révéler si le joueur a vu juste et gagne la partie.
                 Sinon, celle-ci continue !
               </p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-oldstyle text-[#8b2020] mb-4">Règles complètes</h3>
-              <p className="text-[#0c0c0d]">
+              <h3 className="heading-feature">Règles complètes</h3>
+              <p className="text-ink">
                 <strong>
                   Règles disponibles ici :{' '}
                   <a
                     href="https://archive.org/details/Boucaniers"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#8b2020] hover:underline"
+                    className="text-pirate-red hover:underline"
                   >
                     archive.org/details/Boucaniers
                   </a>
@@ -418,7 +414,7 @@ export default function HomePage() {
         </div>
 
         {/* Second Social Media and Newsletter Section */}
-        <div className="mt-16 pt-8 border-t-2 border-[#d4a574]">
+        <div className="mt-16 pt-8 border-t-2 border-gold">
           <div className="mb-8">
             <SocialLinks />
           </div>
