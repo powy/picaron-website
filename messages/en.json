@@ -1,8 +1,55 @@
 {
+  "metadata": {
+    "boucaniers": {
+      "title": "Boucaniers",
+      "description": "Embark on a simultaneous treasure hunt! Sail through a changing archipelago filled with cannibals and voodoo mysteries."
+    },
+    "boutique": {
+      "title": "Shop",
+      "description": "Order Boucaniers - Strategic board game for 2-6 players"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Frequently asked questions about Boucaniers"
+    },
+    "equipe": {
+      "title": "Team",
+      "description": "Meet the team behind Boucaniers"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact us with any questions about Boucaniers"
+    },
+    "cgv": {
+      "title": "Terms of Sale",
+      "description": "Terms and conditions of sale for Boucaniers"
+    },
+    "mentionsLegales": {
+      "title": "Legal Notice",
+      "description": "Legal information for Picaron website"
+    },
+    "politiqueConfidentialite": {
+      "title": "Privacy Policy",
+      "description": "Privacy policy and data protection"
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "description": "Information about cookie usage"
+    },
+    "commandeSucces": {
+      "title": "Order Confirmed",
+      "description": "Your order has been successfully confirmed"
+    },
+    "commandeAnnulation": {
+      "title": "Order Cancelled",
+      "description": "Your order has been cancelled"
+    }
+  },
   "nav": {
     "home": "Picaron",
     "game": "Boucaniers",
     "team": "Team",
+    "faq": "FAQ",
     "shop": "Shop",
     "contact": "Contact"
   },
@@ -80,5 +127,32 @@
     "backShop": "Back to shop",
     "backHome": "Back to home",
     "needHelp": "Need help? Contact us at {email}"
+  },
+  "faq": {
+    "pageTitle": "FAQ - Frequently Asked Questions",
+    "sectionTitle": "Boucaniers FAQ",
+    "questions": {
+      "q1": {
+        "question": "Is the turn when you announce the search counted in the search time?",
+        "answer": "Yes, you announce the search at the beginning of the turn, and the end of that same turn already counts as one turn. The player must therefore stay 3 more turns after. Thus, the demolisher buccaneer finishes the search as soon as the player announces the search, as long as the boat is not caught in a boarding or has not been shipwrecked."
+      },
+      "q2": {
+        "question": "How to count the search time?",
+        "answer": "When you announce the search, set the compass to the number of turns you need to search (4 turns minus the number of fragments possessed and minus the buccaneer of the Tattooed Man if he is on board). If you want to continue searching on the next turn, point your compass arrow to the man with the shovel and indicate one turn less for the number and so on for the next turns. If you want to move instead of searching, you can set your compass to a heading and a sailing distance."
+      },
+      "q3": {
+        "question": "I discovered a clue card, how do I interpret the symbol on the card?",
+        "answer": "The symbol means that the two islands on which it is drawn do not contain the treasure.",
+        "example": "Example: if you draw the Volcano clue, it means that the treasure is neither on the deserted island nor on the Chatty Parrot island."
+      },
+      "q4": {
+        "question": "Can the East India Companies meet each other?",
+        "answer": "Never. The two ships are either 4 or 5 segments apart from each other. If they meet, there was an error in the reappearance placement or an oversight in the movement."
+      },
+      "q5": {
+        "question": "Do the East India Company ships reappear in a straight line? How to properly replace them?",
+        "answer": "They reappear on the opposite side, mirrored, on their dedicated path (page 5 of the rules). You can draw a straight line only when the shipwreck point is in the re-entrant angles of their route (when a straight line connects the shipwreck point to the reappearance point)."
+      }
+    }
   }
 }

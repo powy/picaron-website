@@ -1,4 +1,20 @@
 import Image from 'next/image'
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  return {
+    title: t('equipe.title'),
+    description: t('equipe.description')
+  }
+}
 
 const teamMembers = [
   {
@@ -27,7 +43,9 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <div className="mt-8">
-      <h1 className="heading-section">L'équipage de PicaRon</h1>
+      <h1 className="title-page">
+        L'équipage de Picaron
+      </h1>
 
       <div className="max-w-4xl mx-auto mb-12 text-center">
         <p className="text-lg text-ink leading-relaxed">
@@ -47,7 +65,9 @@ export default function TeamPage() {
                 className="object-cover"
               />
             </div>
-            <h3 className="heading-team-member">{member.name}</h3>
+            <h3 className="text-2xl font-oldstyle text-ink mb-1">
+              {member.name}
+            </h3>
             <p className="text-pirate-red font-oldstyle text-lg mb-3">
               {member.role}
             </p>

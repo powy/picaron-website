@@ -12,21 +12,22 @@ export default function Navigation() {
   const navItems = [
     { href: '/', label: t('game') },
     { href: '/equipe', label: 'PicaRon' },
+    { href: '/faq', label: t('faq') },
     { href: '/boutique', label: t('shop') },
-    { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: t('contact') }
   ]
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-copper-dark font-normal">
+    <nav className="fixed top-0 w-full z-50 bg-mahogany font-normal">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-32 py-2">
-          <Link href="/" className="flex items-center">
+        <div className="flex justify-between items-center h-12 lg:h-14">
+          <Link href="/" className="flex items-center h-12 lg:h-14 leading-none">
             <Image
-              src="/assets/LogoPICARONJ1Pour_Fond_Sombre2.png"
+              src="/assets/LogoPICARONJ1Pour_Fond_Sombre3.png"
               alt="Picaron"
-              width={180}
+              width={90}
               height={90}
+              className="h-12 w-auto lg:h-14 object-contain leading-none block align-top"
               priority
             />
           </Link>
@@ -55,7 +56,7 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-sand bg-copper-dark">
+          <div className="lg:hidden py-4 border-t border-sand bg-mahogany">
             {navItems.map((item) => (
               <Link
                 key={item.href}

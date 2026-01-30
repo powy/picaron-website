@@ -62,7 +62,9 @@ export default function BoutiquePage() {
 
   return (
     <div className="mt-8">
-      <h1 className="heading-section">Boutique</h1>
+      <h1 className="title-page">
+        Boutique
+      </h1>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
@@ -85,7 +87,7 @@ export default function BoutiquePage() {
           <div className="contents md:block md:w-1/2 md:space-y-4">
             {/* Header (nom + commande) - Premier sur mobile */}
             <div className="order-1">
-              <h2 className="heading-product">Boucaniers</h2>
+              <h2 className="text-3xl font-oldstyle text-pirate-red mb-2">Boucaniers</h2>
 
               {/* Stock status */}
               <div className="mb-3">
@@ -100,14 +102,14 @@ export default function BoutiquePage() {
               <div className="space-y-4 mb-6">
                 <button
                   onClick={handleCheckout_boucanier_nouvellOPTIONEL}
-                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
+                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
                 >
                   Commander le Jeu seul
                 </button>
 
                 <button
                   onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
+                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
                 >
                   Commander le jeu et la nouvelle
                 </button>
@@ -182,7 +184,7 @@ export default function BoutiquePage() {
           <div className="contents md:block md:w-1/2 md:space-y-4">
             {/* Header (nom + commande) - Premier sur mobile */}
             <div className="order-1">
-              <h2 className="heading-product">Armand ou Les Rêveurs du Nouveau Monde</h2>
+              <h2 className="text-3xl font-oldstyle text-pirate-red mb-2">Armand ou Les Rêveurs du Nouveau Monde</h2>
 
               {/* Stock status */}
               <div className="mb-3">
@@ -196,14 +198,14 @@ export default function BoutiquePage() {
               <div className="space-y-4 mb-6">
                 <button
                   onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
+                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
                 >
                   Commander le jeu et la nouvelle
                 </button>
 
                 <button
                   onClick={handleCheckout_nouvelle}
-                  className="w-full bg-forest-green text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors"
+                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
                 >
                   Commander la nouvelle seule
                 </button>

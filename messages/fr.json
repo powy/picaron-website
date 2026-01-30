@@ -1,8 +1,55 @@
 {
+  "metadata": {
+    "boucaniers": {
+      "title": "Boucaniers",
+      "description": "Embarquez dans une chasse au trésor en simultané ! Voguez dans un archipel changeant truffé de cannibales et de mystères vaudous."
+    },
+    "boutique": {
+      "title": "Boutique",
+      "description": "Commandez le jeu Boucaniers - Jeu de société stratégique pour 2-6 joueurs"
+    },
+    "faq": {
+      "title": "FAQ",
+      "description": "Questions fréquentes sur le jeu Boucaniers"
+    },
+    "equipe": {
+      "title": "Équipe",
+      "description": "Rencontrez l'équipe derrière Boucaniers"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contactez-nous pour toute question sur Boucaniers"
+    },
+    "cgv": {
+      "title": "Conditions Générales de Vente",
+      "description": "Conditions générales de vente du jeu Boucaniers"
+    },
+    "mentionsLegales": {
+      "title": "Mentions Légales",
+      "description": "Mentions légales du site Picaron"
+    },
+    "politiqueConfidentialite": {
+      "title": "Politique de Confidentialité",
+      "description": "Politique de confidentialité et protection des données"
+    },
+    "cookies": {
+      "title": "Politique des Cookies",
+      "description": "Informations sur l'utilisation des cookies"
+    },
+    "commandeSucces": {
+      "title": "Commande Confirmée",
+      "description": "Votre commande a été confirmée avec succès"
+    },
+    "commandeAnnulation": {
+      "title": "Commande Annulée",
+      "description": "Votre commande a été annulée"
+    }
+  },
   "nav": {
     "home": "Picaron",
     "game": "Boucaniers",
     "team": "Équipe",
+    "faq": "FAQ",
     "shop": "Boutique",
     "contact": "Contact"
   },
@@ -80,5 +127,32 @@
     "backShop": "Retourner à la boutique",
     "backHome": "Retour à l'accueil",
     "needHelp": "Besoin d'aide ? Contactez-nous à {email}"
+  },
+  "faq": {
+    "pageTitle": "FAQ - Questions Fréquentes",
+    "sectionTitle": "FAQ Boucaniers",
+    "questions": {
+      "q1": {
+        "question": "Le tour où l'on annonce la fouille est-il décompté dans le temps de fouille ?",
+        "answer": "Oui, on annonce la fouille au début du tour, et la fin de ce même tour compte déjà pour un tour. Le joueur doit donc rester 3 tours de plus après. Ainsi, le boucanier démolisseur finit la fouille dès l'instant où le joueur annonce la fouille, tant que le bateau n'est pas pris dans un abordage ou n'a pas fait naufrage."
+      },
+      "q2": {
+        "question": "Comment décompter le temps de fouille ?",
+        "answer": "Au moment où vous annoncez la fouille, mettez le compas sur le nombre de tours qu'il vous est nécessaire pour fouiller (4 tours moins le nombre de fragments possédés et moins le boucanier de l'Homme au tatouage s'il est embarqué). Si vous souhaitez continuer à fouiller au prochain tour, pointez la flèche de votre compas sur l'homme à la pelle et indiquez un tour de moins pour le chiffre et ainsi de suite les prochains tours. Si vous souhaitez vous déplacer au lieu de fouiller, vous pouvez régler votre compas sur un cap et une distance de navigation."
+      },
+      "q3": {
+        "question": "J'ai découvert une carte indice, comment interpréter le symbole sur la carte ?",
+        "answer": "Le symbole signifie que les deux îles sur lesquelles il est dessiné ne contiennent pas le trésor.",
+        "example": "Exemple : si vous piochez l'indice Volcan, cela signifie que le trésor ne se trouve ni sur l'île déserte ni sur l'île du Perroquet Bavard."
+      },
+      "q4": {
+        "question": "Les Compagnies des Indes peuvent-elles se rejoindre ?",
+        "answer": "Jamais. Les deux navires sont soit à 4 soit à 5 segments de distance l'un de l'autre. S'ils se rejoignent, c'est qu'il y a eu une erreur dans le placement de la réapparition ou un oubli dans le déplacement."
+      },
+      "q5": {
+        "question": "Les navires des Compagnies des Indes réapparaissent-ils en ligne droite ? Comment bien les replacer ?",
+        "answer": "Ils réapparaissent à l'opposé, en miroir, sur leur chemin dédié (page 5 des règles). On peut tracer une ligne droite uniquement lorsque le point de naufrage est dans les angles rentrants de leur parcours (quand une ligne droite relie le point de naufrage au point de réapparition)."
+      }
+    }
   }
 }

@@ -32,17 +32,18 @@ const config: Config = {
         ink: '#0c0c0d',
         parchment: '#f2e8d5',
         'pirate-red': '#8b2020',
-        'pirate-red-light': '#a02525',
         gold: '#d4a574',
         'sea-mist': '#1e3a3a',
         navy: '#1a2332',
         bone: '#faf8f3',
         wood: '#3e2f2a',
         copper: '#4e7c7b',
-        'copper-dark': '#842c0d',
-        sand: '#ffdaa6',
-        'forest-green': '#378536',
-        'forest-green-light': '#40933f',
+        // NEW COLORS
+        forest: '#378536',           // Green CTA buttons
+        'forest-hover': '#40933f',   // Green button hover state
+        'pirate-red-hover': '#a02525', // Red button hover state
+        mahogany: '#842c0d',         // Navigation background
+        sand: '#ffdaa6',             // Navigation text
       },
     },
   },

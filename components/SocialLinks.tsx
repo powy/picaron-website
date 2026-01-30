@@ -36,7 +36,7 @@ export default function SocialLinks({ title }: { title?: string }) {
         <a
           key={social.name}
           href={social.url}
-          className="w-10 h-10 badge-social"
+          className="social-icon"
           aria-label={social.name}
         >
           {social.icon}

@@ -120,7 +120,9 @@ export default function ContactPage() {
 
   return (
     <div className="mt-8 max-w-2xl mx-auto">
-      <h1 className="heading-section">Contact</h1>
+      <h1 className="title-page">
+        Contact
+      </h1>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
@@ -213,7 +215,7 @@ export default function ContactPage() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-light transition disabled:opacity-50"
+          className="w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50"
         >
           {status === 'loading' ? 'Envoi...' : 'Envoyer votre message'}
         </button>

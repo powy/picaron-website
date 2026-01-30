@@ -1,8 +1,25 @@
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  return {
+    title: t('cookies.title'),
+    description: t('cookies.description')
+  }
+}
+
 export default function Cookies() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="heading-section">Cookies</h1>
+        <h1 className="title-page">Cookies</h1>
 
         <div className="prose prose-lg max-w-none text-ink space-y-8">
           <section>
@@ -26,7 +43,7 @@ export default function Cookies() {
             </p>
           </section>
 
-          <p className="mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg">
+          <p className="legal-update-note">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
         </div>

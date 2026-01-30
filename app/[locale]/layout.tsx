@@ -3,6 +3,25 @@ import { NextIntlClientProvider } from 'next-intl'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { locales } from '@/i18n'
+import { Metadata } from 'next'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+
+  return {
+    title: {
+      template: 'Picaron - %s',
+      default: 'Picaron'
+    },
+    description: locale === 'fr'
+      ? 'Boucaniers - Jeu de société de stratégie et de pirates'
+      : 'Boucaniers - Pirate strategy board game',
+  }
+}
 
 export default async function LocaleLayout({
   children,
@@ -32,7 +51,7 @@ export default async function LocaleLayout({
         
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navigation />
-          <main className="container mx-auto px-4 pt-24 flex-grow">
+          <main className="container mx-auto px-4 pt-14 lg:pt-16 flex-grow">
             {children}
           </main>
           <Footer locale={locale} />

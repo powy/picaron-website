@@ -1,12 +1,29 @@
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  return {
+    title: t('cgv.title'),
+    description: t('cgv.description')
+  }
+}
+
 export default function CGV() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="heading-section">Conditions Générales de Vente</h1>
+        <h1 className="title-page">Conditions Générales de Vente</h1>
 
         <div className="prose prose-lg max-w-none text-ink space-y-8">
           <section>
-            <h2 className="heading-red-title">1. Identification du vendeur</h2>
+            <h2 className="heading-section">1. Identification du vendeur</h2>
             <p>Le site https://picaron.fr/ est exploité par :</p>
             <p className="ml-4">
               Picaron SARL<br />
@@ -21,7 +38,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">2. Objet</h2>
+            <h2 className="heading-section">2. Objet</h2>
             <p>
               Les présentes Conditions Générales de Vente définissent les droits et obligations de Picaron SARL
               et des clients particuliers dans le cadre de la vente en ligne du jeu de société BOUCANIERS.
@@ -29,7 +46,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">3. Champ d&apos;application</h2>
+            <h2 className="heading-section">3. Champ d&apos;application</h2>
             <p>
               Les présentes CGV s&apos;appliquent à toutes les ventes réalisées en France métropolitaine et dans
               l&apos;Union européenne, à destination de consommateurs particuliers.
@@ -37,7 +54,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">4. Produits</h2>
+            <h2 className="heading-section">4. Produits</h2>
             <p>
               Le produit proposé à la vente est un jeu de société. Les caractéristiques essentielles
               (contenu, dimensions, composition, âge recommandé, etc.) sont indiquées sur le site.
@@ -46,7 +63,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">5. Prix</h2>
+            <h2 className="heading-section">5. Prix</h2>
             <p>
               Les prix sont indiqués en euros (€), toutes taxes comprises (TTC), hors frais de livraison.
               Les frais de livraison sont précisés avant validation de la commande.
@@ -56,7 +73,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">6. Commande</h2>
+            <h2 className="heading-section">6. Commande</h2>
             <p>
               Toute commande implique l&apos;acceptation pleine et entière des présentes CGV.
               Le client reçoit un courriel de confirmation après validation de la commande.
@@ -64,7 +81,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">7. Paiement</h2>
+            <h2 className="heading-section">7. Paiement</h2>
             <p>
               Le paiement s&apos;effectue en ligne par carte bancaire via la plateforme sécurisée Stripe.
               La commande n&apos;est définitive qu&apos;après validation du paiement par Stripe.
@@ -72,7 +89,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">8. Livraison</h2>
+            <h2 className="heading-section">8. Livraison</h2>
             <p>
               La livraison est possible en France métropolitaine et dans les pays de l&apos;Union européenne.
             </p>
@@ -86,7 +103,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">9. Réception et réclamations</h2>
+            <h2 className="heading-section">9. Réception et réclamations</h2>
             <p>Le client est invité à vérifier l&apos;état du colis à sa réception.</p>
             <p className="mt-4">
               Pour faciliter le traitement des dommages liés au transport, le client est encouragé à signaler
@@ -102,7 +119,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">10. Droit de rétractation</h2>
+            <h2 className="heading-section">10. Droit de rétractation</h2>
             <p>
               Conformément aux articles L.221-18 et suivants du Code de la consommation, le client dispose
               d&apos;un délai de 14 jours calendaires à compter de la réception du produit pour exercer son droit
@@ -121,7 +138,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">11. Garantie légale</h2>
+            <h2 className="heading-section">11. Garantie légale</h2>
             <p>
               Les produits vendus bénéficient des garanties légales prévues par les articles L.217-3 à L.217-20
               du Code de la consommation (garantie de conformité) et des articles 1641 à 1649 du Code civil
@@ -130,7 +147,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">12. Responsabilité</h2>
+            <h2 className="heading-section">12. Responsabilité</h2>
             <p>
               Picaron SARL ne saurait être tenue responsable des dommages indirects.
               Sa responsabilité est limitée au montant de la commande.
@@ -140,7 +157,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">13. Données personnelles</h2>
+            <h2 className="heading-section">13. Données personnelles</h2>
             <p>
               Les données collectées lors d&apos;une commande sont utilisées uniquement pour son traitement
               et la gestion du service client.
@@ -158,7 +175,7 @@ export default function CGV() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">14. Médiation et litiges</h2>
+            <h2 className="heading-section">14. Médiation et litiges</h2>
             <p>
               En cas de litige, le client est invité à contacter Picaron SARL via le{' '}
               <a href="https://picaron.fr/fr/contact" className="text-pirate-red underline">
@@ -176,7 +193,7 @@ export default function CGV() {
             </p>
           </section>
 
-          <p className="mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg">
+          <p className="legal-update-note">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
         </div>

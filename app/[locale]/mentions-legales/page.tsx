@@ -1,12 +1,29 @@
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'metadata' })
+
+  return {
+    title: t('mentionsLegales.title'),
+    description: t('mentionsLegales.description')
+  }
+}
+
 export default function MentionsLegales() {
   return (
     <div className="mt-8">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="heading-section">Mentions légales</h1>
+        <h1 className="title-page">Mentions légales</h1>
 
         <div className="prose prose-lg max-w-none text-ink space-y-8">
           <section>
-            <h2 className="heading-red-title">1. Éditeur du site</h2>
+            <h2 className="heading-section">1. Éditeur du site</h2>
             <p>Le site https://picaron.fr/ est édité par :</p>
             <p className="ml-4">
               Picaron SARL<br />
@@ -23,7 +40,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">2. Hébergeur</h2>
+            <h2 className="heading-section">2. Hébergeur</h2>
             <p>Le site est hébergé par :</p>
             <p className="ml-4">
               Vercel Inc.<br />
@@ -36,7 +53,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">3. Propriété intellectuelle</h2>
+            <h2 className="heading-section">3. Propriété intellectuelle</h2>
             <p>
               L&apos;ensemble des contenus du site (textes, images, graphismes, logos, vidéos, noms, marques, etc.)
               est protégé par le droit de la propriété intellectuelle et reste la propriété exclusive de Picaron SARL
@@ -49,7 +66,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">4. Données personnelles</h2>
+            <h2 className="heading-section">4. Données personnelles</h2>
             <p>Les données personnelles collectées sur le site sont traitées par Picaron SARL pour les finalités suivantes :</p>
             <ul className="list-disc list-inside space-y-1 ml-4">
               <li>traitement des commandes,</li>
@@ -77,7 +94,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">5. Cookies</h2>
+            <h2 className="heading-section">5. Cookies</h2>
             <p>
               Le site utilise uniquement des cookies strictement nécessaires à son fonctionnement.
               Aucun cookie publicitaire ou d&apos;analyse n&apos;est déposé.
@@ -85,7 +102,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">6. Responsabilité</h2>
+            <h2 className="heading-section">6. Responsabilité</h2>
             <p>
               Picaron SARL met tout en œuvre pour assurer l&apos;exactitude des informations diffusées sur le site
               mais ne saurait être tenue responsable des erreurs, omissions ou de l&apos;indisponibilité du service.
@@ -94,7 +111,7 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">7. Recyclage et obligations légales (REP)</h2>
+            <h2 className="heading-section">7. Recyclage et obligations légales (REP)</h2>
             <p>
               Conformément à la loi AGEC, Picaron SARL rejoindra la filière REP Emballages.
               Identifiant unique ADEME : en cours d&apos;attribution.
@@ -102,14 +119,14 @@ export default function MentionsLegales() {
           </section>
 
           <section>
-            <h2 className="heading-red-title">8. Droit applicable</h2>
+            <h2 className="heading-section">8. Droit applicable</h2>
             <p>
               Les présentes mentions légales sont régies par le droit français.
               En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.
             </p>
           </section>
 
-          <p className="mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg">
+          <p className="legal-update-note">
             Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}
           </p>
         </div>

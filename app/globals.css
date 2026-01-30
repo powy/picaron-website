@@ -19,9 +19,21 @@
   font-display: swap;
 }
 
+:root {
+  --color-ink: #0c0c0d;
+  --color-parchment: #f2e8d5;
+  --color-pirate-red: #8b2020;
+  --color-gold: #d4a574;
+  --color-sea-mist: #1e3a3a;
+  --color-navy: #1a2332;
+  --color-bone: #faf8f3;
+  --color-wood: #3e2f2a;
+  --color-copper: #4e7c7b;
+}
+
 body {
   font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
-  color: #0c0c0d; /* ink */
+  color: var(--color-ink);
   font-size: 24px;
   font-weight: 900;
   line-height: 1.6;
@@ -32,49 +44,67 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-granjon), serif;
+  font-family: var(--font-garamont), serif;
   font-weight: 900;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 2.5rem;      /* Mobile: 40px */
   line-height: 1.1;
+}
+@media (min-width: 768px) {
+  h1 { font-size: 5rem; } /* Desktop: 80px */
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2rem;        /* Mobile: 32px */
   line-height: 1.2;
+}
+@media (min-width: 768px) {
+  h2 { font-size: 4rem; } /* Desktop: 64px */
 }
 
 h3 {
-  font-size: 3.2rem;
+  font-size: 1.8rem;      /* Mobile: 29px */
   line-height: 1.2;
+}
+@media (min-width: 768px) {
+  h3 { font-size: 3.2rem; }
 }
 
 h4 {
-  font-size: 2.6rem;
+  font-size: 1.5rem;      /* Mobile: 24px */
   line-height: 1.3;
+}
+@media (min-width: 768px) {
+  h4 { font-size: 2.6rem; }
 }
 
 h5 {
-  font-size: 2.2rem;
+  font-size: 1.3rem;      /* Mobile: 21px */
   line-height: 1.3;
+}
+@media (min-width: 768px) {
+  h5 { font-size: 2.2rem; }
 }
 
 h6 {
-  font-size: 1.8rem;
+  font-size: 1.1rem;      /* Mobile: 18px */
   line-height: 1.4;
+}
+@media (min-width: 768px) {
+  h6 { font-size: 1.8rem; }
 }
 
 button, .btn {
-  font-family: var(--font-granjon), serif;
+  font-family: var(--font-garamont), serif;
   font-size: 1.6rem;
   font-weight: 900;
   padding: 1rem 2rem;
 }
 
 nav a {
-  font-family: var(--font-granjon), serif;
+  font-family: var(--font-garamont), serif;
   font-size: 2rem;
   font-weight: 900;
 }
@@ -166,111 +196,167 @@ strong, b {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f2e8d5; /* parchment */
+  background: var(--color-parchment);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3e2f2a; /* wood */
+  background: var(--color-wood);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b2020; /* pirate-red */
+  background: var(--color-pirate-red);
 }
 
-/* ============================================
-   COMPONENT UTILITY CLASSES
-   ============================================ */
+/* ================================
+   SEMANTIC UTILITY CLASSES
+   ================================ */
 
 @layer components {
-  /* Headings */
+  /* === PAGE TITLES === */
+  .title-page {
+    @apply text-xl md:text-2xl font-garamond font-bold text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity tracking-[0.12em] text-center;
+  }
+
+  /* === SECTION HEADINGS === */
   .heading-section {
-    @apply text-5xl font-caravagesque font-normal text-ink mb-8 text-center;
+    @apply text-xl md:text-2xl font-oldstyle text-pirate-red mb-4;
   }
 
-  .heading-red-title {
-    @apply text-2xl font-oldstyle text-pirate-red mb-4;
-  }
-
-  .heading-subsection {
-    @apply text-3xl font-oldstyle text-pirate-red mb-8;
-  }
-
-  .heading-section-large {
-    @apply text-4xl font-oldstyle font-normal text-pirate-red mb-8 text-center mt-16;
-  }
-
-  .heading-product {
-    @apply text-3xl font-oldstyle text-pirate-red mb-2;
-  }
-
-  .heading-faq-question {
-    @apply text-xl font-bold text-ink mb-4;
-  }
-
-  .heading-feature {
-    @apply text-2xl font-oldstyle text-pirate-red mb-4;
-  }
-
-  .heading-team-member {
-    @apply text-2xl font-oldstyle text-ink mb-1;
-  }
-
-  /* Buttons */
-  .btn-primary {
-    @apply bg-forest-green text-bone px-6 py-3 rounded-lg font-oldstyle text-lg hover:bg-forest-green-light transition-colors;
-  }
-
-  .btn-secondary {
-    @apply bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-light transition;
-  }
-
-  /* Form Inputs */
-  .input-field {
-    @apply w-full px-4 py-2 border-2 border-wood rounded bg-bone;
-  }
-
-  .input-field-error {
-    @apply w-full px-4 py-2 border-2 border-red-500 rounded bg-bone;
-  }
-
-  /* Social/Badge Buttons */
-  .badge-social {
-    @apply bg-wood text-bone rounded-full flex items-center justify-center hover:bg-pirate-red transition;
-  }
-
-  .badge-info {
-    @apply bg-wood text-bone px-4 py-2 rounded-lg hover:bg-pirate-red transition-colors;
-  }
-
-  /* Section Dividers */
-  .divider-gold {
-    @apply border-t-2 border-gold;
-  }
-
-  .divider-parchment {
-    @apply border-t-2 border-parchment;
-  }
-
-  .divider-gold-border {
-    @apply border-b border-gold pb-6;
-  }
-
-  /* Text Styles */
+  /* === BODY TEXT === */
   .text-body {
     @apply text-ink text-lg leading-relaxed;
   }
 
-  .text-body-center {
+  .text-body-base {
+    @apply text-ink;
+  }
+
+  .text-body-centered {
     @apply text-ink text-lg leading-relaxed text-center;
   }
 
-  /* Link Styles */
-  .link-red {
+  /* Body text with standard spacing */
+  .text-body-spaced {
+    @apply text-ink mb-6;
+  }
+
+  /* Main section titles (h2 level) */
+  .title-section {
+    @apply text-2xl md:text-4xl font-oldstyle font-normal text-pirate-red mb-8 text-center mt-16;
+  }
+
+  /* === LINKS === */
+  .link-pirate {
     @apply text-pirate-red hover:underline;
   }
 
-  .link-red-transition {
+  .link-pirate-transition {
     @apply hover:text-pirate-red transition-colors;
+  }
+
+  /* === BUTTONS === */
+  .btn-primary {
+    @apply bg-forest hover:bg-forest-hover text-bone font-oldstyle text-lg px-6 py-3 rounded-lg transition-colors;
+  }
+
+  .btn-primary-full {
+    @apply w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors;
+  }
+
+  .btn-primary-rounded {
+    @apply inline-block bg-forest hover:bg-forest-hover text-bone font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-full transition-colors duration-200 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-pirate-red hover:bg-pirate-red-hover text-bone font-oldstyle rounded transition;
+  }
+
+  .btn-secondary-full {
+    @apply w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50;
+  }
+
+  .btn-secondary-lg {
+    @apply inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors;
+  }
+
+  /* === CONTAINERS === */
+  .container-content {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .container-legal {
+    @apply max-w-4xl mx-auto px-4 py-8;
+  }
+
+  .container-page {
+    @apply mt-8;
+  }
+
+  /* === IMAGES === */
+  .img-rounded {
+    @apply rounded-lg mx-auto;
+  }
+
+  /* === SECTIONS === */
+  .section-spacing {
+    @apply space-y-12;
+  }
+
+  .section-divider {
+    @apply border-t-2 border-gold;
+  }
+
+  /* === FORMS === */
+  .input-field {
+    @apply w-full px-4 py-2 border-2 rounded bg-bone border-wood;
+  }
+
+  .label-field {
+    @apply block text-ink font-oldstyle mb-2;
+  }
+
+  /* === SPECIAL COMPONENTS === */
+  .newsletter-section {
+    @apply bg-navy text-bone p-4 sm:p-6 rounded-lg my-8;
+  }
+
+  .social-icon {
+    @apply w-10 h-10 bg-wood text-bone rounded-full flex items-center justify-center hover:bg-pirate-red transition;
+  }
+
+  /* === NAVIGATION === */
+  .nav-bg {
+    @apply bg-mahogany;
+  }
+
+  .nav-link {
+    @apply text-sand font-caravagesque font-normal;
+  }
+
+  /* === LEGAL PAGES === */
+  .legal-content {
+    @apply prose prose-lg max-w-none text-ink space-y-8;
+  }
+
+  .legal-section-heading {
+    @apply text-2xl font-oldstyle text-pirate-red mb-4;
+  }
+
+  .legal-update-note {
+    @apply mt-12 text-sm text-gray-600 bg-parchment/20 p-4 rounded-lg;
+  }
+
+  /* === FAQ COMPONENTS === */
+  .heading-faq-question {
+    @apply text-xl font-bold text-ink mb-4;
+  }
+
+  .faq-item {
+    @apply border-b border-gold pb-6;
+  }
+
+  .faq-container {
+    @apply space-y-8;
   }
 }

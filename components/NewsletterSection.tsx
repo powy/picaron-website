@@ -15,7 +15,7 @@ export default function NewsletterSection() {
   }
 
   return (
-    <section className="bg-navy text-bone p-4 sm:p-6 rounded-lg my-8">
+    <section className="newsletter-section">
       <h3 className="text-2xl font-oldstyle mb-4 text-center">
         {t('title')}
       </h3>
@@ -30,7 +30,7 @@ export default function NewsletterSection() {
         />
         <button
           type="submit"
-          className="w-full sm:w-auto bg-pirate-red px-6 py-2 rounded hover:bg-pirate-red-light transition font-oldstyle text-shadow whitespace-nowrap"
+          className="w-full sm:w-auto bg-pirate-red px-6 py-2 rounded hover:bg-pirate-red-hover transition font-oldstyle text-shadow whitespace-nowrap"
         >
           {t('submit')}
         </button>

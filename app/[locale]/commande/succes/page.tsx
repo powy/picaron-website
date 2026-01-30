@@ -20,7 +20,7 @@ export default function SuccessPage() {
             </svg>
           </div>
 
-          <h1 className="text-4xl font-oldstyle font-normal text-pirate-red mb-4">Commande confirmée !</h1>
+          <h1 className="title-page">Commande confirmée !</h1>
 
           <p className="text-xl text-ink mb-6">
             Merci pour votre achat de Boucaniers !
@@ -57,7 +57,7 @@ export default function SuccessPage() {
           <div className="space-y-3">
             <Link
               href={`/${locale}`}
-              className="inline-block bg-[#8b2020] text-[#faf8f3] px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-light transition-colors"
+              className="inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors"
             >
               Retour à l&apos;accueil
             </Link>
