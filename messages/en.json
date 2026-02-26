@@ -48,6 +48,13 @@
   "nav": {
     "home": "Picaron",
     "game": "Boucaniers",
+    "boucaniers": "Boucaniers",
+    "boucaniersSubmenu": {
+      "presentation": "Presentation",
+      "howToPlay": "How to Play",
+      "medias": "Media",
+      "faq": "FAQ"
+    },
     "team": "Team",
     "faq": "FAQ",
     "shop": "Shop",

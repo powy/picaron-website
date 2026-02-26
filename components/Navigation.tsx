@@ -1,24 +1,95 @@
 'use client'
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+
+type NavItem = {
+  href: string
+  label: string
+  children?: NavItem[]
+}
+
+const ChevronIcon = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    width="12"
+    height="8"
+    viewBox="0 0 12 8"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1 1.5L6 6.5L11 1.5"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+const ShoppingBagIcon = ({ isActive }: { isActive: boolean }) => (
+  <Image
+    src={isActive ? '/assets/Shopping_panier_blanc.png' : '/assets/Shopping_panier.png'}
+    alt=""
+    width={32}
+    height={32}
+    className="inline-block mr-2 relative top-1"
+  />
+)
 
 export default function Navigation() {
   const t = useTranslations('nav')
   const locale = useLocale()
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null) // desktop
+  const [mobileAccordionOpen, setMobileAccordionOpen] = useState<string | null>(null) // mobile
 
-  const navItems = [
-    { href: '/', label: t('game') },
+  const navItems: NavItem[] = [
+    {
+      href: '/boucaniers',
+      label: t('boucaniers'),
+      children: [
+        { href: '/boucaniers/presentation', label: t('boucaniersSubmenu.presentation') },
+        { href: '/boucaniers/comment-jouer', label: t('boucaniersSubmenu.howToPlay') },
+        { href: '/boucaniers/medias', label: t('boucaniersSubmenu.medias') },
+        { href: '/boucaniers/faq', label: t('boucaniersSubmenu.faq') }
+      ]
+    },
     { href: '/equipe', label: 'PicaRon' },
-    { href: '/faq', label: t('faq') },
     { href: '/boutique', label: t('shop') },
     { href: '/contact', label: t('contact') }
   ]
 
+  // Helper function to determine if a link is active
+  const isLinkActive = (
+    itemHref: string,
+    currentPathname: string,
+    hasChildren: boolean = false
+  ): boolean => {
+    // Remove locale prefix (e.g., '/fr' or '/en')
+    const pathWithoutLocale = currentPathname.replace(/^\/(fr|en)/, '') || '/'
+
+    // Root path edge case
+    if (itemHref === '/' && pathWithoutLocale === '/') {
+      return true
+    }
+
+    // For parent items with children, use "starts with" matching
+    if (hasChildren) {
+      return pathWithoutLocale.startsWith(itemHref)
+    }
+
+    // For leaf items, use exact matching
+    return pathWithoutLocale === itemHref
+  }
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-mahogany font-normal">
+    <nav className="fixed top-0 w-full z-50 nav-bg font-normal shadow-nav">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-12 lg:h-14">
           <Link href="/" className="flex items-center h-12 lg:h-14 leading-none">
@@ -34,13 +105,56 @@ export default function Navigation() {
 
           <div className="hidden lg:flex space-x-6">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="text-sand font-caravagesque font-normal menu-item"
-              >
-                {item.label}
-              </Link>
+              item.children ? (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setDropdownOpen(item.label)}
+                  onMouseLeave={() => setDropdownOpen(null)}
+                >
+                  <Link
+                    href={`/${locale}${item.href}`}
+                    className={`font-caravagesque font-normal menu-item inline-flex items-center ${
+                      isLinkActive(item.href, pathname, true) ? 'text-white' : 'text-sand'
+                    }`}
+                    aria-haspopup="true"
+                    aria-expanded={dropdownOpen === item.label}
+                  >
+                    {item.label}
+                    <ChevronIcon
+                      className={`nav-chevron ${dropdownOpen === item.label ? 'nav-chevron-open' : ''}`}
+                    />
+                  </Link>
+
+                  {dropdownOpen === item.label && (
+                    <div className="dropdown-panel" role="menu">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={`/${locale}${child.href}`}
+                          className={`dropdown-link ${
+                            isLinkActive(child.href, pathname) ? 'text-white' : ''
+                          }`}
+                          role="menuitem"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={`/${locale}${item.href}`}
+                  className={`font-caravagesque font-normal menu-item inline-flex items-baseline ${
+                    isLinkActive(item.href, pathname) ? 'text-white' : 'text-sand'
+                  }`}
+                >
+                  {item.href === '/boutique' && <ShoppingBagIcon isActive={isLinkActive(item.href, pathname)} />}
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
 
@@ -56,16 +170,68 @@ export default function Navigation() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-sand bg-mahogany">
+          <div className="lg:hidden py-4 border-t border-sand nav-bg">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="block text-sand font-caravagesque font-normal mobile-menu-item"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+              item.children ? (
+                <div key={item.href} className="border-b border-sand/20">
+                  <button
+                    onClick={() => setMobileAccordionOpen(
+                      mobileAccordionOpen === item.label ? null : item.label
+                    )}
+                    className={`mobile-accordion-header ${
+                      isLinkActive(item.href, pathname, true) ? 'text-white' : ''
+                    }`}
+                    aria-expanded={mobileAccordionOpen === item.label}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronIcon
+                      className={`nav-chevron ${
+                        mobileAccordionOpen === item.label ? 'nav-chevron-open' : ''
+                      }`}
+                    />
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {mobileAccordionOpen === item.label && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={`/${locale}${child.href}`}
+                            className={`mobile-accordion-link ${
+                              isLinkActive(child.href, pathname) ? 'text-white' : ''
+                            }`}
+                            onClick={() => {
+                              setMobileMenuOpen(false)
+                              setMobileAccordionOpen(null)
+                            }}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={`/${locale}${item.href}`}
+                  className={`flex items-baseline font-caravagesque font-normal mobile-menu-item ${
+                    isLinkActive(item.href, pathname) ? 'text-white' : 'text-sand'
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.href === '/boutique' && <ShoppingBagIcon isActive={isLinkActive(item.href, pathname)} />}
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
         )}

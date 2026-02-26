@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 @font-face {
   font-family: 'OldStyle';
   src: url('/hinted-OldStyle1HPLHS.woff2') format('woff2'),
@@ -217,33 +222,79 @@ strong, b {
   .title-page {
     @apply text-xl md:text-2xl font-garamond font-bold text-[#0c0c0d] leading-snug md:leading-relaxed px-4 hover:opacity-80 transition-opacity tracking-[0.12em] text-center;
   }
+  
+  /* === VIDEO SECTION === */
+  
+  /* light background variant */
+  .video-section-on-light {
+	  @apply w-full md:w-[50%] lg:w-[60%];
+  }
+  /* Dark background variant */
+  .video-section-on-dark {
+    @apply w-full md:w-[50%] lg:w-[60%];
+  }
+  
+  /* === TEXT SECTION === */
+  
+  /* light background variant */
+  .text-section-on-light {
+	  @apply w-full md:w-[50%] lg:w-[40%] space-y-6 text-left;
+  }
+  /* Dark background variant */
+  .text-section-on-dark {
+    @apply w-full md:w-[50%] lg:w-[40%] space-y-6 text-right;
+  }
 
   /* === SECTION HEADINGS === */
-  .heading-section {
-    @apply text-xl md:text-2xl font-oldstyle text-pirate-red mb-4;
+  /* Default - for light backgrounds */
+  .heading-section-on-light {
+    @apply text-xl md:text-[2.0rem] lg:text-[3.0rem] font-oldstyle font-bold text-pirate-red mb-4 tracking-widest;
+  }
+
+  /* Dark background variant */
+  .heading-section-on-dark {
+    @apply text-xl md:text-[2.0rem] lg:text-[3.0rem] font-oldstyle font-bold text-gold mb-4 tracking-widest;
   }
 
   /* === BODY TEXT === */
-  .text-body {
-    @apply text-ink text-lg leading-relaxed;
+  /* Default - for light backgrounds */
+  .text-body-on-light {
+    @apply text-ink text-lg md:text-[1.5rem] lg:text-[2.2rem] leading-tight  tracking-wider;
   }
 
-  .text-body-base {
-    @apply text-ink;
+  /* Dark background variant */
+  .text-body-on-dark {
+    @apply text-bone text-lg md:text-[1.5rem] lg:text-[2.2rem] leading-tight tracking-wider;
   }
 
-  .text-body-centered {
-    @apply text-ink text-lg leading-relaxed text-center;
+  /* === HIGHLIGHTED TEXT === */
+  /* Highlight text - pirate font emphasis for game terms */
+  .text-highlight-on-light {
+    @apply text-xl md:text-[1.75rem] lg:text-[2.5rem] font-caravagesque text-pirate-red leading-tight tracking-widest font-thin;
   }
 
-  /* Body text with standard spacing */
-  .text-body-spaced {
-    @apply text-ink mb-6;
+  .text-highlight-on-dark {
+    @apply text-xl md:text-[2.0rem] lg:text-[3.0rem] font-caravagesque text-gold leading-tight tracking-widest font-thin;
   }
 
-  /* Main section titles (h2 level) */
+  .text-cite-on-dark {
+    @apply text-gold italic;
+  }
+
+  /* === SECTION TITLES === */
+  /* Main section titles (h2 level) - default for light backgrounds */
   .title-section {
+    @apply text-2xl md:text-4xl font-oldstyle font-normal text-pirate-red mb-4 text-center mt-8;
+  }
+
+  /* Explicit light background variant */
+  .title-section-on-light {
     @apply text-2xl md:text-4xl font-oldstyle font-normal text-pirate-red mb-8 text-center mt-16;
+  }
+
+  /* Dark background variant */
+  .title-section-on-dark {
+    @apply text-2xl md:text-4xl font-oldstyle font-normal text-gold mb-8 text-center mt-16;
   }
 
   /* === LINKS === */
@@ -266,6 +317,10 @@ strong, b {
 
   .btn-primary-rounded {
     @apply inline-block bg-forest hover:bg-forest-hover text-bone font-oldstyle text-lg md:text-2xl px-6 py-3 md:px-8 md:py-4 rounded-full transition-colors duration-200 shadow-lg;
+  }
+
+  .btn-primary-blue-rounded {
+    @apply inline-block bg-ocean-blue hover:bg-ocean-blue-hover text-bone font-oldstyle text-[1.5rem] md:text-[1.75rem] lg:text-2xl px-6 py-3 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full transition-colors duration-200 shadow-lg;
   }
 
   .btn-secondary {
@@ -328,6 +383,14 @@ strong, b {
   /* === NAVIGATION === */
   .nav-bg {
     @apply bg-mahogany;
+    background-image: url('/assets/Nouvelle-Bannière.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .shadow-nav {
+    box-shadow: 0 4px 12px rgba(12, 12, 13, 0.4);
   }
 
   .nav-link {
@@ -358,5 +421,107 @@ strong, b {
 
   .faq-container {
     @apply space-y-8;
+  }
+
+  /* === DROPDOWN NAVIGATION === */
+  /* Desktop Dropdown Panel */
+  .dropdown-panel {
+    @apply absolute top-full left-0 min-w-[280px]
+           bg-mahogany rounded-b-lg shadow-lg overflow-hidden z-50
+           -mt-[1.2rem];
+    background-image: url('/assets/Nouvelle-Bannière.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Desktop Dropdown Link */
+  .dropdown-link {
+    @apply block px-6 py-3 text-sand font-caravagesque
+           text-xl font-normal hover:bg-pirate-red/20
+           transition-colors duration-200;
+  }
+
+  /* Chevron Icon */
+  .nav-chevron {
+    @apply inline-block ml-2 transition-transform duration-200;
+  }
+
+  .nav-chevron-open {
+    @apply rotate-180;
+  }
+
+  /* Mobile Accordion Header */
+  .mobile-accordion-header {
+    @apply w-full flex justify-between items-center
+           text-sand font-caravagesque text-2xl md:text-3xl
+           font-normal py-4 px-4 text-left
+           hover:bg-pirate-red/20 transition-colors;
+  }
+
+  /* Mobile Accordion Link */
+  .mobile-accordion-link {
+    @apply block text-sand font-caravagesque text-xl
+           font-normal py-3 pl-8 pr-4
+           bg-mahogany/50 hover:bg-pirate-red/20
+           transition-colors;
+  }
+}
+
+/* ============================================
+   Card Carousel Animation
+   ============================================ */
+
+/* Mobile: 7 cartes × (280px + 24px gap) = 2128px */
+@keyframes carousel-scroll-mobile {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-2128px);
+  }
+}
+
+/* Tablet: 7 cartes × (330px + 24px gap) = 2478px */
+@keyframes carousel-scroll-tablet {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-2478px);
+  }
+}
+
+/* Desktop: 7 cartes × (380px + 28px gap) = 2856px */
+@keyframes carousel-scroll-desktop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-2856px);
+  }
+}
+
+/* Application des animations */
+.carousel-track {
+  animation: carousel-scroll-mobile 30s linear infinite;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .carousel-track {
+    animation: carousel-scroll-tablet 30s linear infinite;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel-track {
+    animation: carousel-scroll-desktop 30s linear infinite;
+  }
+}
+
+/* Support pour prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation-duration: 60s; /* 2× plus lent */
   }
 }

@@ -32,7 +32,7 @@ const config: Config = {
         ink: '#0c0c0d',
         parchment: '#f2e8d5',
         'pirate-red': '#8b2020',
-        gold: '#d4a574',
+        gold: '#e6c896',
         'sea-mist': '#1e3a3a',
         navy: '#1a2332',
         bone: '#faf8f3',
@@ -41,6 +41,8 @@ const config: Config = {
         // NEW COLORS
         forest: '#378536',           // Green CTA buttons
         'forest-hover': '#40933f',   // Green button hover state
+        'ocean-blue': '#2B5F6F',        // Blue button color (matching texture)
+        'ocean-blue-hover': '#3A7A8A',  // Lighter blue for hover state
         'pirate-red-hover': '#a02525', // Red button hover state
         mahogany: '#842c0d',         // Navigation background
         sand: '#ffdaa6',             // Navigation text
