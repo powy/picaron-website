@@ -47,7 +47,7 @@ export default function HomePage() {
         </Link>
       </section>
 
-        {/* Banner and video sections */}
+        {/* Banner and video sections  */}
         <div className="max-w-6xl mx-auto px-4">
 
         {/* FIXME: Badge BoardGameGeek - API ne fonctionne pas correctement, à investiguer
@@ -148,15 +148,22 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  {/* Right: Image */}
+                  {/* Right: video */}
                   <div className="video-section-on-dark">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image002.gif"
-                      alt="Mécaniques de jeu simultané"
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/1_Jouez_en_simultane.webm"
+                      alt="Mécaniques de jeu simultané"
                     />
+					</video>
                   </div>
 
                 </div>
@@ -176,15 +183,22 @@ export default function HomePage() {
 
 
 
-                  {/* Left: Image */}
-                  <div className="video-section-on-light">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image003.gif"
-                      alt="Mécanique de combat"
+                  {/* Left: video */}
+                  <div className="video-section-on-dark">
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/2_Mecanique fluide.webm"
+                      alt="Mécaniques de combat"
                     />
+					</video>
                   </div>
 
                   {/* Right: Text */}
@@ -227,15 +241,22 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  {/* Right: Image */}
+                  {/* Right: video */}
                   <div className="video-section-on-dark">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image004.gif"
-                      alt="Objectifs du jeu"
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/3_Une_epopee_a_deux_objectifs.webm"
+                      alt="Objectifs du jeu"
                     />
+					</video>
                   </div>
 
                 </div>
@@ -616,13 +637,20 @@ export default function HomePage() {
               <div className="mx-auto px-4 py-24 md:py-20 w-full">
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
                   <div className="w-full md:w-1/2">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image012.gif"
-                      alt="Exactitude historique"
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/7_Fidelite_historique.webm"
+                      alt="Exactitude historique"
                     />
+					</video>
                   </div>
                   <div className="w-full md:w-1/2 space-y-6">
                     <p className="heading-section-on-dark">FIDÉLITÉ HISTORIQUE</p>
@@ -660,7 +688,7 @@ export default function HomePage() {
                   {/* Left: Image */}
                   <div className="w-full md:w-1/2">
                     <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image013.jpg"
+                      src="/boucanier3/boucaniers 3_fichiers/12-Drapeaux personnalisables.jpg"
                       alt="Drapeaux personnalisables"
                       width={605}
                       height={340}

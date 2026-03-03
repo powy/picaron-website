@@ -18,6 +18,8 @@ export default function CardCarousel() {
     { id: 'A5', filename: 'A5Mangrove.webp', alt: 'Carte indice - Mangrove' },
     { id: 'A6', filename: 'A6eglise.webp', alt: 'Carte indice - Église' },
     { id: 'A7', filename: 'A7phare.webp', alt: 'Carte indice - Phare' },
+	{ id: 'A8', filename: 'A8remparts.webp', alt: 'Carte indice - Remparts' },
+	{ id: 'A8', filename: 'A9flamantsroses.webp', alt: 'Carte indice - FlamantsRoses' },
   ]
 
   // Triple cards for seamless infinite loop
