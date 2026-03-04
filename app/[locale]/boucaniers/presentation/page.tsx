@@ -500,20 +500,22 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* GAMEPLAY SOPHISTIQUÉ - Section 1: Main Introduction (NO IMAGE) */}
-          <div className="relative w-full min-h-[1000px] md:min-h-[1100px] lg:min-h-[1500px]">
-            {/* Red texture overlay */}
+          {/* GAMEPLAY SOPHISTIQUÉ  */}
+                  <div className="space-y-12">
+
+          <div className="relative w-full min-h-[1200px] md:min-h-[950px] lg:min-h-[1500px]">
+
             <div
-              className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:auto_100%] md:[background-size:100%_100%]"
+              className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:cover] md:[background-size:100%_100%]"
               style={{
                 backgroundImage: 'url(/Tache-rouge-avec-texture.png)',
               }}
             />
 
             {/* Vertically almost-on-top (3% padding on top) content container */}
-            <div className="relative z-10 flex items-center min-h-[1000px] md:min-h-[1100px] lg:min-h-[1500px]">
-              <div className="mx-auto px-4 py-24 md:py-20 w-full translate-y-[-5%] md:translate-y-[0%] lg:translate-y-[-5%]">
-                <div className="space-y-6 mx-auto ">
+            <div className="relative z-10 flex items-center min-h-[1200px] md:min-h-[950px] lg:min-h-[1500px]">
+              <div className="mx-auto px-4 pt-24 md:py-20 w-full">
+                <div className="space-y-6 pt-50 mx-auto ">
                     {/* Grid: 2 columns for text+ image on right. TODO: center the thing, currently i had to add an extra 3rd column to have an aliignment, it's bad.*/}
                     <div className="grid grid-cols-[1fr_0.5fr] md:grid-cols-[1fr_0.25fr_0.25fr] gap-2 md:gap-4 lg:gap-4 items-center ">
                         <h3 className="heading-section-on-dark text-right self-end">GAMEPLAY SOPHISTIQUÉ</h3>
@@ -580,14 +582,15 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+                    </div>
 
           {/*  FIGURINES FAITES MAISON */}
           <div className="relative w-full min-h-[600px] md:min-h-[500px] lg:min-h-[400px]">
 
 
             {/* Vertically centered content container */}
-            <div className="relative z-10 flex items-center min-h-[1100px] md:min-h-[1000px] lg:min-h-[1100px]">
-              <div className=" mx-auto px-4 py-24 md:py-20 w-full">
+            <div className="relative z-10 flex items-center min-h-[600px] md:min-h-[500px] lg:min-h-[400px]">
+              <div className=" mx-auto px-4 py-12 md:py-20 w-full">
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
 
 
@@ -621,11 +624,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* GAMEPLAY SOPHISTIQUÉ - Section 3: FIDÉLITÉ HISTORIQUE */}
-          <div className="relative w-full min-h-[900px] md:min-h-[500px] lg:min-h-[1500px]">
+          {/*   FIDÉLITÉ HISTORIQUE */}
+          <div className="relative w-full min-h-[1250px] md:min-h-[500px] lg:min-h-[1500px]">
             {/* Red texture overlay */}
             <div
-              className="absolute inset-0 pointer-events-none bg-right bg-no-repeat opacity-100 z-0 [background-size:190%_100%] md:[background-size:100%_125%] lg:[background-size:125%_125%] translate-y-[5%] md:translate-y-[-10%] lg:translate-y-[-22%]"
+              className="absolute inset-0 pointer-events-none bg-right bg-no-repeat opacity-100 z-0 [background-size:190%_100%] md:[background-size:100%_125%] lg:[background-size:125%_125%] translate-y-[0%] md:translate-y-[-10%] lg:translate-y-[-22%]"
               style={{
                 backgroundImage: 'url(/11-Tache-d_encre-bleue-TEXTURÉE.png)',
               }}
