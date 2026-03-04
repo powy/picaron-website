@@ -161,7 +161,6 @@ export default function HomePage() {
 					>  
 					  <source
 					  src="/boucanier3/boucaniers 3_fichiers/1_Jouez_en_simultane.webm"
-                      alt="Mécaniques de jeu simultané"
                     />
 					</video>
                   </div>
@@ -196,7 +195,6 @@ export default function HomePage() {
 					>  
 					  <source
 					  src="/boucanier3/boucaniers 3_fichiers/2_Mecanique fluide.webm"
-                      alt="Mécaniques de combat"
                     />
 					</video>
                   </div>
@@ -254,7 +252,6 @@ export default function HomePage() {
 					>  
 					  <source
 					  src="/boucanier3/boucaniers 3_fichiers/3_Une_epopee_a_deux_objectifs.webm"
-                      alt="Objectifs du jeu"
                     />
 					</video>
                   </div>
@@ -651,7 +648,6 @@ export default function HomePage() {
 					>  
 					  <source
 					  src="/boucanier3/boucaniers 3_fichiers/7_Fidelite_historique.webm"
-                      alt="Exactitude historique"
                     />
 					</video>
                   </div>
