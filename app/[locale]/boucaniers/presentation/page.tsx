@@ -2,7 +2,6 @@ import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
 import SocialLinks from '@/components/SocialLinks'
-// FIXME: import BggRatingBadge from '@/components/BggRatingBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
