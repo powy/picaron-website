@@ -143,7 +143,7 @@ export default function HomePage() {
                       Pour des parties pleines de <span className="text-highlight-on-dark">BLUFF</span><br/> et de <span className="text-highlight-on-dark">SUSPENSE</span> !</p>
                     <p className="text-body-on-dark mb-6">
                       Choisissez votre navigation en secret<br/> puis bougez tous en même temps.<br/>
-                      On n'attend pas les tours des autres !
+                      On n'attend pas le tour des autres !
                     </p>
                   </div>
 
@@ -204,7 +204,7 @@ export default function HomePage() {
                     <p className="text-body-on-light mb-6">
                       Si des bateaux sont en contact,<br />
                       <span className="text-highlight-on-light">À L'ABORDAGE !</span><br />
-                      À un de distance? <span className="text-highlight-on-light">AUX CANONS !</span><br />
+                      À un de distance ? <span className="text-highlight-on-light">AUX CANONS !</span><br />
                       Puis, tout le monde joue ses actions en même temps.
                     </p>
                   </div>
@@ -232,7 +232,7 @@ export default function HomePage() {
                   <div className="text-section-on-dark">
                     <h3 className="heading-section-on-dark">UNE ÉPOPÉE À 2 OBJECTIFS</h3>
                     <p className="text-body-on-dark mb-6">
-                      Déterrez le <span className="text-highlight-on-dark">trésor</span> d'Armand avant les autres<br /> <span className="text-highlight-on-dark">ou</span> amassez 25 <span className="text-highlight-on-dark">pièces</span>.</p>
+                      Déterrez le <span className="text-highlight-on-dark">trésor</span> d'Armand<br />  avant les autres<br /> <span className="text-highlight-on-dark">ou</span> amassez 25 <span className="text-highlight-on-dark">pièces</span>.</p>
                     <p className="text-body-on-dark mb-6">
                       Le passage du Rougeaud au Bastion Rouge<br/> est à ne pas manquer... sa prise rapporte alors 15 pièces.
                     </p>
@@ -271,21 +271,27 @@ export default function HomePage() {
                 <div className="grid grid-cols-2 md:grid-cols-[1.5fr_1fr_0.75fr] gap-2 md:gap-4 lg:gap-4 items-center">
 
                   {/* Column 1: Existing left image - spans 2 cols on mobile, 1 on desktop */}
-                  <div className="w-full col-span-2 md:col-span-1">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image005.png"
-                      alt="Profondeur stratégique"
+                   <div className="w-full col-span-2 md:col-span-1">
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/4_Profondeur_de_jeu.mp4"
                     />
+					</video>
                   </div>
 
                   {/* Column 2: Text content - 1 col on mobile, 1 on desktop */}
                   <div className="w-full space-y-6">
                     <h3 className="heading-section-on-light">PROFONDEUR DE JEU</h3>
                     <p className="text-body-on-light mb-6">
-                      Des îles aux actions uniques, des combos infinis, des navires asymétriques.<br />
+                      Des îles aux actions <span className="text-highlight-on-light">uniques</span>, des <span className="text-highlight-on-light">combos</span> infinis, des navires <span className="text-highlight-on-light">asymétRiques</span>.<br />
                       Explorez des tactiques insolites et personnelles.
                     </p>
                   </div>
@@ -340,8 +346,8 @@ export default function HomePage() {
                   <div className="w-full md:w-[50%] space-y-6 text-right">
                     <h3 className="heading-section-on-dark">JOUABILITÉ ET REJOUABILITÉ</h3>
                     <p className="text-body-on-dark mb-6">
-                      Chaque partie est unique grâce au plateau modulable, à l'asymétrie des 10 navires et aux 24 boucaniers uniques.
-                      Aussi palpitant à 2 joueurs qu'à 3, 4 ou 5, les experts comme les plus jeunes seront dans leur élément.
+                      Chaque partie est unique grâce au <span className="text-highlight-on-dark">plateau modulable</span>, à l'asymétrie des 10 navires et aux 24 boucaniers uniques.<br />
+                      Aussi palpitant à 2 joueurs qu'à 3, 4 ou 5, les <span className="text-highlight-on-dark">expeRts</span> comme les <span className="text-highlight-on-dark">plus jeunes</span> seront dans leur élément.
                     </p>
                   </div>
 
@@ -376,7 +382,8 @@ export default function HomePage() {
                 <div className="max-w-3xl mx-auto text-center space-y-4">
                   <h3 className="heading-section-on-light">UNIVERS IMMERSIF</h3>
                   <p className="text-body-on-light mb-6">
-                    Les indices forment une frise continue. Elle permet de placer le trésor sur une île au hasard avant la partie. Un système innovant fait d'indices et de caches pour la mise en place et la vérification des tentatives de fouille du trésor.
+                    Les indices forment une frise continue. Elle permet de cacher le trésor sur une île au hasard avant la partie. <br />
+					Un système innovant fait d'indices et de caches pour la mise en place et la vérification des tentatives de fouille du trésor.
                   </p>
                 </div>
               </div>
@@ -398,7 +405,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
                   <div className="w-full md:w-1/2">
                     <p className="text-body-on-light">
-                      Quand un joueur fouille sur une île, on vérifie si le trésor s'y trouve bien. Sinon, la partie continue.
+                      Quand un joueur fouille sur une île, on vérifie si le trésor s'y trouve bien. <br /> <br />Sinon, la partie continue.
                     </p>
                   </div>
 
@@ -433,9 +440,8 @@ export default function HomePage() {
               <div className="px-8 pt-20 md:pt-16 w-full max-w-2xl text-center">
                  
                 <p className="text-body-on-dark mb-6">
-                  L'histoire d'Armand se cache dans les indices.
-                  Les péripéthies qui l'ont conduit au trésor
-                  mystérieux sont racontées dans la
+                  Les péripéties d'Armand se cachent dans les indices.
+                  Ce que renferme le trésor est raconté dans la
                    nouvelle illustrée <span className="text-cite-on-dark">Armand ou Les Réveurs du Nouveau Monde.</span>
                 </p>
               </div>
@@ -533,7 +539,7 @@ export default function HomePage() {
                           className="w-full h-auto"
                         />
                         <p className="text-body-on-dark mb-6">
-                        Le jeu mêle stratégie de placement, planification sur plusieurs tours, combinaisons infinies et combos ingénieux, sens du sacrifice, gestion de ressources, des combats et surtout... du BLUFF!
+                        Le jeu mêle stratégie de placement, planification sur plusieurs tours, combinaisons infinies et combos ingénieux, sens du sacrifice, gestion de ressources, des combats et surtout... du <span className="text-highlight-on-dark">BLUFF</span> !
                         </p>
                         <Image
                           src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-droite.png"
@@ -564,7 +570,7 @@ export default function HomePage() {
                           className="hidden md:block w-full h-auto"
                       />
                       <p className="text-body-on-dark mb-6">
-                        Ici, ce sont vos décisions, et non le hasard, qui dictent l'issue de la partie.
+                        Ici, ce sont vos décisions, <span className="text-highlight-on-dark">et non le hasaRd</span>, <br />qui dictent l'issue de la partie.
                       </p>
                       <Image
                           src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-gauche.png"
@@ -591,26 +597,32 @@ export default function HomePage() {
 
 
 
-                  {/* Left: Image */}
-               <div className="w-full md:w-1/2">
-                    <Image
-                      src="/boucanier3/boucaniers 3_fichiers/image011.gif"
-                      alt="Figurines 3D"
+                  {/* Left: video */}
+                  <div className="video-section-on-dark">
+                    <video
+                      className="w-full h-auto"
                       width={605}
                       height={340}
-                      className="w-full h-auto"
+					  autoPlay
+					  muted
+					  loop
+					  playsInline
+					>  
+					  <source
+					  src="/boucanier3/boucaniers 3_fichiers/10_Figurines_faites_maison_Petit.webm"
                     />
+					</video>
                   </div>
 
                   {/* Right: Text */}
                   <div className="w-full md:w-1/2 space-y-6">
                     <p className="heading-section-on-light">FIGURINES FAITES MAISON</p>
                      <p className="text-body-on-light mb-6">
-                      Sculptées en réalité virtuelle et imprimées en 3D avec en PLA, 
+                      Sculptées en réalité virtuelle et imprimées en 3D en PLA, 
                       les figurines sont entièrement réalisées dans notre atelier.
                     </p>
                     <p className="text-body-on-light mb-6">
-                      Une fabrications unique dans le monde du jeu 
+                      Une fabrication unique dans le monde du jeu 
                       permetant d'obtenir des <span className="text-highlight-on-light">figurines multicolores</span>
                     </p>
 
@@ -653,7 +665,7 @@ export default function HomePage() {
                   <div className="w-full md:w-1/2 space-y-6">
                     <p className="heading-section-on-dark">FIDÉLITÉ HISTORIQUE</p>
                     <p className="text-body-on-dark mb-6">
-                      Apprenez-en plus sur l'Histoire de la marine et de la boucane aux <span className="text-highlight-on-dark">Caraïbes.</span></p>
+                      Apprenez-en plus sur l'Histoire de la marine et de la boucane aux <span className="text-highlight-on-dark">CaRaïbes.</span></p>
                     
                     <p className="text-body-on-dark mb-6">
                       Les bateaux portent leur description historique sur leurs fiches. 
