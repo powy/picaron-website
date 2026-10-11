@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import TestModeBanner from '@/components/TestModeBanner'
+import CartProvider from '@/lib/cart-context'
 import { locales } from '@/i18n'
 
 export default async function LocaleLayout({
@@ -32,11 +34,14 @@ export default async function LocaleLayout({
         />
 
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Navigation />
-          <main className="w-full mx-auto pt-12 lg:pt-14 flex-grow">
-            {children}
-          </main>
+          <CartProvider>
+            <Navigation />
+            <main className="w-full mx-auto pt-12 lg:pt-14 flex-grow">
+              {children}
+            </main>
+          </CartProvider>
           <Footer locale={locale} />
+          <TestModeBanner />
         </div>
       </div>
     </NextIntlClientProvider>

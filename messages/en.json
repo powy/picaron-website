@@ -43,6 +43,18 @@
     "commandeAnnulation": {
       "title": "Order Cancelled",
       "description": "Your order has been cancelled"
+    },
+    "panier": {
+      "title": "My Cart",
+      "description": "View and edit your cart before checking out."
+    },
+    "commandeAdresse": {
+      "title": "Billing Address",
+      "description": "Enter your billing address to finalize your order."
+    },
+    "commandePaiement": {
+      "title": "Payment",
+      "description": "Pay for your order securely."
     }
   },
   "nav": {
@@ -72,7 +84,7 @@
         "description": "Discover mysterious islands and their hidden treasures"
       },
       "commerce": {
-        "title": "Trade", 
+        "title": "Trade",
         "description": "Negotiate with ports and enrich your crew"
       },
       "combat": {
@@ -85,6 +97,9 @@
     "title": "Stay informed",
     "placeholder": "Your email",
     "submit": "Subscribe"
+  },
+  "franceOnly": {
+    "text": "Delivery to mainland France only. For any other destination, please <link>contact us</link>."
   },
   "shop": {
     "title": "Shop",
@@ -112,19 +127,135 @@
     "cgvLink": "Terms and Conditions",
     "privacyLink": "Privacy Policy"
   },
+  "cart": {
+    "title": "My Cart",
+    "cartAria": "View cart",
+    "products": {
+      "boucaniers": {
+        "name": "Boucaniers"
+      },
+      "armand": {
+        "name": "Armand or the Dreamers of the New World"
+      }
+    },
+    "addToCart": "Add to cart",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "unitPrice": "Unit price",
+    "lineTotal": "Subtotal",
+    "summary": {
+      "subtotal": "Total",
+      "checkout": "Proceed to checkout",
+      "continueShopping": "Continue shopping",
+      "itemsSubtotal": "Items subtotal",
+      "shipping": "Shipping",
+      "shippingPending": "Choose a delivery method",
+      "total": "Total"
+    },
+    "shippingMethod": {
+      "title": "Shipping method",
+      "deliveryEstimate": "Delivery in France, expected within 15 days (indicative).",
+      "mondialRelay": {
+        "name": "Mondial Relay",
+        "description": "Delivery to a pickup point"
+      },
+      "colissimo": {
+        "name": "Colissimo",
+        "description": "Home delivery"
+      }
+    },
+    "empty": {
+      "title": "Your cart is empty",
+      "message": "Browse our products and add them to your cart.",
+      "cta": "View shop"
+    },
+    "aria": {
+      "increaseQuantity": "Increase quantity",
+      "decreaseQuantity": "Decrease quantity",
+      "removeItem": "Remove this item"
+    },
+    "preview": {
+      "title": "Your cart",
+      "empty": "Your cart is empty",
+      "emptyHint": "Add a product to get started.",
+      "items": "{count, plural, one {# item} other {# items}}",
+      "subtotal": "Items subtotal",
+      "shippingNextStep": "Shipping calculated at the next step",
+      "viewCart": "View cart and checkout",
+      "viewCartShort": "View cart",
+      "added": "Added to cart",
+      "terms": "Terms of sale",
+      "navBadgeAria": "{label}, {count, plural, one {# item} other {# items}} in the cart"
+    }
+  },
+  "checkout": {
+    "title": "Billing Address",
+    "requiredHint": "* Required fields",
+    "internationalNote": "Contact us for deliveries outside mainland France.",
+    "orderSummary": "Order Summary",
+    "modifyCart": "Edit cart",
+    "fields": {
+      "lastName": "Last name",
+      "firstName": "First name",
+      "address": "Address",
+      "addressComplement": "Address line 2",
+      "postalCode": "Postal code",
+      "city": "City",
+      "country": "Country",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address",
+      "invalidPostalCode": "Invalid postal code (5 digits)",
+      "notMainlandFrance": "We only deliver to mainland France. For any other destination, please contact us."
+    },
+    "relay": {
+      "title": "Mondial Relay pickup point",
+      "chooseCta": "Choose your pickup point below.",
+      "selectedLabel": "Selected pickup point",
+      "mock": {
+        "notice": "Test mode: fake pickup points (no connection to Mondial Relay).",
+        "postalCodeLabel": "Postal code",
+        "search": "Search",
+        "choose": "Choose this pickup point",
+        "selected": "Selected"
+      }
+    },
+    "deliveryAddressTitle": "Delivery Address",
+    "billingAddressTitle": "Billing Address",
+    "differentBillingCheckbox": "Different billing address",
+    "continueToPayment": "Continue to payment",
+    "submitting": "Creating your order…",
+    "submitError": "Your order could not be created. Please check your details and try again."
+  },
   "success": {
     "title": "Order confirmed!",
     "thanks": "Thank you for your purchase of Boucaniers!",
     "nextSteps": "Next steps:",
     "steps": {
       "email": "You will receive a confirmation email",
-      "preparation": "Your order will be prepared within 48 hours",
-      "delivery": "Delivery scheduled for mid-December",
+      "delivery": "Delivery in France, expected within 15 days (indicative).",
       "tracking": "You will receive an email with delivery tracking"
     },
     "orderRef": "Order reference: {ref}",
     "backHome": "Back to home",
-    "contact": "Questions? Contact us at {email}"
+    "contact": "Questions? Contact us at {email}",
+    "loading": "Checking payment…",
+    "notFound": "Order not found.",
+    "pendingTitle": "Payment being confirmed",
+    "pendingMessage": "Your payment is being processed. You will receive a confirmation email as soon as it is confirmed.",
+    "failedTitle": "Payment declined",
+    "failedMessage": "The payment for this order did not go through. No amount has been charged.",
+    "retryPayment": "Retry payment",
+    "summaryTitle": "Summary",
+    "total": "Total",
+    "relayLabel": "Mondial Relay pickup point",
+    "colissimoLabel": "Colissimo home delivery",
+    "backShop": "Back to shop",
+    "itemsSubtotal": "Items subtotal",
+    "shipping": "Shipping"
   },
   "cancel": {
     "title": "Order cancelled",
@@ -133,7 +264,8 @@
     "tip": "Tip: The pirate adventure is just waiting for you to begin",
     "backShop": "Back to shop",
     "backHome": "Back to home",
-    "needHelp": "Need help? Contact us at {email}"
+    "needHelp": "Need help? Contact us at {email}",
+    "resumePayment": "Resume payment"
   },
   "faq": {
     "pageTitle": "FAQ - Frequently Asked Questions",
@@ -160,6 +292,33 @@
         "question": "Do the East India Company ships reappear in a straight line? How to properly replace them?",
         "answer": "They reappear on the opposite side, mirrored, on their dedicated path (page 5 of the rules). You can draw a straight line only when the shipwreck point is in the re-entrant angles of their route (when a straight line connects the shipwreck point to the reappearance point)."
       }
+    }
+  },
+  "testBanner": {
+    "text": "Test environment ({env}) — no real payment"
+  },
+  "payment": {
+    "title": "Payment",
+    "loading": "Preparing payment…",
+    "loadError": "Payment could not be prepared. Please try again in a moment.",
+    "notFound": "Order not found.",
+    "orderRef": "Order {ref}",
+    "amount": "Amount due",
+    "pay": "Pay {amount}",
+    "processing": "Processing payment…",
+    "secureNote": "Secure payment by Stripe. Your card details never go through our servers.",
+    "declined": {
+      "card_declined": "Your card was declined. Please try another card.",
+      "insufficient_funds": "Insufficient funds. Please try another card.",
+      "generic": "The payment did not go through. You can try again."
+    },
+    "abandon": "Abandon payment",
+    "mock": {
+      "title": "Simulated payment (test mode)",
+      "hint": "No card is charged: pick the payment outcome to simulate. It goes through the same processing as a real Stripe payment (order status, confirmation email).",
+      "succeeded": "Simulate a successful payment",
+      "declined": "Simulate a declined card",
+      "insufficientFunds": "Simulate insufficient funds"
     }
   }
 }

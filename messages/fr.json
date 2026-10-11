@@ -43,6 +43,18 @@
     "commandeAnnulation": {
       "title": "Commande Annulée",
       "description": "Votre commande a été annulée"
+    },
+    "panier": {
+      "title": "Mon panier",
+      "description": "Consultez et modifiez le contenu de votre panier avant de passer commande."
+    },
+    "commandeAdresse": {
+      "title": "Adresse de facturation",
+      "description": "Renseignez votre adresse de facturation pour finaliser votre commande."
+    },
+    "commandePaiement": {
+      "title": "Paiement",
+      "description": "Réglez votre commande en toute sécurité."
     }
   },
   "nav": {
@@ -72,7 +84,7 @@
         "description": "Découvrez des îles mystérieuses et leurs trésors cachés"
       },
       "commerce": {
-        "title": "Commerce", 
+        "title": "Commerce",
         "description": "Négociez avec les ports et enrichissez votre équipage"
       },
       "combat": {
@@ -85,6 +97,9 @@
     "title": "Restez informé",
     "placeholder": "Votre email",
     "submit": "S'inscrire"
+  },
+  "franceOnly": {
+    "text": "Livraison en France métropolitaine uniquement. Pour toute autre destination, <link>contactez-nous</link>."
   },
   "shop": {
     "title": "Boutique",
@@ -112,19 +127,135 @@
     "cgvLink": "Conditions Générales de Vente",
     "privacyLink": "Politique de Confidentialité"
   },
+  "cart": {
+    "title": "Mon panier",
+    "cartAria": "Voir le panier",
+    "products": {
+      "boucaniers": {
+        "name": "Boucaniers"
+      },
+      "armand": {
+        "name": "Armand ou Les Rêveurs du Nouveau Monde"
+      }
+    },
+    "addToCart": "Ajouter au panier",
+    "quantity": "Quantité",
+    "remove": "Retirer",
+    "unitPrice": "Prix unitaire",
+    "lineTotal": "Sous-total",
+    "summary": {
+      "subtotal": "Total",
+      "checkout": "Passer commande",
+      "continueShopping": "Continuer mes achats",
+      "itemsSubtotal": "Sous-total articles",
+      "shipping": "Livraison",
+      "shippingPending": "Choisissez un mode de livraison",
+      "total": "Total"
+    },
+    "shippingMethod": {
+      "title": "Mode de livraison",
+      "deliveryEstimate": "Livraison en France, prévue sous 15 jours indicatifs.",
+      "mondialRelay": {
+        "name": "Mondial Relay",
+        "description": "Livraison en point relais"
+      },
+      "colissimo": {
+        "name": "Colissimo",
+        "description": "Livraison à domicile"
+      }
+    },
+    "empty": {
+      "title": "Votre panier est vide",
+      "message": "Découvrez nos produits et ajoutez-les à votre panier.",
+      "cta": "Voir la boutique"
+    },
+    "aria": {
+      "increaseQuantity": "Augmenter la quantité",
+      "decreaseQuantity": "Diminuer la quantité",
+      "removeItem": "Retirer cet article"
+    },
+    "preview": {
+      "title": "Votre panier",
+      "empty": "Votre panier est vide",
+      "emptyHint": "Ajoutez un produit pour commencer.",
+      "items": "{count, plural, one {# article} other {# articles}}",
+      "subtotal": "Sous-total articles",
+      "shippingNextStep": "Frais de livraison calculés à l'étape suivante",
+      "viewCart": "Voir le panier et commander",
+      "viewCartShort": "Voir le panier",
+      "added": "Ajouté au panier",
+      "terms": "Conditions générales de vente",
+      "navBadgeAria": "{label}, {count, plural, one {# article} other {# articles}} dans le panier"
+    }
+  },
+  "checkout": {
+    "title": "Adresse de facturation",
+    "requiredHint": "* Champs obligatoires",
+    "internationalNote": "Nous contacter pour les livraisons hors France métropolitaine.",
+    "orderSummary": "Récapitulatif de la commande",
+    "modifyCart": "Modifier le panier",
+    "fields": {
+      "lastName": "Nom",
+      "firstName": "Prénom",
+      "address": "Adresse",
+      "addressComplement": "Complément d'adresse",
+      "postalCode": "Code postal",
+      "city": "Ville",
+      "country": "Pays",
+      "email": "Email",
+      "phone": "Téléphone"
+    },
+    "errors": {
+      "required": "Ce champ est requis",
+      "invalidEmail": "Adresse email invalide",
+      "invalidPostalCode": "Code postal invalide (5 chiffres)",
+      "notMainlandFrance": "Nous livrons uniquement en France métropolitaine. Pour une autre destination, contactez-nous."
+    },
+    "relay": {
+      "title": "Point relais Mondial Relay",
+      "chooseCta": "Choisissez votre point relais ci-dessous.",
+      "selectedLabel": "Point relais sélectionné",
+      "mock": {
+        "notice": "Mode test : points relais fictifs (pas de connexion à Mondial Relay).",
+        "postalCodeLabel": "Code postal",
+        "search": "Rechercher",
+        "choose": "Choisir ce point relais",
+        "selected": "Sélectionné"
+      }
+    },
+    "deliveryAddressTitle": "Adresse de livraison",
+    "billingAddressTitle": "Adresse de facturation",
+    "differentBillingCheckbox": "Adresse de facturation différente",
+    "continueToPayment": "Continuer vers le paiement",
+    "submitting": "Création de la commande…",
+    "submitError": "La commande n'a pas pu être créée. Vérifiez vos informations et réessayez."
+  },
   "success": {
     "title": "Commande confirmée !",
     "thanks": "Merci pour votre achat de Boucaniers !",
     "nextSteps": "Prochaines étapes :",
     "steps": {
       "email": "Vous allez recevoir un email de confirmation",
-      "preparation": "Votre commande sera préparée dans les 48h",
-      "delivery": "Livraison prévue pour mi-décembre",
+      "delivery": "Livraison en France, prévue sous 15 jours indicatifs.",
       "tracking": "Vous recevrez un email avec le suivi de livraison"
     },
     "orderRef": "Référence de commande: {ref}",
     "backHome": "Retour à l'accueil",
-    "contact": "Des questions ? Contactez-nous à {email}"
+    "contact": "Des questions ? Contactez-nous à {email}",
+    "loading": "Vérification du paiement…",
+    "notFound": "Commande introuvable.",
+    "pendingTitle": "Paiement en cours de confirmation",
+    "pendingMessage": "Votre paiement est en cours de traitement. Vous recevrez un email de confirmation dès sa validation.",
+    "failedTitle": "Paiement refusé",
+    "failedMessage": "Le paiement de cette commande n'a pas abouti. Aucun montant n'a été débité.",
+    "retryPayment": "Réessayer le paiement",
+    "summaryTitle": "Récapitulatif",
+    "total": "Total",
+    "relayLabel": "Point relais Mondial Relay",
+    "colissimoLabel": "Livraison à domicile Colissimo",
+    "backShop": "Retour à la boutique",
+    "itemsSubtotal": "Sous-total articles",
+    "shipping": "Livraison"
   },
   "cancel": {
     "title": "Commande annulée",
@@ -133,7 +264,8 @@
     "tip": "Astuce : L'aventure pirate n'attend que vous pour commencer",
     "backShop": "Retourner à la boutique",
     "backHome": "Retour à l'accueil",
-    "needHelp": "Besoin d'aide ? Contactez-nous à {email}"
+    "needHelp": "Besoin d'aide ? Contactez-nous à {email}",
+    "resumePayment": "Reprendre le paiement"
   },
   "faq": {
     "pageTitle": "FAQ - Questions Fréquentes",
@@ -160,6 +292,33 @@
         "question": "Les navires des Compagnies des Indes réapparaissent-ils en ligne droite ? Comment bien les replacer ?",
         "answer": "Ils réapparaissent à l'opposé, en miroir, sur leur chemin dédié (page 5 des règles). On peut tracer une ligne droite uniquement lorsque le point de naufrage est dans les angles rentrants de leur parcours (quand une ligne droite relie le point de naufrage au point de réapparition)."
       }
+    }
+  },
+  "testBanner": {
+    "text": "Environnement de test ({env}) — aucun paiement réel"
+  },
+  "payment": {
+    "title": "Paiement",
+    "loading": "Préparation du paiement…",
+    "loadError": "Impossible de préparer le paiement. Réessayez dans quelques instants.",
+    "notFound": "Commande introuvable.",
+    "orderRef": "Commande {ref}",
+    "amount": "Montant à régler",
+    "pay": "Payer {amount}",
+    "processing": "Paiement en cours…",
+    "secureNote": "Paiement sécurisé par Stripe. Vos données bancaires ne transitent pas par nos serveurs.",
+    "declined": {
+      "card_declined": "Votre carte a été refusée. Essayez une autre carte.",
+      "insufficient_funds": "Fonds insuffisants. Essayez une autre carte.",
+      "generic": "Le paiement n'a pas abouti. Vous pouvez réessayer."
+    },
+    "abandon": "Abandonner le paiement",
+    "mock": {
+      "title": "Paiement simulé (mode test)",
+      "hint": "Aucune carte n'est débitée : choisissez le résultat du paiement à simuler. Il passe par le même traitement qu'un vrai paiement Stripe (statut de la commande, email de confirmation).",
+      "succeeded": "Simuler un paiement accepté",
+      "declined": "Simuler une carte refusée",
+      "insufficientFunds": "Simuler des fonds insuffisants"
     }
   }
 }

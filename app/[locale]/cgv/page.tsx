@@ -31,8 +31,9 @@ export default function CGV() {
           <section>
             <h2 className="heading-section-on-light">3. Champ d&apos;application</h2>
             <p>
-              Les présentes CGV s&apos;appliquent à toutes les ventes réalisées en France métropolitaine et dans
-              l&apos;Union européenne, à destination de consommateurs particuliers.
+              Les présentes CGV s&apos;appliquent aux ventes réalisées à destination de la France métropolitaine,
+              auprès de consommateurs particuliers. Pour toute livraison hors de France métropolitaine, le client est
+              invité à nous contacter via le formulaire de contact avant de commander.
             </p>
           </section>
 
@@ -74,7 +75,8 @@ export default function CGV() {
           <section>
             <h2 className="heading-section-on-light">8. Livraison</h2>
             <p>
-              La livraison est possible en France métropolitaine et dans les pays de l&apos;Union européenne.
+              La livraison est assurée en France métropolitaine uniquement. Pour toute autre destination, y compris
+              dans l&apos;Union européenne, le client doit nous contacter via le formulaire de contact.
             </p>
             <p className="mt-4">
               Lorsque le produit est indiqué comme étant en stock au moment de la commande, le délai indicatif

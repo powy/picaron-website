@@ -15,6 +15,11 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Local and staging must never be indexed (app/robots.ts covers robots.txt).
+  async headers() {
+    if (process.env.NEXT_PUBLIC_APP_ENV === 'production') return [];
+    return [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }];
+  },
 };
 
 export default withNextIntl(nextConfig);

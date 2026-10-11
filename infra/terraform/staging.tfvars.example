@@ -1,0 +1,22 @@
+# Copy to staging.tfvars (git-ignored). Secrets go in TF_VAR_... env vars.
+environment     = "staging"
+site_url        = "https://staging.picaron.fr"
+allowed_origins = ["https://staging.picaron.fr"]
+smtp_host       = "smtp.tem.scaleway.com"
+
+# FIXME(email): TEMPORARY. Order emails go to the team through the EmailJS
+# contact-form template (subject tagged FIXME), not to the customer, until an
+# SMTP provider is chosen. Then: email_transport = "smtp" and fill smtp_*.
+# TF_VAR_emailjs_private_key holds the EmailJS private key (Account > Security).
+email_transport     = "emailjs"
+emailjs_service_id  = "service_xxxxxxx"
+emailjs_template_id = "template_xxxxxxx"
+emailjs_public_key  = "xxxxxxxxxxxxxxx"
+
+# Every paid or failed order emails the team. With "smtp" this address is
+# required; with the emailjs stopgap the EmailJS template decides.
+# team_notify_email = "equipe@exemple.fr"
+
+# Shipping methods accepted by the API. Also set NEXT_PUBLIC_SHIPPING_METHODS
+# on Vercel. Staging can keep both (Mondial Relay uses the BDTEST sandbox brand).
+shipping_methods = ["mondial_relay", "colissimo"]

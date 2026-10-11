@@ -49,12 +49,6 @@ export default function HomePage() {
         {/* Banner and video sections  */}
         <div className="max-w-6xl mx-auto px-4">
 
-        {/* FIXME: Badge BoardGameGeek - API ne fonctionne pas correctement, à investiguer
-        <div className="text-center mb-8">
-          <BggRatingBadge gameId={434117} gameName="Boucaniers" />
-        </div>
-        */}
-
         {/* Game Info Banner - Above Video */}
         <div className="text-center relative z-10 mb-0">
           <Image

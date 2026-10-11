@@ -335,6 +335,12 @@ strong, b {
     @apply inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors;
   }
 
+  /* === CART === */
+  .cart-badge {
+    @apply absolute -top-1 -right-2 bg-pirate-red text-bone text-xs font-bold
+           rounded-full min-w-[1.1rem] h-[1.1rem] flex items-center justify-center px-1;
+  }
+
   /* === CONTAINERS === */
   .container-content {
     @apply max-w-4xl mx-auto;
@@ -369,6 +375,14 @@ strong, b {
 
   .label-field {
     @apply block text-ink font-oldstyle mb-2;
+  }
+
+  .input-field-error {
+    @apply border-pirate-red;
+  }
+
+  .error-text {
+    @apply text-pirate-red text-sm mt-1;
   }
 
   /* === SPECIAL COMPONENTS === */
@@ -523,5 +537,13 @@ strong, b {
 @media (prefers-reduced-motion: reduce) {
   .carousel-track {
     animation-duration: 60s; /* 2× plus lent */
+  }
+}
+
+/* Space for the shop's mobile cart bar (components/cart/CartPreviewBar.tsx),
+   so it never hides the end of the page or the footer. */
+@media (max-width: 1023px) {
+  body.has-cart-bar {
+    padding-bottom: 4.5rem;
   }
 }

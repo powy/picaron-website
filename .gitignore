@@ -155,3 +155,24 @@ temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Terraform (infra/terraform) — provider cache and local state, not the
+# .terraform.lock.hcl file, which stays committed.
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.*
+infra/terraform/*.tfvars
+infra/terraform/*.secrets.env
+infra/terraform/crash.log
+infra/terraform/crash.*.log
+# One state per environment (terraform workspace staging / prod) and the
+# zipped function bundle built at plan time.
+infra/terraform/terraform.tfstate.d/
+infra/terraform/.build/
+
+# Scaleway function bundle (npm run build:functions)
+/functions/dist/
+
+# Playwright
+/test-results/
+/playwright-report/

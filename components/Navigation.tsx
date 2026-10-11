@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useCart } from '@/lib/cart-context'
 
 type NavItem = {
   href: string
@@ -41,13 +42,35 @@ const ShoppingBagIcon = ({ isActive }: { isActive: boolean }) => (
   />
 )
 
+// Number of items in the cart, shown on the "Boutique" link (the cart itself
+// is previewed on the shop page — there is no separate cart icon in the menu).
+// Sits right after the label, vertically centered (the menu links are heavily
+// padded, so an absolutely positioned badge would end up clipped).
+const CartCountBadge = ({ count }: { count: number }) =>
+  count > 0 ? (
+    <span
+      aria-hidden="true"
+      data-testid="nav-cart-badge"
+      className="cart-badge static ml-2 self-center text-sm min-w-[1.4rem] h-[1.4rem]"
+    >
+      {count}
+    </span>
+  ) : null
+
 export default function Navigation() {
   const t = useTranslations('nav')
+  const tCart = useTranslations('cart')
   const locale = useLocale()
   const pathname = usePathname()
+  const { itemCount } = useCart()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null) // desktop
   const [mobileAccordionOpen, setMobileAccordionOpen] = useState<string | null>(null) // mobile
+
+  const shopAriaLabel = (item: NavItem) =>
+    item.href === '/boutique' && itemCount > 0
+      ? tCart('preview.navBadgeAria', { label: item.label, count: itemCount })
+      : undefined
 
   const navItems: NavItem[] = [
     {
@@ -150,9 +173,11 @@ export default function Navigation() {
                   className={`font-caravagesque font-normal menu-item inline-flex items-baseline ${
                     isLinkActive(item.href, pathname) ? 'text-white' : 'text-sand'
                   }`}
+                  aria-label={shopAriaLabel(item)}
                 >
                   {item.href === '/boutique' && <ShoppingBagIcon isActive={isLinkActive(item.href, pathname)} />}
                   {item.label}
+                  {item.href === '/boutique' && <CartCountBadge count={itemCount} />}
                 </Link>
               )
             ))}
@@ -227,9 +252,11 @@ export default function Navigation() {
                     isLinkActive(item.href, pathname) ? 'text-white' : 'text-sand'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
+                  aria-label={shopAriaLabel(item)}
                 >
                   {item.href === '/boutique' && <ShoppingBagIcon isActive={isLinkActive(item.href, pathname)} />}
                   {item.label}
+                  {item.href === '/boutique' && <CartCountBadge count={itemCount} />}
                 </Link>
               )
             ))}

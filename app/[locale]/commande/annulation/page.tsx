@@ -1,11 +1,28 @@
 'use client';
 
-import { useParams } from 'next/navigation';
+// Reached with "Abandonner le paiement" on the payment page. The order stays
+// 'pending' (the payment intent could still be completed), so the customer
+// can resume it; nothing has been charged.
+
+import { Suspense } from 'react';
+import { useParams, useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 export default function CancelPage() {
+  return (
+    <Suspense>
+      <CancelContent />
+    </Suspense>
+  );
+}
+
+function CancelContent() {
   const params = useParams();
+  const searchParams = useSearchParams();
   const locale = params.locale as string;
+  const publicId = searchParams.get('order');
+  const t = useTranslations('cancel');
 
   return (
     <div className="mt-8">
@@ -17,44 +34,45 @@ export default function CancelPage() {
             </svg>
           </div>
 
-          <h1 className="title-page">Commande annulée</h1>
+          <h1 className="title-page">{t('title')}</h1>
 
-          <p className="text-xl text-ink mb-6">
-            Votre commande a été annulée. Aucun montant n&apos;a été débité.
-          </p>
+          <p className="text-xl text-ink mb-6">{t('message')}</p>
 
           <div className="bg-parchment/30 rounded-lg p-6 mb-6">
-            <p className="text-ink mb-3">
-              Vous avez changé d&apos;avis ? Boucaniers vous attend toujours !
-            </p>
-            <p className="text-sm text-gray-600">
-              💡 Astuce : L&apos;aventure pirate n&apos;attend que vous pour commencer
-            </p>
+            <p className="text-ink mb-3">{t('encouragement')}</p>
+            <p className="text-sm text-gray-600 italic">{t('tip')}</p>
           </div>
 
           <div className="space-y-4">
+            {publicId && (
+              <div>
+                <Link
+                  href={`/${locale}/commande/paiement?order=${publicId}`}
+                  className="inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors"
+                >
+                  {t('resumePayment')}
+                </Link>
+              </div>
+            )}
+
             <Link
               href={`/${locale}/boutique`}
-              className="inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors"
+              className={
+                publicId
+                  ? 'text-pirate-red hover:underline font-oldstyle'
+                  : 'inline-block bg-pirate-red text-bone px-8 py-3 rounded-lg font-oldstyle text-lg hover:bg-pirate-red-hover transition-colors'
+              }
             >
-              Retourner à la boutique
+              {t('backShop')}
             </Link>
 
             <div>
-              <Link
-                href={`/${locale}`}
-                className="text-pirate-red hover:underline font-oldstyle"
-              >
-                Retour à l&apos;accueil
+              <Link href={`/${locale}`} className="text-pirate-red hover:underline font-oldstyle">
+                {t('backHome')}
               </Link>
             </div>
 
-            <p className="text-sm text-ink pt-4">
-              Besoin d&apos;aide ? Contactez-nous à{' '}
-              <a href="mailto:contact@picaron.fr" className="text-pirate-red hover:underline">
-                contact@picaron.fr
-              </a>
-            </p>
+            <p className="text-sm text-ink pt-4">{t('needHelp', { email: 'contact@picaron.fr' })}</p>
           </div>
         </div>
       </div>

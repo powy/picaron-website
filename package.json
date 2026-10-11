@@ -4,32 +4,51 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:stripe": "node scripts/dev-stripe.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:test": "node --env-file-if-exists=.env.local scripts/db/test-connection.mjs",
+    "db:setup": "node --env-file-if-exists=.env.local scripts/db/setup.mjs",
+    "db:local:up": "docker compose -f infra/local/docker-compose.yml up -d --wait",
+    "db:local:down": "docker compose -f infra/local/docker-compose.yml down",
+    "db:local:reset": "docker compose -f infra/local/docker-compose.yml down -v && docker compose -f infra/local/docker-compose.yml up -d --wait && npm run db:setup",
+    "test": "node --import tsx --test \"lib/**/*.unit.test.ts\" \"scripts/db/*.unit.test.mjs\"",
+    "test:integration": "node --env-file-if-exists=.env.local --import tsx --test --test-concurrency=1 \"lib/**/*.integration.test.ts\" \"scripts/db/*.integration.test.mjs\"",
+    "test:e2e": "playwright test",
+    "build:functions": "node scripts/build-functions.mjs",
+    "tf": "node scripts/terraform.mjs",
+    "smoke": "node --env-file-if-exists=.env.local scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@types/nodemailer": "^7.0.0",
+    "@stripe/react-stripe-js": "^6.12.0",
+    "@stripe/stripe-js": "^9.17.0",
     "autoprefixer": "^10.4.21",
-    "boardgamegeekclient": "^1.9.1",
     "framer-motion": "^12.23.12",
     "next": "^16.0.7",
     "next-intl": "^4.5.8",
-    "nodemailer": "^7.0.5",
+    "nodemailer": "^8",
+    "pg": "^8.23.0",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "stripe": "^22.6.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/nodemailer": "^8",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "baseline-browser-mapping": "^2.9.19",
+    "esbuild": "^0.28.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.7",
     "postcss": "^8",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

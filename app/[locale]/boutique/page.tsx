@@ -1,12 +1,38 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { useCart } from '@/lib/cart-context';
+import { PRODUCTS, ProductId, formatPriceCents } from '@/lib/products';
+import CartPreview from '@/components/cart/CartPreview';
+import CartPreviewBar from '@/components/cart/CartPreviewBar';
+import FranceOnlyNotice from '@/components/checkout/FranceOnlyNotice';
+
+const ADDED_FEEDBACK_MS = 1500;
 
 export default function BoutiquePage() {
   const params = useParams();
   const locale = params.locale as string;
+  const t = useTranslations('cart');
+  const tPreview = useTranslations('cart.preview');
+  const { addItem } = useCart();
+
+  // Brief "added" feedback on the button and in the cart preview, instead of
+  // a popup that would cover the product sheet.
+  const [justAdded, setJustAdded] = useState<ProductId | null>(null);
+  const addedTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const handleAdd = (productId: ProductId) => {
+    addItem(productId, 1);
+    setJustAdded(productId);
+    if (addedTimer.current) clearTimeout(addedTimer.current);
+    addedTimer.current = setTimeout(() => setJustAdded(null), ADDED_FEEDBACK_MS);
+  };
+  useEffect(() => () => {
+    if (addedTimer.current) clearTimeout(addedTimer.current);
+  }, []);
+  const addLabel = (productId: ProductId) => (justAdded === productId ? `✓ ${tPreview('added')}` : t('addToCart'));
 
   // State pour gérer l'image agrandie dans le lightbox
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
@@ -33,21 +59,6 @@ export default function BoutiquePage() {
   };
 
 
-  const handleCheckout_boucanier_nouvellOPTIONEL = () => {
-    // Direct redirect to Stripe payment link (France)
-    window.location.href = 'https://buy.stripe.com/dRmdR8fVY9T31pw45W67S01';
-  };
-
-  const handleCheckout_nouvelle = () => {
-    // Direct redirect to Stripe payment link (France)
-    window.location.href = 'https://buy.stripe.com/6oUfZgh028OZ0ls45W67S02';
-  };
-
-  const handleCheckout_boucanier_nouvelle = () => {
-    // Direct redirect to Stripe payment link (France)
-    window.location.href = 'https://buy.stripe.com/eVqdR84dg2qB0ls6e467S04';
-  };
-
   // Gérer la fermeture du lightbox avec la touche Escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -66,7 +77,10 @@ export default function BoutiquePage() {
         Boutique
       </h1>
 
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Products on the left, cart preview on the right (desktop). Below lg the
+          preview becomes a bottom bar (CartPreviewBar). */}
+      <div className="max-w-7xl mx-auto px-4 py-8 lg:grid lg:grid-cols-[1fr_22rem] lg:gap-10 lg:items-start">
+      <div className="min-w-0">
         <div className="flex flex-col md:flex-row gap-8">
           {/* Galerie d'images - Deuxième sur mobile, gauche sur desktop */}
           <div className="order-2 md:order-1 md:w-1/2 space-y-4">
@@ -96,27 +110,20 @@ export default function BoutiquePage() {
                 </span>
               </div>
 
-              <p className="text-2xl font-semibold text-ink mb-4">69,00 € TTC</p>
+              <p className="text-2xl font-semibold text-ink mb-4">
+                {formatPriceCents(PRODUCTS.boucaniers.priceCents, locale)}
+              </p>
 
-              {/* Boutons de commande */}
+              {/* Bouton d'ajout au panier */}
               <div className="space-y-4 mb-6">
                 <button
-                  onClick={handleCheckout_boucanier_nouvellOPTIONEL}
-                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
+                  onClick={() => handleAdd('boucaniers')}
+                  className="btn-primary-full"
+                  aria-live="polite"
                 >
-                  Commander le Jeu seul
+                  {addLabel('boucaniers')}
                 </button>
-
-                <button
-                  onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
-                >
-                  Commander le jeu et la nouvelle
-                </button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  Paiement sécurisé par Stripe
-                </p>
+                <FranceOnlyNotice />
               </div>
             </div>
 
@@ -174,7 +181,7 @@ export default function BoutiquePage() {
                 className="w-full h-auto"
                 onClick={() => setZoomedImage('/assets/Nouvelle-illustrée-intérieur.png')}
               />
-              <p className="text-center text-sm text-gray-500 italic mt-2">
+              <p className="text-center text-sm text-ink italic mt-2">
                 Cliquer pour agrandir
               </p>
             </div>
@@ -193,26 +200,18 @@ export default function BoutiquePage() {
                 </span>
               </div>
 
-              <p className="text-2xl font-semibold text-ink mb-4">10,00 € TTC</p>
+              <p className="text-2xl font-semibold text-ink mb-4">
+                {formatPriceCents(PRODUCTS.armand.priceCents, locale)}
+              </p>
 
               <div className="space-y-4 mb-6">
                 <button
-                  onClick={handleCheckout_boucanier_nouvelle}
-                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
+                  onClick={() => handleAdd('armand')}
+                  className="btn-primary-full"
+                  aria-live="polite"
                 >
-                  Commander le jeu et la nouvelle
+                  {addLabel('armand')}
                 </button>
-
-                <button
-                  onClick={handleCheckout_nouvelle}
-                  className="w-full bg-forest text-bone py-3 px-6 rounded-lg font-oldstyle text-lg hover:bg-forest-hover transition-colors"
-                >
-                  Commander la nouvelle seule
-                </button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  Paiement sécurisé par Stripe
-                </p>
               </div>
             </div>
 
@@ -242,6 +241,13 @@ export default function BoutiquePage() {
         </div>
 
       </div>
+
+        <div className="hidden lg:block lg:sticky lg:top-20">
+          <CartPreview locale={locale} highlightId={justAdded} />
+        </div>
+      </div>
+
+      <CartPreviewBar locale={locale} />
 
       {/* Lightbox Modal */}
       {zoomedImage && (

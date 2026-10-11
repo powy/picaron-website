@@ -1,0 +1,35 @@
+# Local stand-ins for the Scaleway / email services — see
+# shop update plan/12-environnements-et-mode-test.md.
+# Usage: npm run db:local:up / npm run db:local:down (from picaron_web_2).
+services:
+  # Scaleway Serverless SQL Database is wire-compatible Postgres.
+  postgres:
+    image: postgres:16-alpine
+    container_name: picaron-db-local
+    environment:
+      POSTGRES_USER: picaron
+      POSTGRES_PASSWORD: picaron
+      POSTGRES_DB: picaron_commandes
+    ports:
+      # Host port 5433, not 5432: avoids clashing with a native Postgres
+      # install already using 5432 on the host.
+      - '5433:5432'
+    volumes:
+      - picaron_db_local:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U picaron -d picaron_commandes']
+      interval: 2s
+      timeout: 3s
+      retries: 15
+
+  # Catch-all SMTP server: every email the site sends lands here instead of a
+  # real inbox. Web UI: http://localhost:8025 — SMTP on localhost:1025.
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: picaron-mailpit-local
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+
+volumes:
+  picaron_db_local:
