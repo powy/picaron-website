@@ -1,0 +1,67 @@
+# PICARON SOURCE-AVAILABLE LICENSE
+
+Copyright (c) 2025-2026 Picaron SARL. All rights reserved.
+
+This repository is public so that people can read it. It is NOT open source. Only the permissions listed in section 1 are granted. Everything else is reserved, subject to applicable law.
+
+This license applies to all versions of this repository, including its history.
+
+### 1. WHAT YOU MAY DO
+
+a. Read, browse and study the source code and documentation, for personal, educational or reference purposes.
+
+b. Fork this repository on GitHub, and view your fork, as GitHub's Terms of Service allow for public repositories. A fork is for viewing only and remains subject to this license.
+
+c. Quote short excerpts of the code or documentation for the purpose of discussion, criticism or review, with a mention of the source.
+
+### 2. WHAT YOU MAY NOT DO
+
+Except as expressly permitted in section 1 or by applicable law, you may not, without the prior written permission of Picaron SARL:
+
+a. Copy, reproduce, modify, adapt, translate, merge or create derivative works of the code, in whole or in part.
+
+b. Run, deploy, host or make available the code, or any derivative of it, as a website, a shop, a service or an application, publicly or privately, for any purpose other than reading or studying it as permitted in section 1.
+
+c. Distribute, publish, sublicense, sell, rent or otherwise make the code available to third parties.
+
+d. Use, reproduce or adapt any substantial portion of the source code to develop or operate a website, application or service that imitates or competes with the Picaron website or shop.
+
+### 3. BRAND AND CONTENT: NOT LICENSED
+
+No rights to use, reproduce, modify, display, distribute or commercially exploit the following materials are granted by this license, except as permitted by applicable law or under a separate license from the relevant rights holder:
+
+- the names "Picaron" and "Boucaniers", and all other names, trademarks, logos and visual identity of Picaron SARL and of its products;
+- the artwork, illustrations, images, animations, videos, card and board-game designs, game rules, texts, translations and other content of the website and of the game;
+- fonts and other assets that belong to Picaron SARL or to their authors.
+
+Nothing in this license grants any rights in trademarks or in the content above, and no such rights can be implied from the fact that these materials are published here.
+
+The names and logos may not be used in any way that suggests affiliation with, or endorsement by, Picaron SARL.
+
+### 4. THIRD-PARTY COMPONENTS
+
+Third-party components (for example npm packages and fonts) remain under their own licenses, which apply to them instead of this one.
+
+### 5. NO WARRANTY
+
+The repository is provided "as is", without warranty of any kind. Picaron SARL is not liable for any damage arising from its use, to the extent permitted by law.
+
+### 6. TERMINATION
+
+Any breach of this license ends the permissions in section 1 automatically.
+
+### 7. MANDATORY LAW
+
+Nothing in this license restricts rights that applicable law gives you and that cannot be waived by contract (for example statutory exceptions to copyright).
+
+### 8. SEVERABILITY
+
+If any provision of this license is held invalid or unenforceable, the remaining provisions remain in full force and effect.
+
+### 9. GOVERNING LAW AND JURISDICTION
+
+This license is governed by French law. Any dispute relating to it falls under the jurisdiction of the courts of the registered office of Picaron SARL, without prejudice to any mandatory rules of law that provide otherwise.
+
+### 10. PERMISSIONS
+
+To request permission for anything not allowed above, contact Picaron SARL through the contact page of the Picaron website.
