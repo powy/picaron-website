@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/assets/LogoPICARONJ1Pour_Fond_Sombre3.png">
-    <img src="public/assets/PICARON_LOGO.png" alt="Picaron" width="240">
+    <source media="(prefers-color-scheme: dark)" srcset="public/assets/LogoPICARONJ1Pour_Fond_Sombre3.webp">
+    <img src="public/assets/PICARON_LOGO.webp" alt="Picaron" width="240">
   </picture>
 </p>
 
