@@ -19,21 +19,21 @@ export async function generateMetadata({
 const teamMembers = [
   {
     id: 'vincent',
-    image: '/team/Vinz.png',
+    image: '/team/Vinz.webp',
     name: 'Vincent Tellier',
     role: 'Capitaine & Créateur',
     description: 'Concepteur du jeu Boucaniers et de ses mécaniques, auteur des illustrations, modéleur des figurines. Mordu d\'histoire.'
   },
   {
     id: 'remi',
-    image: '/team/remi.png',
+    image: '/team/remi.webp',
     name: 'Rémi Durand',
     role: 'Maître Charpentier',
     description: 'Fabricant des figurines. Ingénieur chevronné et pointilleux. Expert en impression 3D, assure la qualité de fabrication.'
   },
   {
     id: 'thierry',
-    image: '/team/thierry.png',
+    image: '/team/thierry.webp',
     name: 'Thierry Durand',
     role: 'Quartier-maître',
     description: 'Concepteur de l\'idée première de Boucaniers, éternel insatisfait, qui dépouille le jeu de chaque défaut.'
@@ -80,7 +80,7 @@ export default function TeamPage() {
 
       <div className="max-w-4xl mx-auto mt-12">
         <Image
-          src="/assets/PICARON_LOGO.png"
+          src="/assets/PICARON_LOGO.webp"
           alt="Logo Picaron"
           width={589}
           height={391}

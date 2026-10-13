@@ -171,22 +171,22 @@ export default function BoutiquePage() {
           <div className="order-2 md:order-1 md:w-1/2 space-y-4">
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
-                src="/assets/Nouvelle-illustrée.png"
+                src="/assets/Nouvelle-illustrée.webp"
                 alt="Armand ou Les Rêveurs du Nouveau Monde - Couverture"
                 width={600}
                 height={800}
                 className="w-full h-auto"
-                onClick={() => setZoomedImage('/assets/Nouvelle-illustrée.png')}
+                onClick={() => setZoomedImage('/assets/Nouvelle-illustrée.webp')}
               />
             </div>
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
-                src="/assets/Nouvelle-illustrée-intérieur.png"
+                src="/assets/Nouvelle-illustrée-intérieur.webp"
                 alt="Armand ou Les Rêveurs du Nouveau Monde - Intérieur"
                 width={600}
                 height={800}
                 className="w-full h-auto"
-                onClick={() => setZoomedImage('/assets/Nouvelle-illustrée-intérieur.png')}
+                onClick={() => setZoomedImage('/assets/Nouvelle-illustrée-intérieur.webp')}
               />
               <p className="text-center text-sm text-ink italic mt-2">
                 Cliquer pour agrandir

@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import SocialLinks from '@/components/SocialLinks'
-import Image from 'next/image'
 import Link from 'next/link'
 
 export default function CommentJouerPage() {
@@ -37,12 +36,16 @@ export default function CommentJouerPage() {
                 En fonction de la rose des vents, choisissez votre cap et votre vitesse en secret sur vos compas. Toujours en ligne droite,
                 chaque navire ayant une vitesse maximum. Puis révélez vos compas tous en même temps. Vos navires sont ensuite déplacés comme prévu.
               </p>
-              <Image
-                src="/boucanier3/boucaniers 3_fichiers/image015.gif"
-                alt="Phase de navigation"
+              <video
+                src="/boucanier3/boucaniers 3_fichiers/image015.mp4"
+                aria-label="Phase de navigation"
                 width={605}
                 height={340}
                 className="mx-auto"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </div>
 
@@ -87,12 +90,16 @@ export default function CommentJouerPage() {
                 une marchandise et ils réapparaissent à l'opposé du plateau. Quand le Rougeaud passe au large du Bastion Rouge, sa prise vaut 15 pièces !
                 Un événement à ne pas manquer si l'on cherche la victoire aux 25 !
               </p>
-              <Image
-                src="/boucanier3/boucaniers 3_fichiers/image016.gif"
-                alt="Compagnies des Indes"
+              <video
+                src="/boucanier3/boucaniers 3_fichiers/image016.mp4"
+                aria-label="Compagnies des Indes"
                 width={605}
                 height={340}
                 className="mx-auto"
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </div>
 

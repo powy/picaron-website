@@ -25,8 +25,8 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: 'armand',
     kind: 'novel',
     priceCents: 1000,
-    image: '/assets/Nouvelle-illustrée.png',
-    thumbnail: '/assets/Nouvelle-illustrée.png',
+    image: '/assets/Nouvelle-illustrée.webp',
+    thumbnail: '/assets/Nouvelle-illustrée.webp',
   },
 };
 
