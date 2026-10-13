@@ -87,12 +87,12 @@ export default function BoutiquePage() {
             {/* Image du matériel */}
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
-                src="/MatérielTransparent.png"
+                src="/assets/boucaniers/materiel-transparent-v3.png"
                 alt="Matériel Boucaniers"
                 width={600}
                 height={800}
                 className="w-full h-auto"
-                onClick={() => setZoomedImage('/MatérielTransparent.png')}
+                onClick={() => setZoomedImage('/assets/boucaniers/materiel-transparent-v3.png')}
               />
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function BoutiquePage() {
                 recrutez, pillez et commercez en prenant garde aux Compagnies des Indes.
                 Le dénouement n&apos;est jamais certain et chaque tour donne le frisson !
               </p>
-              <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
+              <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international : Nous contacter directement.</p>
 
               {/* Liens vers les pages légales */}
               <div className="text-sm text-ink space-y-1">
@@ -221,7 +221,7 @@ export default function BoutiquePage() {
                 Armand ou Les Rêveurs du Nouveau Monde se plonge dans la vie et les pensées des contemporains du siècle des Lumières, sentant les préludes des chamboulements de l&apos;Ancien Monde quand le Nouveau éclot déjà. Cette nouvelle illustrée introduit le jeu de société Boucaniers. Texte et illustrations par VINCENT TELLIER.
               </p>
 
-               <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international: Nous contacter directement.</p>
+               <p>Livraison en France, prévue sous 15 jours indicatifs. Livraison à l'international : Nous contacter directement.</p>
 
               {/* Liens vers les pages légales */}
               <div className="text-sm text-ink space-y-1">

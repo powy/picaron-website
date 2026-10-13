@@ -723,7 +723,7 @@ export default function HomePage() {
         <p className="text-body-on-light text-center mb-8">Qu'y a-t-il dans la boîte ?</p>
         <div className="w-full mb-16 max-w-2xl mx-auto">
           <Image
-            src="/MatérielTransparent.png"
+            src="/assets/boucaniers/materiel-transparent-v3.png"
             alt="Contenu de la boîte"
             width={800}
             height={600}

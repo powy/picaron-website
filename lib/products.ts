@@ -15,7 +15,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: 'boucaniers',
     kind: 'game',
     priceCents: 6900,
-    image: '/MatérielTransparent.png',
+    image: '/assets/boucaniers/materiel-transparent-v3.png',
   },
   armand: {
     id: 'armand',

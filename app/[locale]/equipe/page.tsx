@@ -77,6 +77,16 @@ export default function TeamPage() {
           </div>
         ))}
       </div>
+
+      <div className="max-w-4xl mx-auto mt-12">
+        <Image
+          src="/assets/PICARON_LOGO.png"
+          alt="Logo Picaron"
+          width={589}
+          height={391}
+          className="w-1/2 md:w-1/3 h-auto mx-auto"
+        />
+      </div>
     </div>
   )
 }
