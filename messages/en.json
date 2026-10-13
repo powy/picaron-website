@@ -297,6 +297,11 @@
   "testBanner": {
     "text": "Test environment ({env}) — no real payment"
   },
+  "bgg": {
+    "label": "Player rating on",
+    "ariaLabel": "Rated {rating} out of 10 on BoardGameGeek (new tab)",
+    "checkedAt": "BoardGameGeek rating checked on {date}"
+  },
   "payment": {
     "title": "Payment",
     "loading": "Preparing payment…",
