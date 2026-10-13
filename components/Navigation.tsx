@@ -34,7 +34,7 @@ const ChevronIcon = ({ className }: { className?: string }) => (
 
 const ShoppingBagIcon = ({ isActive }: { isActive: boolean }) => (
   <Image
-    src={isActive ? '/assets/Shopping_panier_blanc.png' : '/assets/Shopping_panier.png'}
+    src={isActive ? '/assets/Shopping_panier_blanc.webp' : '/assets/Shopping_panier.webp'}
     alt=""
     width={32}
     height={32}
@@ -117,7 +117,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-12 lg:h-14">
           <Link href="/" className="flex items-center h-12 lg:h-14 leading-none">
             <Image
-              src="/assets/LogoPICARONJ1Pour_Fond_Sombre3.png"
+              src="/assets/LogoPICARONJ1Pour_Fond_Sombre3.webp"
               alt="Picaron"
               width={90}
               height={90}

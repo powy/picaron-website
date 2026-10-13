@@ -16,7 +16,7 @@ export default function HomePage() {
       <div className="absolute top-0 right-0 bottom-0 w-full pointer-events-none hidden md:block z-0">
         <div className="max-w-6xl mx-auto px-4 h-full relative">
           <Image
-            src="/assets-presentation/0_Singe_rallongé_petit.gif"
+            src="/assets-presentation/0_Singe_rallongé_petit.webp"
             alt=""
             width={800}
             height={905}
@@ -94,11 +94,16 @@ export default function HomePage() {
         {/* Main Presentation Image - Moved from Top */}
         <div className="max-w-full mx-auto mb-16">
           <div className="w-full">
-            <Image
-              src="/Présentation-KS2-transparent.png"
+            {/* Plain <img>: images are unoptimized, so next/image would not emit this srcset. */}
+            <img
+              src="/presentation/presentation-ks2-2180.webp"
+              srcSet="/presentation/presentation-ks2-1080.webp 1080w, /presentation/presentation-ks2-1600.webp 1600w, /presentation/presentation-ks2-2180.webp 2180w"
+              sizes="(min-width: 1152px) 1120px, calc(100vw - 2rem)"
               alt="Présentation Boucaniers"
-              width={1200}
-              height={900}
+              width={2180}
+              height={5320}
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto max-w-none"
             />
           </div>
@@ -127,7 +132,7 @@ export default function HomePage() {
             <div
               className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:auto_100%] md:[background-size:100%_100%]"
               style={{
-                backgroundImage: 'url(/Tache-rouge-avec-texture.png)',
+                backgroundImage: 'url(/Tache-rouge-avec-texture.webp)',
               }}
             />
 
@@ -219,7 +224,7 @@ export default function HomePage() {
               <div
               className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:auto_100%] md:[background-size:100%_100%]"
               style={{
-                backgroundImage: 'url(/3-Fond-bleu-avec-texture2.png)',
+                backgroundImage: 'url(/3-Fond-bleu-avec-texture2.webp)',
               }}
             /> 
 
@@ -299,7 +304,7 @@ export default function HomePage() {
                   {/* Column 3: New sea wolf image (right) - 1 col on mobile, 1.5fr on desktop */}
                   <div className="w-full">
                     <Image
-                      src="/assets-presentation/4_Vieux_Loup_de_mer_transparent_petit.gif"
+                      src="/assets-presentation/4_Vieux_Loup_de_mer_transparent_petit.webp"
                       alt="Vieux loup de mer"
                       width={700}
                       height={816}
@@ -311,7 +316,7 @@ export default function HomePage() {
                   {/* Bottom row: Player count banner - spans 2 cols on mobile, 3 on desktop */}
                   <div className="col-span-2 md:col-span-3 w-full flex justify-center mt-4 md:mt-0">
                     <Image
-                      src="/assets-presentation/4_nombre_de_joueurs.gif"
+                      src="/assets-presentation/4_nombre_de_joueurs.webp"
                       alt="Nombre de joueurs"
                       width={640}
                       height={94}
@@ -333,7 +338,7 @@ export default function HomePage() {
             <div
               className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:auto_100%] md:[background-size:100%_100%]"
               style={{
-                backgroundImage: 'url(/Tache-rouge-avec-texture.png)',
+                backgroundImage: 'url(/Tache-rouge-avec-texture.webp)',
               }}
             />
 
@@ -354,7 +359,7 @@ export default function HomePage() {
                   {/* Right: Two Images Stacked */}
                   <div className="w-full md:w-[50%]">
                     <Image
-                      src="/boucanier3/boucaniers 3_fichiers/5-rejouabilite.gif"
+                      src="/boucanier3/boucaniers 3_fichiers/5-rejouabilite.webp"
                       alt="Variabilité du jeu"
                       width={605}
                       height={340}
@@ -411,7 +416,7 @@ export default function HomePage() {
 
                   <div className="w-full md:w-1/2">
                     <Image
-                      src="/boucanier3/boucaniers 3_fichiers/7-Indices-ile superposes.gif"
+                      src="/boucanier3/boucaniers 3_fichiers/7-Indices-ile superposes.webp"
                       alt="Mécanisme de fouille"
                       width={605}
                       height={340}
@@ -431,7 +436,7 @@ export default function HomePage() {
             <div
               className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:auto_100%] md:[background-size:100%_100%]"
               style={{
-                backgroundImage: 'url(/8-a-CORRECTED-Petite-Tache-TEXTUREE.png',
+                backgroundImage: 'url(/8-a-CORRECTED-Petite-Tache-TEXTUREE.webp',
               }}
             />
 
@@ -464,7 +469,7 @@ export default function HomePage() {
                   {/* 2. Three episodes illustration */}
                   <div className="w-full max-w-4xl">
                     <Image
-                      src="/assets-presentation/8 Episodes-d_Armand.png"
+                      src="/assets-presentation/8 Episodes-d_Armand.webp"
                       alt="Épisodes d'Armand le Baratineur"
                       width={1200}
                       height={400}
@@ -477,7 +482,7 @@ export default function HomePage() {
                     {/* Book image */}
                     <div className="w-full md:w-auto">
                       <Image
-                        src="/assets-presentation/8-Nouvelle-illustrée-intérieur.png"
+                        src="/assets-presentation/8-Nouvelle-illustrée-intérieur.webp"
                         alt="Nouvelle illustrée - Les Récits du Nouveau Monde"
                         width={1200}
                         height={800}
@@ -510,7 +515,7 @@ export default function HomePage() {
             <div
               className="absolute inset-0 pointer-events-none bg-center bg-no-repeat opacity-100 z-0 [background-size:cover] md:[background-size:100%_100%]"
               style={{
-                backgroundImage: 'url(/Tache-rouge-avec-texture.png)',
+                backgroundImage: 'url(/Tache-rouge-avec-texture.webp)',
               }}
             />
 
@@ -522,7 +527,7 @@ export default function HomePage() {
                     <div className="grid grid-cols-[1fr_0.5fr] md:grid-cols-[1fr_0.25fr_0.25fr] gap-2 md:gap-4 lg:gap-4 items-center ">
                         <h3 className="heading-section-on-dark text-right self-end">GAMEPLAY SOPHISTIQUÉ</h3>
                         <Image
-                          src="/boucanier3/boucaniers 3_fichiers/9-zephyr.png"
+                          src="/boucanier3/boucaniers 3_fichiers/9-zephyr.webp"
                           alt="Mécanisme de fouille"
                           width={605}
                           height={340}
@@ -532,7 +537,7 @@ export default function HomePage() {
                     {/* Grid: 3 column for tex t+ image on each side TODO: in mobile, put both icon on an extra row on top*/}
                     <div className="grid grid-cols-[0.5fr_1fr] md:grid-cols-[0.25fr_1fr_0.25fr] gap-2 md:gap-4 lg:gap-4 items-center">
                         <Image
-                          src="/boucanier3/boucaniers 3_fichiers/9-poseidon.png"
+                          src="/boucanier3/boucaniers 3_fichiers/9-poseidon.webp"
                           alt="Mécanisme de fouille"
                           width={605}
                           height={340}
@@ -542,7 +547,7 @@ export default function HomePage() {
                         Le jeu mêle stratégie de placement, planification sur plusieurs tours, combinaisons infinies et combos ingénieux, sens du sacrifice, gestion de ressources, des combats et surtout... du <span className="text-highlight-on-dark">BLUFF</span> !
                         </p>
                         <Image
-                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-droite.png"
+                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-droite.webp"
                           alt="Mécanisme de fouille"
                           width={605}
                           height={340}
@@ -563,7 +568,7 @@ export default function HomePage() {
                     <div className="grid grid-cols-[1fr_0.25fr] md:grid-cols-[0.25fr_0.25fr_1fr] gap-2 md:gap-4 lg:gap-4 items-center">
 				      <div className="hidden md:block" />
                       <Image
-                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-gauche.png"
+                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-gauche.webp"
                           alt="Mécanisme de fouille"
                           width={605}
                           height={340}
@@ -573,7 +578,7 @@ export default function HomePage() {
                         Ici, ce sont vos décisions, <span className="text-highlight-on-dark">et non le hasaRd</span>, <br />qui dictent l'issue de la partie.
                       </p>
                       <Image
-                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-gauche.png"
+                          src="/boucanier3/boucaniers 3_fichiers/9-Petit-bateau-gauche.webp"
                           alt="Mécanisme de fouille"
                           width={605}
                           height={340}
@@ -638,7 +643,7 @@ export default function HomePage() {
             <div
               className="absolute inset-0 pointer-events-none bg-right bg-no-repeat opacity-100 z-0 [background-size:190%_100%] md:[background-size:100%_125%] lg:[background-size:125%_125%] translate-y-[0%] md:translate-y-[-10%] lg:translate-y-[-22%]"
               style={{
-                backgroundImage: 'url(/11-Tache-d_encre-bleue-TEXTURÉE.png)',
+                backgroundImage: 'url(/11-Tache-d_encre-bleue-TEXTURÉE.webp)',
               }}
             />
 			
