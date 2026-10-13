@@ -73,10 +73,6 @@ export default function BoutiquePage() {
 
   return (
     <div className="mt-8">
-      <h1 className="title-page">
-        Boutique
-      </h1>
-
       {/* Products on the left, cart preview on the right (desktop). Below lg the
           preview becomes a bottom bar (CartPreviewBar). */}
       <div className="max-w-7xl mx-auto px-4 py-8 lg:grid lg:grid-cols-[1fr_22rem] lg:gap-10 lg:items-start">
@@ -84,15 +80,26 @@ export default function BoutiquePage() {
         <div className="flex flex-col md:flex-row gap-8">
           {/* Galerie d'images - Deuxième sur mobile, gauche sur desktop */}
           <div className="order-2 md:order-1 md:w-1/2 space-y-4">
-            {/* Image du matériel */}
+            {/* Boîte du jeu */}
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
               <Image
-                src="/assets/boucaniers/materiel-transparent-v3.png"
-                alt="Matériel Boucaniers"
-                width={600}
-                height={800}
+                src={PRODUCTS.boucaniers.image}
+                alt="Boîte du jeu Boucaniers"
+                width={1600}
+                height={1323}
                 className="w-full h-auto"
-                onClick={() => setZoomedImage('/assets/boucaniers/materiel-transparent-v3.png')}
+                onClick={() => setZoomedImage(PRODUCTS.boucaniers.image)}
+              />
+            </div>
+            {/* Matériel du jeu */}
+            <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
+              <Image
+                src="/boutique/boucaniers-materiel.webp"
+                alt="Matériel Boucaniers"
+                width={1099}
+                height={2256}
+                className="w-full h-auto"
+                onClick={() => setZoomedImage('/boutique/boucaniers-materiel.webp')}
               />
             </div>
           </div>
@@ -101,7 +108,7 @@ export default function BoutiquePage() {
           <div className="contents md:block md:w-1/2 md:space-y-4">
             {/* Header (nom + commande) - Premier sur mobile */}
             <div className="order-1">
-              <h2 className="text-3xl font-oldstyle text-pirate-red mb-2">Boucaniers</h2>
+              <h1 className="text-3xl font-oldstyle text-pirate-red mb-2">Boucaniers</h1>
 
               {/* Stock status */}
               <div className="mb-3">

@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import ProductJsonLd from './ProductJsonLd'
 
 export async function generateMetadata({
   params
@@ -15,10 +16,19 @@ export async function generateMetadata({
   }
 }
 
-export default function BoutiqueLayout({
-  children
+export default async function BoutiqueLayout({
+  children,
+  params
 }: {
   children: React.ReactNode
+  params: Promise<{ locale: string }>
 }) {
-  return <>{children}</>
+  const { locale } = await params
+
+  return (
+    <>
+      <ProductJsonLd locale={locale} />
+      {children}
+    </>
+  )
 }

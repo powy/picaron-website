@@ -31,8 +31,8 @@ export default function HomePage() {
       <div className="relative z-10">
 
         {/* Title section */}
-        <section className="text-center pb-4 mb-4 md:py-8 md:mb-8">
-        <Link href="/fr/boutique" className="block mb-4 md:mb-6">
+        <section className="text-center pb-4 mb-2 md:py-8 md:mb-2">
+        <Link href="/fr/boutique" className="block mb-2 md:mb-2">
           <h1 className="title-page">
             Le jeu Boucaniers disponible !
           </h1>
@@ -721,12 +721,12 @@ export default function HomePage() {
 
         <h2 className="title-section">Matériel</h2>
         <p className="text-body-on-light text-center mb-8">Qu'y a-t-il dans la boîte ?</p>
-        <div className="w-full mb-16 max-w-2xl mx-auto">
+        <div className="w-full mb-16 max-w-md mx-auto">
           <Image
-            src="/assets/boucaniers/materiel-transparent-v3.png"
+            src="/boutique/boucaniers-materiel.webp"
             alt="Contenu de la boîte"
-            width={800}
-            height={600}
+            width={1099}
+            height={2256}
             className="w-full h-auto"
           />
         </div>

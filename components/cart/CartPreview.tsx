@@ -89,13 +89,12 @@ function CartPreviewLine({ item, locale, highlighted }: { item: CartItem; locale
       }`}
       data-testid={`cart-preview-line-${item.productId}`}
     >
-      {/* object-top: the Boucaniers picture shows the box at the top of the material spread. */}
       <Image
-        src={product.image}
+        src={product.thumbnail}
         alt=""
         width={56}
         height={56}
-        className="w-14 h-14 rounded object-cover object-top bg-bone flex-shrink-0"
+        className="w-14 h-14 object-contain flex-shrink-0"
       />
 
       <div className="flex-grow min-w-0 space-y-1">
