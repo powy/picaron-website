@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
 import SocialLinks from '@/components/SocialLinks'
+import BggRatingBadge from '@/components/BggRatingBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -45,6 +46,11 @@ export default function HomePage() {
           Commander
         </Link>
       </section>
+
+        {/* BoardGameGeek rating */}
+        <div className="flex justify-center mb-2">
+          <BggRatingBadge />
+        </div>
 
         {/* Banner and video sections  */}
         <div className="max-w-6xl mx-auto px-4">
