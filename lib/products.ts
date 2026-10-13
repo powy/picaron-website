@@ -7,7 +7,10 @@ export interface Product {
   id: ProductId;
   kind: ProductKind;
   priceCents: number;
+  /** Full-size picture (shop zoom, Google product data). */
   image: string;
+  /** Small version of `image` for cart thumbnails. */
+  thumbnail: string;
 }
 
 export const PRODUCTS: Record<ProductId, Product> = {
@@ -15,13 +18,15 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: 'boucaniers',
     kind: 'game',
     priceCents: 6900,
-    image: '/MatérielTransparent.png',
+    image: '/boutique/boucaniers-packshot.webp',
+    thumbnail: '/boutique/boucaniers-packshot-thumb.webp',
   },
   armand: {
     id: 'armand',
     kind: 'novel',
     priceCents: 1000,
     image: '/assets/Nouvelle-illustrée.png',
+    thumbnail: '/assets/Nouvelle-illustrée.png',
   },
 };
 

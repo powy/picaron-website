@@ -14,7 +14,7 @@ export default function CartItemRow({ item, locale }: { item: CartItem; locale: 
   return (
     <div className="flex items-center gap-4 py-4 border-b border-parchment">
       <Image
-        src={product.image}
+        src={product.thumbnail}
         alt={t(`products.${item.productId}.name`)}
         width={80}
         height={80}
