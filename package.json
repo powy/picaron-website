@@ -19,7 +19,8 @@
     "test:e2e": "playwright test",
     "build:functions": "node scripts/build-functions.mjs",
     "tf": "node scripts/terraform.mjs",
-    "smoke": "node --env-file-if-exists=.env.local scripts/smoke-test.mjs"
+    "smoke": "node --env-file-if-exists=.env.local scripts/smoke-test.mjs",
+    "ci": "node scripts/ci-local.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
