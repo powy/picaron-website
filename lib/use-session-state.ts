@@ -18,13 +18,14 @@ export function useSessionState<T>(
     try {
       const raw = window.sessionStorage.getItem(key);
       if (raw !== null) {
+        // Read after mount on purpose: sessionStorage does not exist during SSR.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setValue(JSON.parse(raw));
       }
     } catch {
       // ignore corrupted/unavailable storage, keep initial
     }
     setHasHydrated(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [key]);
 
   useEffect(() => {

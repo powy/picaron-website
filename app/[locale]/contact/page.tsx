@@ -25,6 +25,8 @@ export default function ContactPage() {
   }
 
   useEffect(() => {
+    // Random numbers after mount on purpose: during SSR they would not match the client.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     generateMathQuestion()
   }, [])
 

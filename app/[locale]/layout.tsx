@@ -4,7 +4,7 @@ import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import TestModeBanner from '@/components/TestModeBanner'
 import CartProvider from '@/lib/cart-context'
-import { locales } from '@/i18n'
+import { locales, type Locale } from '@/i18n'
 
 export default async function LocaleLayout({
   children,
@@ -14,7 +14,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  if (!locales.includes(locale as any)) notFound()
+  if (!locales.includes(locale as Locale)) notFound()
   
   const messages = (await import(`@/messages/${locale}.json`)).default
 

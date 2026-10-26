@@ -29,7 +29,8 @@ test('the EmailJS email is tagged FIXME in subject and body and keeps the custom
 });
 
 test('the EmailJS transport calls the REST API with the contact-template fields', async (t) => {
-  const calls: { url: string; body: any }[] = [];
+  type EmailJsBody = { service_id: string; template_id: string; user_id: string; accessToken: string; template_params: Record<string, string> };
+  const calls: { url: string; body: EmailJsBody }[] = [];
   t.mock.method(globalThis, 'fetch', async (url: string, init: { body: string }) => {
     calls.push({ url, body: JSON.parse(init.body) });
     return new Response('OK', { status: 200 });

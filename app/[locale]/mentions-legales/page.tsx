@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function MentionsLegales() {
   return (
     <div className="mt-8">
@@ -70,9 +72,9 @@ export default function MentionsLegales() {
             </p>
             <p className="mt-4">
               Pour plus d&apos;informations, consultez notre{' '}
-              <a href="/fr/politique-confidentialite" className="text-pirate-red underline">
+              <Link href="/fr/politique-confidentialite" className="text-pirate-red underline">
                 Politique de Confidentialité
-              </a>.
+              </Link>.
             </p>
           </section>
 
