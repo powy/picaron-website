@@ -1,6 +1,8 @@
 # Merge queue: a PR is merged once CI is green, re-tested on top of the
 # latest main first. The check names are the job names of
-# .github/workflows/ci.yml; keep them in sync.
+# .github/workflows/ci.yml; keep them in sync. Merged branches are deleted by
+# GitHub's "Automatically delete head branches" repository setting (Mergify's
+# delete_head_branch action is deprecated).
 
 shared:
   ci_checks: &ci_checks
@@ -39,12 +41,6 @@ pull_request_rules:
     actions:
       queue:
         name: default
-
-  - name: Delete the branch after merge
-    conditions:
-      - merged
-    actions:
-      delete_head_branch: {}
 
   - name: Flag PRs in conflict with main
     conditions:
