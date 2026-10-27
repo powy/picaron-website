@@ -74,7 +74,7 @@ function PaymentContent() {
   return (
     <div className="mt-8">
       <h1 className="title-page">{t('title')}</h1>
-      <div className="max-w-2xl mx-auto px-4 py-8 space-y-6">
+      <div className="max-w-2xl mx-auto px-4 py-8 stack-y-6">
         {state.kind === 'loading' && <p className="text-center text-ink">{t('loading')}</p>}
         {state.kind === 'notFound' && <p className="text-center text-ink">{t('notFound')}</p>}
         {state.kind === 'error' && (

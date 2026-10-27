@@ -39,7 +39,7 @@ export default function MockRelayPicker({ onSelect }: MockRelayPickerProps) {
   };
 
   return (
-    <div className="border-2 border-dashed border-wood rounded p-4 space-y-4" data-testid="mock-relay-picker">
+    <div className="border-2 border-dashed border-wood rounded-sm p-4 stack-y-4" data-testid="mock-relay-picker">
       <p className="text-sm text-ink italic">{t('notice')}</p>
 
       <div className="flex gap-2">
@@ -65,11 +65,11 @@ export default function MockRelayPicker({ onSelect }: MockRelayPickerProps) {
       </div>
 
       {results.length > 0 && (
-        <ul className="space-y-2">
+        <ul className="stack-y-2">
           {results.map((relay) => (
             <li
               key={relay.ID}
-              className={`flex flex-wrap items-center justify-between gap-2 border-2 rounded p-3 ${
+              className={`flex flex-wrap items-center justify-between gap-2 border-2 rounded-sm p-3 ${
                 selectedId === relay.ID ? 'border-pirate-red bg-parchment/30' : 'border-wood'
               }`}
             >

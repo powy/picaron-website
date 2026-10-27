@@ -18,7 +18,7 @@ export default function FAQPage() {
 
 
           {/* Questions Container */}
-          <div className="faq-container">
+          <div className="stack-y-8">
             {/* Question 1 */}
             <div className="faq-item border-t border-gold pt-6">
               <h3 className="heading-faq-question">

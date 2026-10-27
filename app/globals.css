@@ -1,6 +1,60 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+/* Tailwind v3 defaults that v4 changed (from the official upgrade guide):
+   borders were gray-200 instead of currentColor, buttons had a pointer
+   cursor, placeholders were gray-400. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-gray-400);
+  }
+}
+
+/* Tailwind v3's space-y-*, which v4 changed: v4 puts a margin-bottom on every
+   child but the last, replacing the margin-bottom of p and li (and of mb-*)
+   instead of adding to it. Use stack-y-* rather than space-y-* on this site. */
+@utility stack-y-* {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-top: calc(var(--spacing) * --value(integer));
+    margin-bottom: 0;
+  }
+}
+
+/* Same for space-x-*: v3 put the margin on the left of every child but the
+   first. */
+@utility stack-x-* {
+  & > :not([hidden]) ~ :not([hidden]) {
+    margin-left: calc(var(--spacing) * --value(integer));
+    margin-right: 0;
+  }
+}
+
+/* tailwind.config.ts overrides these sizes with a font-size only, so in v3
+   they set no line-height; v4 would add its default one. */
+@theme {
+  --text-sm--line-height: initial;
+  --text-base--line-height: initial;
+  --text-lg--line-height: initial;
+  --text-xl--line-height: initial;
+  --text-2xl--line-height: initial;
+  --text-3xl--line-height: initial;
+  --text-4xl--line-height: initial;
+  --text-5xl--line-height: initial;
+}
 
 html, body {
   margin: 0;
@@ -24,193 +78,196 @@ html, body {
   font-display: swap;
 }
 
-:root {
-  --color-ink: #0c0c0d;
-  --color-parchment: #f2e8d5;
-  --color-pirate-red: #8b2020;
-  --color-gold: #d4a574;
-  --color-sea-mist: #1e3a3a;
-  --color-navy: #1a2332;
-  --color-bone: #faf8f3;
-  --color-wood: #3e2f2a;
-  --color-copper: #4e7c7b;
-}
+/* Element defaults sit in the base layer: in Tailwind v4, unlayered CSS would
+   override every utility class. */
+@layer base {
+  :root {
+    --color-ink: #0c0c0d;
+    --color-parchment: #f2e8d5;
+    --color-pirate-red: #8b2020;
+    --color-sea-mist: #1e3a3a;
+    --color-navy: #1a2332;
+    --color-bone: #faf8f3;
+    --color-wood: #3e2f2a;
+    --color-copper: #4e7c7b;
+  }
 
-body {
-  font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
-  color: var(--color-ink);
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1.6;
-}
+  body {
+    font-family: var(--font-garamond), 'EB Garamond', Georgia, serif;
+    color: var(--color-ink);
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.6;
+  }
 
-.text-shadow {
-  /* text-shadow removed */
-}
+  .text-shadow {
+    /* text-shadow removed */
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-garamont), serif;
-  font-weight: 900;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-garamont), serif;
+    font-weight: 900;
+  }
 
-h1 {
-  font-size: 2.5rem;      /* Mobile: 40px */
-  line-height: 1.1;
-}
-@media (min-width: 768px) {
-  h1 { font-size: 5rem; } /* Desktop: 80px */
-}
+  h1 {
+    font-size: 2.5rem;      /* Mobile: 40px */
+    line-height: 1.1;
+  }
+  @media (min-width: 768px) {
+    h1 { font-size: 5rem; } /* Desktop: 80px */
+  }
 
-h2 {
-  font-size: 2rem;        /* Mobile: 32px */
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  h2 { font-size: 4rem; } /* Desktop: 64px */
-}
+  h2 {
+    font-size: 2rem;        /* Mobile: 32px */
+    line-height: 1.2;
+  }
+  @media (min-width: 768px) {
+    h2 { font-size: 4rem; } /* Desktop: 64px */
+  }
 
-h3 {
-  font-size: 1.8rem;      /* Mobile: 29px */
-  line-height: 1.2;
-}
-@media (min-width: 768px) {
-  h3 { font-size: 3.2rem; }
-}
+  h3 {
+    font-size: 1.8rem;      /* Mobile: 29px */
+    line-height: 1.2;
+  }
+  @media (min-width: 768px) {
+    h3 { font-size: 3.2rem; }
+  }
 
-h4 {
-  font-size: 1.5rem;      /* Mobile: 24px */
-  line-height: 1.3;
-}
-@media (min-width: 768px) {
-  h4 { font-size: 2.6rem; }
-}
+  h4 {
+    font-size: 1.5rem;      /* Mobile: 24px */
+    line-height: 1.3;
+  }
+  @media (min-width: 768px) {
+    h4 { font-size: 2.6rem; }
+  }
 
-h5 {
-  font-size: 1.3rem;      /* Mobile: 21px */
-  line-height: 1.3;
-}
-@media (min-width: 768px) {
-  h5 { font-size: 2.2rem; }
-}
+  h5 {
+    font-size: 1.3rem;      /* Mobile: 21px */
+    line-height: 1.3;
+  }
+  @media (min-width: 768px) {
+    h5 { font-size: 2.2rem; }
+  }
 
-h6 {
-  font-size: 1.1rem;      /* Mobile: 18px */
-  line-height: 1.4;
-}
-@media (min-width: 768px) {
-  h6 { font-size: 1.8rem; }
-}
+  h6 {
+    font-size: 1.1rem;      /* Mobile: 18px */
+    line-height: 1.4;
+  }
+  @media (min-width: 768px) {
+    h6 { font-size: 1.8rem; }
+  }
 
-button, .btn {
-  font-family: var(--font-garamont), serif;
-  font-size: 1.6rem;
-  font-weight: 900;
-  padding: 1rem 2rem;
-}
+  button, .btn {
+    font-family: var(--font-garamont), serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    padding: 1rem 2rem;
+  }
 
-nav a {
-  font-family: var(--font-garamont), serif;
-  font-size: 2rem;
-  font-weight: 900;
-}
+  nav a {
+    font-family: var(--font-garamont), serif;
+    font-size: 2rem;
+    font-weight: 900;
+  }
 
-.font-granjon {
-  font-family: var(--font-granjon), serif;
-}
+  .font-granjon {
+    font-family: var(--font-granjon), serif;
+  }
 
-.font-garamond {
-  font-family: var(--font-garamond), serif;
-}
+  .font-garamond {
+    font-family: var(--font-garamond), serif;
+  }
 
-/* Paragraph and text sizing */
-p {
-  font-family: var(--font-garamond), serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-}
+  /* Paragraph and text sizing */
+  p {
+    font-family: var(--font-garamond), serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
 
-/* List styling */
-ul, ol {
-  font-family: var(--font-garamond), serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  line-height: 1.7;
-}
+  /* List styling */
+  ul, ol {
+    font-family: var(--font-garamond), serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.7;
+  }
 
-li {
-  margin-bottom: 0.6rem;
-  font-weight: 900;
-}
+  li {
+    margin-bottom: 0.6rem;
+    font-weight: 900;
+  }
 
-/* Link styling */
-a {
-  font-size: 1.4rem;
-  font-weight: 900;
-}
+  /* Link styling */
+  a {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
 
-/* Menu items - extra large */
-.menu-item {
-  font-size: 2.2rem;
-  font-weight: normal;
-  padding: 1.2rem 2rem;
-}
+  /* Menu items - extra large */
+  .menu-item {
+    font-size: 2.2rem;
+    font-weight: normal;
+    padding: 1.2rem 2rem;
+  }
 
-/* Mobile menu items - even bigger */
-.mobile-menu-item {
-  font-size: 2.6rem;
-  font-weight: normal;
-  padding: 1.5rem 1.5rem;
-}
+  /* Mobile menu items - even bigger */
+  .mobile-menu-item {
+    font-size: 2.6rem;
+    font-weight: normal;
+    padding: 1.5rem 1.5rem;
+  }
 
-/* Text content styling */
-div, span {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 900;
-}
+  /* Text content styling */
+  div, span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 900;
+  }
 
-/* Label styling */
-label {
-  font-family: var(--font-granjon), serif;
-  font-size: 1.4rem;
-  font-weight: 900;
-}
+  /* Label styling */
+  label {
+    font-family: var(--font-granjon), serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
 
-/* Input styling */
-input, textarea, select {
-  font-family: var(--font-garamond), serif;
-  font-size: 1.3rem;
-  font-weight: 900;
-  padding: 0.8rem 1.2rem;
-}
+  /* Input styling */
+  input, textarea, select {
+    font-family: var(--font-garamond), serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: 0.8rem 1.2rem;
+  }
 
-/* Strong emphasis */
-strong, b {
-  font-weight: 900;
-}
+  /* Strong emphasis */
+  strong, b {
+    font-weight: 900;
+  }
 
-/* All text should be maximum bold */
-* {
-  font-weight: 900;
-}
+  /* All text should be maximum bold */
+  * {
+    font-weight: 900;
+  }
 
-::-webkit-scrollbar {
-  width: 12px;
-}
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
 
-::-webkit-scrollbar-track {
-  background: var(--color-parchment);
-}
+  ::-webkit-scrollbar-track {
+    background: var(--color-parchment);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-wood);
-  border-radius: 6px;
-}
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-wood);
+    border-radius: 6px;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-pirate-red);
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-pirate-red);
+  }
 }
 
 /* ================================
@@ -238,11 +295,11 @@ strong, b {
   
   /* light background variant */
   .text-section-on-light {
-	  @apply w-full md:w-[50%] lg:w-[40%] space-y-6 text-left;
+	  @apply w-full md:w-[50%] lg:w-[40%] text-left;
   }
   /* Dark background variant */
   .text-section-on-dark {
-    @apply w-full md:w-[50%] lg:w-[40%] space-y-6 text-right;
+    @apply w-full md:w-[50%] lg:w-[40%] text-right;
   }
 
   /* === SECTION HEADINGS === */
@@ -324,11 +381,11 @@ strong, b {
   }
 
   .btn-secondary {
-    @apply bg-pirate-red hover:bg-pirate-red-hover text-bone font-oldstyle rounded transition;
+    @apply bg-pirate-red hover:bg-pirate-red-hover text-bone font-oldstyle rounded-sm transition;
   }
 
   .btn-secondary-full {
-    @apply w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50;
+    @apply w-full bg-pirate-red text-bone py-3 rounded-sm font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50;
   }
 
   .btn-secondary-lg {
@@ -361,7 +418,7 @@ strong, b {
 
   /* === SECTIONS === */
   .section-spacing {
-    @apply space-y-12;
+    @apply stack-y-12;
   }
 
   .section-divider {
@@ -370,7 +427,7 @@ strong, b {
 
   /* === FORMS === */
   .input-field {
-    @apply w-full px-4 py-2 border-2 rounded bg-bone border-wood;
+    @apply w-full px-4 py-2 border-2 rounded-sm bg-bone border-wood;
   }
 
   .label-field {
@@ -413,7 +470,7 @@ strong, b {
 
   /* === LEGAL PAGES === */
   .legal-content {
-    @apply prose prose-lg max-w-none text-ink space-y-8;
+    @apply max-w-none text-ink stack-y-8;
   }
 
   .legal-section-heading {
@@ -431,10 +488,6 @@ strong, b {
 
   .faq-item {
     @apply border-b border-gold pb-6;
-  }
-
-  .faq-container {
-    @apply space-y-8;
   }
 
   /* === DROPDOWN NAVIGATION === */

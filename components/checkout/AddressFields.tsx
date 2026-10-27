@@ -47,7 +47,7 @@ export default function AddressFields({ idPrefix, values, errors, touched, onCha
   };
 
   return (
-    <div className="space-y-4">
+    <div className="stack-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {renderField('lastName')}
         {renderField('firstName')}

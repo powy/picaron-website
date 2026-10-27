@@ -64,7 +64,7 @@ export default function CommandeAdressePage() {
     return (
       <div className="mt-8">
         <h1 className="title-page">{t('title')}</h1>
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4">
+        <div className="max-w-2xl mx-auto px-4 py-16 text-center stack-y-4">
           <p className="text-2xl font-oldstyle text-pirate-red">{tCart('empty.title')}</p>
           <p className="text-lg text-ink">{tCart('empty.message')}</p>
           <Link href={`/${locale}/boutique`} className="btn-primary-rounded inline-block mt-4">
@@ -131,8 +131,8 @@ export default function CommandeAdressePage() {
         {shippingMethod === 'colissimo' ? t('deliveryAddressTitle') : t('title')}
       </h1>
 
-      <div className="max-w-7xl mx-auto px-4 py-8 space-y-10">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+      <div className="max-w-7xl mx-auto px-4 py-8 stack-y-10">
+        <form className="stack-y-6" onSubmit={handleSubmit}>
           <div className="flex flex-wrap justify-between gap-x-4 gap-y-1 text-sm text-ink">
             <p>{t('requiredHint')}</p>
             <FranceOnlyNotice />
@@ -225,7 +225,7 @@ export default function CommandeAdressePage() {
         <div className="border-t-2 border-parchment pt-6">
           <h2 className="font-oldstyle text-xl text-pirate-red mb-4">{t('orderSummary')}</h2>
 
-          <div className="space-y-2">
+          <div className="stack-y-2">
             {items.map((item) => (
               <div key={item.productId} className="flex justify-between text-ink">
                 <span>

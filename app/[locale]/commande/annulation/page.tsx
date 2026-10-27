@@ -43,7 +43,7 @@ function CancelContent() {
             <p className="text-sm text-gray-600 italic">{t('tip')}</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="stack-y-4">
             {publicId && (
               <div>
                 <Link

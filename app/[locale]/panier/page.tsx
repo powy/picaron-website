@@ -44,7 +44,7 @@ export default function PanierPage() {
     return (
       <div className="mt-8">
         <h1 className="title-page">{t('title')}</h1>
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-4">
+        <div className="max-w-2xl mx-auto px-4 py-16 text-center stack-y-4">
           <p className="text-2xl font-oldstyle text-pirate-red">{t('empty.title')}</p>
           <p className="text-lg text-ink">{t('empty.message')}</p>
           <Link href={`/${locale}/boutique`} className="btn-primary-rounded inline-block mt-4">
@@ -60,7 +60,7 @@ export default function PanierPage() {
       <h1 className="title-page">{t('title')}</h1>
 
       <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 space-y-10">
+        <div className="lg:col-span-2 stack-y-10">
           <div>
             {items.map((item) => (
               <CartItemRow key={item.productId} item={item} locale={locale} />
@@ -91,7 +91,7 @@ export default function PanierPage() {
         </div>
 
         <div className="lg:col-span-1">
-          <div className="space-y-4 border-2 border-parchment rounded-lg p-6">
+          <div className="stack-y-4 border-2 border-parchment rounded-lg p-6">
             <div className="flex justify-between items-center text-ink">
               <span>{t('summary.itemsSubtotal')}</span>
               <span>{formatPriceCents(subtotalCents, locale)}</span>

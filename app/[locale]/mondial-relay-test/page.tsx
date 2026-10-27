@@ -20,7 +20,7 @@ export default function MondialRelayTestPage() {
         {BRAND_CODE === 'BDTEST' && ' (code de test public, en attente du vrai code Mondial Relay du contrat Picaron)'}
       </p>
 
-      <ul className="text-sm text-ink font-oldstyle mb-6 list-disc pl-5 space-y-1">
+      <ul className="text-sm text-ink font-oldstyle mb-6 list-disc pl-5 stack-y-1">
         <li>Le widget doit s'afficher correctement au chargement</li>
         <li>Une recherche par code postal doit retourner des résultats</li>
         <li>La sélection d'un point relais doit logger les données en console</li>

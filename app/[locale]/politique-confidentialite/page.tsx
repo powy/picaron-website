@@ -4,7 +4,7 @@ export default function PolitiqueConfidentialite() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="title-page">Politique de Confidentialité</h1>
 
-        <div className="prose prose-lg max-w-none text-ink space-y-8">
+        <div className="prose prose-lg max-w-none text-ink stack-y-8">
           <section>
             <h2 className="heading-section-on-light">1. Responsable du traitement</h2>
             <p>Le responsable du traitement des données personnelles est :</p>
@@ -18,7 +18,7 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="heading-section-on-light">2. Données que nous collectons</h2>
             <p>Nous collectons uniquement les données strictement nécessaires aux finalités suivantes :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
+            <ul className="list-disc list-inside stack-y-1 ml-4">
               <li>Inscription à la newsletter : adresse email.</li>
               <li>Traitement des paiements : nom, email, adresse de facturation, informations de paiement (via Stripe).</li>
             </ul>
@@ -31,7 +31,7 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="heading-section-on-light">3. Finalités des traitements</h2>
             <p>Les données personnelles sont utilisées pour :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
+            <ul className="list-disc list-inside stack-y-1 ml-4">
               <li>envoyer la newsletter à la demande de l&apos;utilisateur ;</li>
               <li>traiter et sécuriser les paiements via Stripe ;</li>
               <li>envoyer les emails de confirmation de commande.</li>
@@ -44,7 +44,7 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="heading-section-on-light">4. Sous-traitants</h2>
             <p>Nous utilisons les prestataires suivants :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
+            <ul className="list-disc list-inside stack-y-1 ml-4">
               <li>
                 Stripe Payments Europe : traitement des paiements. Politique de confidentialité :{' '}
                 <a href="https://stripe.com/fr/privacy" className="text-pirate-red underline" target="_blank" rel="noopener noreferrer">
@@ -67,7 +67,7 @@ export default function PolitiqueConfidentialite() {
 
           <section>
             <h2 className="heading-section-on-light">6. Durée de conservation</h2>
-            <ul className="list-disc list-inside space-y-1 ml-4">
+            <ul className="list-disc list-inside stack-y-1 ml-4">
               <li>Email de newsletter : conservé tant que vous êtes inscrit. Vous pouvez vous désinscrire à tout moment en nous contactant via le formulaire.</li>
               <li>Données de paiement : conservées uniquement par Stripe conformément à leurs obligations légales.</li>
             </ul>

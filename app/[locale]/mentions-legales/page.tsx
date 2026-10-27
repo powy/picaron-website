@@ -6,7 +6,7 @@ export default function MentionsLegales() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="title-page">Mentions légales</h1>
 
-        <div className="prose prose-lg max-w-none text-ink space-y-8">
+        <div className="prose prose-lg max-w-none text-ink stack-y-8">
           <section>
             <h2 className="heading-section-on-light">1. Éditeur du site</h2>
             <p>Le site https://picaron.fr/ est édité par :</p>
@@ -53,7 +53,7 @@ export default function MentionsLegales() {
           <section>
             <h2 className="heading-section-on-light">4. Données personnelles</h2>
             <p>Les données personnelles collectées sur le site sont traitées par Picaron SARL pour les finalités suivantes :</p>
-            <ul className="list-disc list-inside space-y-1 ml-4">
+            <ul className="list-disc list-inside stack-y-1 ml-4">
               <li>traitement des commandes,</li>
               <li>gestion du service client,</li>
               <li>envoi de la newsletter (inscription volontaire).</li>

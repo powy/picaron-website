@@ -42,7 +42,7 @@ export default function MockPaymentForm({ paymentIntentId, onSucceeded, onFailed
   };
 
   return (
-    <div className="border-2 border-dashed border-yellow-500 bg-yellow-50/60 rounded p-4 space-y-3" data-testid="mock-payment-form">
+    <div className="border-2 border-dashed border-yellow-500 bg-yellow-50/60 rounded-sm p-4 stack-y-3" data-testid="mock-payment-form">
       <p className="font-oldstyle text-lg text-ink">{t('mock.title')}</p>
       <p className="text-sm text-ink">{t('mock.hint')}</p>
       {OUTCOMES.map(({ outcome, labelKey, className }) => (

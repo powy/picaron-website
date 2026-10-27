@@ -65,7 +65,7 @@ function PaymentForm({ returnUrl, payLabel, onSucceeded, onFailed }: StripePayme
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="stack-y-4">
       <PaymentElement />
       <button
         type="submit"

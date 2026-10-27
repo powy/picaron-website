@@ -93,7 +93,7 @@ export default function MondialRelayPicker({ onSelect }: MondialRelayPickerProps
       )}
 
       <input type="hidden" id="mr-widget-target" />
-      <div ref={widgetZoneRef} id="mr-widget-zone" className="border-2 border-wood rounded min-h-[400px]" />
+      <div ref={widgetZoneRef} id="mr-widget-zone" className="border-2 border-wood rounded-sm min-h-[400px]" />
     </>
   )
 }

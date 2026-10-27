@@ -56,7 +56,7 @@ export default async function LocaleLayout({
             <div className="relative z-10 flex flex-col min-h-screen">
               <CartProvider>
                 <Navigation />
-                <main className="w-full mx-auto pt-12 lg:pt-14 flex-grow">
+                <main className="w-full mx-auto pt-12 lg:pt-14 grow">
                   {children}
                 </main>
               </CartProvider>
