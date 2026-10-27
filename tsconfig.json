@@ -3,7 +3,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "es6"
+      "es2023"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,7 +21,6 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./*"

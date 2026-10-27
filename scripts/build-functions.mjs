@@ -16,7 +16,7 @@ await build({
   outfile: path.join(outDir, 'handler.js'),
   bundle: true,
   platform: 'node',
-  target: 'node22',
+  target: 'node24',
   format: 'cjs',
   // pg's optional native binding is never used.
   external: ['pg-native'],

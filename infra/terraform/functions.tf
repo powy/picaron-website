@@ -66,7 +66,7 @@ data "archive_file" "api" {
 resource "scaleway_function" "api" {
   namespace_id = scaleway_function_namespace.backend.id
   name         = "api"
-  runtime      = "node22"
+  runtime      = "node24"
   handler      = "handler.handle"
   privacy      = "public"
   http_option  = "redirected"
