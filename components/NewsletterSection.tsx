@@ -26,11 +26,11 @@ export default function NewsletterSection() {
           placeholder={t('placeholder')}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="flex-1 px-3 py-2 rounded bg-bone text-ink"
+          className="flex-1 px-3 py-2 rounded-sm bg-bone text-ink"
         />
         <button
           type="submit"
-          className="w-full sm:w-auto bg-pirate-red px-6 py-2 rounded hover:bg-pirate-red-hover transition font-oldstyle text-shadow whitespace-nowrap"
+          className="w-full sm:w-auto bg-pirate-red px-6 py-2 rounded-sm hover:bg-pirate-red-hover transition font-oldstyle text-shadow whitespace-nowrap"
         >
           {t('submit')}
         </button>

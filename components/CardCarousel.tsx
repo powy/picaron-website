@@ -40,7 +40,7 @@ export default function CardCarousel() {
         {tripleCards.map((card, index) => (
           <div
             key={`${card.id}-${index}`}
-            className="flex-shrink-0 w-[280px] md:w-[330px] lg:w-[380px]"
+            className="shrink-0 w-[280px] md:w-[330px] lg:w-[380px]"
           >
             <div className="aspect-[773/1080] w-full">
               <Image

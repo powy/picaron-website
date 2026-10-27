@@ -126,7 +126,7 @@ export default function ContactPage() {
         Contact
       </h1>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="stack-y-6">
         <div>
           <label className="block text-ink font-oldstyle mb-2">
             Nom
@@ -135,7 +135,7 @@ export default function ContactPage() {
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({...formData, name: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+            className={`w-full px-4 py-2 border-2 rounded-sm bg-bone ${
               errors.name ? 'border-red-500' : 'border-wood'
             }`}
           />
@@ -152,7 +152,7 @@ export default function ContactPage() {
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({...formData, email: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+            className={`w-full px-4 py-2 border-2 rounded-sm bg-bone ${
               errors.email ? 'border-red-500' : 'border-wood'
             }`}
           />
@@ -169,7 +169,7 @@ export default function ContactPage() {
             type="text"
             value={formData.subject}
             onChange={(e) => setFormData({...formData, subject: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+            className={`w-full px-4 py-2 border-2 rounded-sm bg-bone ${
               errors.subject ? 'border-red-500' : 'border-wood'
             }`}
           />
@@ -186,7 +186,7 @@ export default function ContactPage() {
             rows={6}
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
-            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+            className={`w-full px-4 py-2 border-2 rounded-sm bg-bone ${
               errors.message ? 'border-red-500' : 'border-wood'
             }`}
           />
@@ -205,7 +205,7 @@ export default function ContactPage() {
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
             placeholder="Votre réponse"
-            className={`w-full px-4 py-2 border-2 rounded bg-bone ${
+            className={`w-full px-4 py-2 border-2 rounded-sm bg-bone ${
               errors.captcha ? 'border-red-500' : 'border-wood'
             }`}
           />
@@ -217,7 +217,7 @@ export default function ContactPage() {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full bg-pirate-red text-bone py-3 rounded font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50"
+          className="w-full bg-pirate-red text-bone py-3 rounded-sm font-oldstyle text-xl hover:bg-pirate-red-hover transition disabled:opacity-50"
         >
           {status === 'loading' ? 'Envoi...' : 'Envoyer votre message'}
         </button>

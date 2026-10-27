@@ -20,7 +20,7 @@ export default function CommentJouerPage() {
           </div>
         </div>
 
-        <div className="space-y-8">
+        <div className="stack-y-8">
           <p className="text-body-on-light">
             Au début de la partie, chacun choisit un bateau et un boucanier. Grâce à la frise des indices, on détermine au hasard l'île au trésor
             sans la révéler. Les tuiles sont placées aléatoirement pour former le plateau de jeu.
@@ -29,7 +29,7 @@ export default function CommentJouerPage() {
             Chaque tour se divise en cinq phases que les joueurs jouent simultanément :
           </p>
 
-          <div className="space-y-8">
+          <div className="stack-y-8">
             <div>
               <h3 className="heading-section-on-light">Navigation</h3>
               <p className="text-body-on-light mb-6">

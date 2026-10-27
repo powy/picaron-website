@@ -10,9 +10,9 @@ export default function OrderSummaryCard({ order, locale }: { order: OrderSummar
   const tCart = useTranslations('cart');
 
   return (
-    <div className="bg-parchment/30 rounded-lg p-6 text-left space-y-3">
+    <div className="bg-parchment/30 rounded-lg p-6 text-left stack-y-3">
       <h2 className="font-oldstyle font-semibold text-2xl text-pirate-red">{t('summaryTitle')}</h2>
-      <div className="space-y-1">
+      <div className="stack-y-1">
         {order.items.map((item) => (
           <div key={item.productId} className="flex justify-between text-ink">
             <span>

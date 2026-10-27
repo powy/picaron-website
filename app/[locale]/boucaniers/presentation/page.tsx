@@ -118,7 +118,7 @@ export default function HomePage() {
         </div>
 
         {/* Full-width background sections */}
-        <div className="space-y-12">
+        <div className="stack-y-12">
           {/* Example of -on-dark variant for dark backgrounds */}
           {/* JOUEZ EN SIMULTANÉ Section with Red Overlay */}
           <div className="relative w-full min-h-[1200px] md:min-h-[1100px] lg:min-h-[1500px]">
@@ -136,7 +136,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
 
                   {/* Left: Text */}
-                  <div className="text-section-on-dark">
+                  <div className="text-section-on-dark stack-y-6">
                     <h3 className="heading-section-on-dark">JOUEZ EN<br/> SIMULTANÉ</h3>
                     <p className="text-body-on-dark mb-6">
                       Pour des parties pleines de <span className="text-highlight-on-dark">BLUFF</span><br/> et de <span className="text-highlight-on-dark">SUSPENSE</span> !</p>
@@ -198,7 +198,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Right: Text */}
-                  <div className="text-section-on-light">
+                  <div className="text-section-on-light stack-y-6">
                     <h3 className="heading-section-on-light">MÉCANIQUE FLUIDE</h3>
                     <p className="text-body-on-light mb-6">
                       Si des bateaux sont en contact,<br />
@@ -228,7 +228,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
 
                   {/* Left: Text */}
-                  <div className="text-section-on-dark">
+                  <div className="text-section-on-dark stack-y-6">
                     <h3 className="heading-section-on-dark">UNE ÉPOPÉE À 2 OBJECTIFS</h3>
                     <p className="text-body-on-dark mb-6">
                       Déterrez le <span className="text-highlight-on-dark">trésor</span> d'Armand<br />  avant les autres<br /> <span className="text-highlight-on-dark">ou</span> amassez 25 <span className="text-highlight-on-dark">pièces</span>.</p>
@@ -287,7 +287,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Column 2: Text content - 1 col on mobile, 1 on desktop */}
-                  <div className="w-full space-y-6">
+                  <div className="w-full stack-y-6">
                     <h3 className="heading-section-on-light">PROFONDEUR DE JEU</h3>
                     <p className="text-body-on-light mb-6">
                       Des îles aux actions <span className="text-highlight-on-light">uniques</span>, des <span className="text-highlight-on-light">combos</span> infinis, des navires <span className="text-highlight-on-light">asymétRiques</span>.<br />
@@ -323,9 +323,9 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div> {/* End space-y-12 for full-width sections */}
+        </div> {/* End stack-y-12 for full-width sections */}
 
-        <div className="space-y-12">
+        <div className="stack-y-12">
           {/* JOUABILITÉ ET REJOUABILITÉ Section with Red Overlay */}
           <div className="relative w-full min-h-[1500px] md:min-h-[850px] lg:min-h-[1500px]">
             {/* Try 5: Red ink stain overlay - Like Try 1 but less transparent */}
@@ -342,7 +342,7 @@ export default function HomePage() {
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
 
                   {/* Left: Text */}
-                  <div className="w-full md:w-[50%] space-y-6 text-right">
+                  <div className="w-full md:w-[50%] stack-y-6 text-right">
                     <h3 className="heading-section-on-dark">JOUABILITÉ ET REJOUABILITÉ</h3>
                     <p className="text-body-on-dark mb-6">
                       Chaque partie est unique grâce au <span className="text-highlight-on-dark">plateau modulable</span>, à l'asymétrie des 10 navires et aux 24 boucaniers uniques.<br />
@@ -366,11 +366,11 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div> {/* End space-y-12 wrapper */}
+        </div> {/* End stack-y-12 wrapper */}
 
         <h2 className="title-section">Fabrication d'excellence</h2>
 
-        <div className="space-y-4">
+        <div className="stack-y-4">
           {/* UNIVERS IMMERSIF - Section 1: Les indices forment une frise continue */}
           <div className="relative w-full min-h-[300px] md:min-h-[300px] lg:min-h-[300px]">
 
@@ -378,7 +378,7 @@ export default function HomePage() {
             {/* Vertically centered content container */}
             <div className="relative z-10 flex items-center min-h-[300px] md:min-h-[300px] lg:min-h-[300px]">
               <div className="max-w-7xl mx-auto px-4 pt-8 pb-4 w-full">
-                <div className="max-w-3xl mx-auto text-center space-y-4">
+                <div className="max-w-3xl mx-auto text-center stack-y-4">
                   <h3 className="heading-section-on-light">UNIVERS IMMERSIF</h3>
                   <p className="text-body-on-light mb-6">
                     Les indices forment une frise continue. Elle permet de cacher le trésor sur une île au hasard avant la partie. <br />
@@ -502,7 +502,7 @@ export default function HomePage() {
           </div>
 
           {/* GAMEPLAY SOPHISTIQUÉ  */}
-                  <div className="space-y-12">
+                  <div className="stack-y-12">
 
           <div className="relative w-full min-h-[1200px] md:min-h-[950px] lg:min-h-[1500px]">
 
@@ -516,7 +516,7 @@ export default function HomePage() {
             {/* Vertically almost-on-top (3% padding on top) content container */}
             <div className="relative z-10 flex items-center min-h-[1200px] md:min-h-[950px] lg:min-h-[1500px]">
               <div className="mx-auto px-4 pt-24 md:py-20 w-full">
-                <div className="space-y-6 pt-50 mx-auto ">
+                <div className="stack-y-6 mx-auto ">
                     {/* Grid: 2 columns for text+ image on right. TODO: center the thing, currently i had to add an extra 3rd column to have an aliignment, it's bad.*/}
                     <div className="grid grid-cols-[1fr_0.5fr] md:grid-cols-[1fr_0.25fr_0.25fr] gap-2 md:gap-4 lg:gap-4 items-center ">
                         <h3 className="heading-section-on-dark text-right self-end">GAMEPLAY SOPHISTIQUÉ</h3>
@@ -614,7 +614,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Right: Text */}
-                  <div className="w-full md:w-1/2 space-y-6">
+                  <div className="w-full md:w-1/2 stack-y-6">
                     <p className="heading-section-on-light">FIGURINES FAITES MAISON</p>
                      <p className="text-body-on-light mb-6">
                       Sculptées en réalité virtuelle et imprimées en 3D en PLA, 
@@ -661,7 +661,7 @@ export default function HomePage() {
                     />
 					</video>
                   </div>
-                  <div className="w-full md:w-1/2 space-y-6">
+                  <div className="w-full md:w-1/2 stack-y-6">
                     <p className="heading-section-on-dark">FIDÉLITÉ HISTORIQUE</p>
                     <p className="text-body-on-dark mb-6">
                       Apprenez-en plus sur l'Histoire de la marine et de la boucane aux <span className="text-highlight-on-dark">CaRaïbes.</span></p>
@@ -706,7 +706,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Right: Text */}
-                         <div className="w-full md:w-1/2 space-y-6">
+                         <div className="w-full md:w-1/2 stack-y-6">
                     <p className="heading-section-on-light">DRAPEAUX PERSONNALISABLES</p>
                     <p className="text-body-on-light mb-6">
                       Les fanions de couleur seront livrés vierges. Vous pourrez <span className="text-highlight-on-light">dessiner</span> sur les pavillons ou en imprimer d'autres !

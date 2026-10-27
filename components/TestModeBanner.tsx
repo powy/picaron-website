@@ -13,7 +13,7 @@ export default function TestModeBanner() {
   return (
     <div
       role="status"
-      className="fixed top-14 right-2 z-40 rounded bg-yellow-300 px-3 py-1 text-xs font-semibold text-black shadow"
+      className="fixed top-14 right-2 z-40 rounded-sm bg-yellow-300 px-3 py-1 text-xs font-semibold text-black shadow-sm"
     >
       {t('text', { env: APP_ENV })}
     </div>

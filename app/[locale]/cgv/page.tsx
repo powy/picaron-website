@@ -4,7 +4,7 @@ export default function CGV() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <h1 className="title-page">Conditions Générales de Vente</h1>
 
-        <div className="prose prose-lg max-w-none text-ink space-y-8">
+        <div className="prose prose-lg max-w-none text-ink stack-y-8">
           <section>
             <h2 className="heading-section-on-light">1. Identification du vendeur</h2>
             <p>Le site https://picaron.fr/ est exploité par :</p>

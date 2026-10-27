@@ -18,10 +18,10 @@ export default function CartItemRow({ item, locale }: { item: CartItem; locale: 
         alt={t(`products.${item.productId}.name`)}
         width={80}
         height={80}
-        className="w-20 h-20 object-contain flex-shrink-0"
+        className="w-20 h-20 object-contain shrink-0"
       />
 
-      <div className="flex-grow min-w-0">
+      <div className="grow min-w-0">
         <p className="font-oldstyle text-lg text-ink truncate">
           {t(`products.${item.productId}.name`)}
         </p>
@@ -58,7 +58,7 @@ export default function CartItemRow({ item, locale }: { item: CartItem; locale: 
         type="button"
         onClick={() => removeItem(item.productId)}
         aria-label={t('aria.removeItem')}
-        className="link-pirate text-sm flex-shrink-0"
+        className="link-pirate text-sm shrink-0"
       >
         {t('remove')}
       </button>

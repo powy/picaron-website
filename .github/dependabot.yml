@@ -1,4 +1,6 @@
 # Weekly grouped update PRs; each one goes through CI like any other PR.
+# At most one npm PR for minor/patch updates (queued automatically by
+# Mergify) and one for major updates (needs a review), never one per package.
 version: 2
 updates:
   - package-ecosystem: npm
@@ -9,6 +11,12 @@ updates:
     groups:
       minor-and-patch:
         update-types: [minor, patch]
+      major:
+        update-types: [major]
+    ignore:
+      # Matches the Node version of .nvmrc; bump both together.
+      - dependency-name: '@types/node'
+        update-types: [version-update:semver-major]
 
   - package-ecosystem: github-actions
     directory: /
@@ -22,3 +30,6 @@ updates:
     directory: /infra/terraform
     schedule:
       interval: weekly
+    groups:
+      terraform:
+        patterns: ['*']

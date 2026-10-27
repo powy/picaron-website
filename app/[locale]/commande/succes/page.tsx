@@ -109,7 +109,7 @@ function SuccessContent() {
   }
   if (state.kind === 'notFound') {
     return (
-      <div className="mt-16 text-center space-y-4">
+      <div className="mt-16 text-center stack-y-4">
         <p className="text-ink">{t('notFound')}</p>
         <Link href={`/${locale}/boutique`} className="link-pirate">
           {t('backShop')}
@@ -123,7 +123,7 @@ function SuccessContent() {
 
   return (
     <div className="mt-8">
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center space-y-6" data-testid={`order-status-${order.status}`}>
+      <div className="max-w-2xl mx-auto px-4 py-16 text-center stack-y-6" data-testid={`order-status-${order.status}`}>
         {isPaid && (
           <>
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
@@ -159,7 +159,7 @@ function SuccessContent() {
         {isPaid && (
           <div className="bg-parchment/30 rounded-lg p-6 text-left">
             <h2 className="font-oldstyle font-semibold text-2xl text-pirate-red mb-4">{t('nextSteps')}</h2>
-            <ul className="space-y-3 text-ink">
+            <ul className="stack-y-3 text-ink">
               {(['email', 'delivery', 'tracking'] as const).map((step) => (
                 <li key={step} className="flex items-center gap-3">
                   <StepIcon name={step} />
