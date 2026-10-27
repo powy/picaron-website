@@ -1,0 +1,54 @@
+# Merge queue: a PR is merged once CI is green, re-tested on top of the
+# latest main first. The check names are the job names of
+# .github/workflows/ci.yml; keep them in sync. Merged branches are deleted by
+# GitHub's "Automatically delete head branches" repository setting (Mergify's
+# delete_head_branch action is deprecated).
+
+shared:
+  ci_checks: &ci_checks
+    - check-success = Lint, types, unit tests
+    - check-success = Integration and e2e tests
+    - check-success = Terraform fmt and validate
+    - check-success = Dependency audit and secret scan
+
+queue_rules:
+  - name: default
+    merge_method: squash
+    queue_conditions: *ci_checks
+    merge_conditions: *ci_checks
+
+pull_request_rules:
+  - name: Queue reviewed PRs once CI is green
+    conditions:
+      - base = main
+      - -draft
+      - "#approved-reviews-by >= 1"
+      - "#changes-requested-reviews-by = 0"
+      - -conflict
+    actions:
+      queue:
+        name: default
+
+  # Grouped minor/patch updates only (see .github/dependabot.yml); majors
+  # still need a review.
+  - name: Queue Dependabot minor and patch updates
+    conditions:
+      - base = main
+      - author = dependabot[bot]
+      - head ~= ^dependabot/(npm_and_yarn|github_actions)/
+      - head ~= (minor-and-patch|actions)
+      - -conflict
+    actions:
+      queue:
+        name: default
+
+  - name: Flag PRs in conflict with main
+    conditions:
+      - conflict
+      - -closed
+    actions:
+      label:
+        toggle:
+          - conflict
+      comment:
+        message: This PR conflicts with `main`; please rebase or merge `main` into it.

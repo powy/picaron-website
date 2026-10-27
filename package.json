@@ -8,7 +8,7 @@
     "dev:stripe": "node scripts/dev-stripe.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "db:test": "node --env-file-if-exists=.env.local scripts/db/test-connection.mjs",
     "db:setup": "node --env-file-if-exists=.env.local scripts/db/setup.mjs",
     "db:local:up": "docker compose -f infra/local/docker-compose.yml up -d --wait",
@@ -19,7 +19,8 @@
     "test:e2e": "playwright test",
     "build:functions": "node scripts/build-functions.mjs",
     "tf": "node scripts/terraform.mjs",
-    "smoke": "node --env-file-if-exists=.env.local scripts/smoke-test.mjs"
+    "smoke": "node --env-file-if-exists=.env.local scripts/smoke-test.mjs",
+    "ci": "node scripts/ci-local.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -51,5 +52,8 @@
     "tailwindcss": "^3.4.1",
     "tsx": "^4.23.15",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

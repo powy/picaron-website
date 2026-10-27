@@ -47,6 +47,8 @@ export default function CartProvider({ children }: { children: ReactNode }) {
   const [hasHydrated, setHasHydrated] = useState(false);
 
   useEffect(() => {
+    // Read after mount on purpose: localStorage does not exist during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(readStoredItems());
     setHasHydrated(true);
   }, []);

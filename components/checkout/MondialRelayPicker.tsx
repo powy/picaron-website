@@ -6,6 +6,8 @@ import type { ParcelShopData } from '@/lib/checkout/order'
 
 export type { ParcelShopData }
 
+// Untyped third-party globals loaded by the Mondial Relay widget scripts.
+/* eslint-disable @typescript-eslint/no-explicit-any */
 declare global {
   interface Window {
     $?: any
@@ -13,6 +15,7 @@ declare global {
     L?: any
   }
 }
+/* eslint-enable @typescript-eslint/no-explicit-any */
 
 const BRAND_CODE = process.env.NEXT_PUBLIC_MONDIAL_RELAY_BRAND_CODE || 'BDTEST'
 
@@ -34,7 +37,9 @@ export default function MondialRelayPicker({ onSelect }: MondialRelayPickerProps
   const widgetZoneRef = useRef<HTMLDivElement>(null)
   const initializedRef = useRef(false)
   const onSelectRef = useRef(onSelect)
-  onSelectRef.current = onSelect
+  useEffect(() => {
+    onSelectRef.current = onSelect
+  })
 
   const [jqueryReady, setJqueryReady] = useState(isJqueryLoaded)
   const [leafletReady, setLeafletReady] = useState(isLeafletLoaded)

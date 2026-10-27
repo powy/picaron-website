@@ -24,6 +24,7 @@ npm run dev                    # http://localhost:3000
 
 | Command | Purpose |
 |---|---|
+| `npm run ci` | every CI check, locally (see below) |
 | `npm test` | unit tests |
 | `npm run test:integration` | integration tests (local PostgreSQL: `npm run db:local:up`) |
 | `npm run test:e2e` | Playwright tests of the checkout flow |
@@ -31,6 +32,24 @@ npm run dev                    # http://localhost:3000
 | `npm run build:functions` | build the `api` serverless function |
 | `npm run tf -- plan` | Terraform (staging/prod), see `infra/terraform/README.md` |
 | `npm run smoke` | end-to-end test order against a deployed API |
+
+## CI
+
+GitHub Actions (`.github/workflows/ci.yml`) runs on every pull request: lint, typecheck, unit tests,
+function bundle, integration and e2e tests (Postgres + Mailpit), Terraform `fmt`/`validate`,
+`npm audit` and a gitleaks secret scan. Mergify (`.mergify.yml`) merges a PR once it is green
+and approved; Dependabot opens weekly update PRs.
+
+Run the same checks locally before pushing (Docker must be running):
+
+```bash
+npm run ci                     # every step, then a summary
+npm run ci -- e2e terraform    # only the steps whose name contains one of the words
+```
+
+It uses the local Postgres and Mailpit containers (`npm run db:local:up`), whatever `.env.local`
+says, and runs gitleaks (and Terraform, if not installed) through Docker. CI also starts from
+`npm ci`; run it yourself after changing dependencies.
 
 ## Layout
 

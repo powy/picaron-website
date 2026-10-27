@@ -1,0 +1,9 @@
+# gitleaks configuration (CI secret scan and `npm run ci`): the default rules,
+# plus the fake values used by tests.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Fake Stripe key of the offline integration tests (never sent to Stripe)"
+regexTarget = "secret"
+regexes = ['''^sk_test_integration$''']
