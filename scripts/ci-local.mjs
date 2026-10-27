@@ -1,6 +1,7 @@
 // Runs every check of the CI workflow (.github/workflows/ci.yml) locally, in
 // the same order; keep both in sync. Needs Docker running (Postgres and
-// Mailpit from infra/local, gitleaks, and terraform when it is not installed).
+// Mailpit from infra/local, the Linux lockfile check, gitleaks, and terraform
+// when it is not installed). It does not reinstall node_modules; CI does.
 //
 //   npm run ci                    every step
 //   npm run ci -- e2e terraform   only the steps whose name contains a word
@@ -9,7 +10,7 @@
 // the exit code is 1 when a step failed.
 
 import { spawnSync } from 'node:child_process';
-import { mkdtempSync } from 'node:fs';
+import { mkdtempSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -18,6 +19,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const tfDir = join(root, 'infra', 'terraform');
 const GITLEAKS_IMAGE = 'ghcr.io/gitleaks/gitleaks:v8.30.1';
 const TERRAFORM_IMAGE = 'hashicorp/terraform:1.16.2';
+// CI runs Linux with the Node (and npm) version of .nvmrc.
+const NODE_IMAGE = `node:${readFileSync(join(root, '.nvmrc'), 'utf8').trim()}`;
 
 // The local Docker database, whatever .env.local says (it may point at a
 // real Scaleway database): real environment variables win over --env-file.
@@ -39,6 +42,17 @@ const terraformStep = has('terraform')
     };
 
 const steps = [
+  {
+    // CI starts with `npm ci` on Linux, where npm checks platform-specific
+    // parts of the lockfile that Windows and macOS skip.
+    job: 'checks',
+    name: 'lockfile (npm ci on Linux, dry run)',
+    command:
+      `docker run --rm -v "${join(root, 'package.json')}:/app/package.json:ro" ` +
+      `-v "${join(root, 'package-lock.json')}:/app/package-lock.json:ro" -w /app ${NODE_IMAGE} ` +
+      'npm ci --dry-run --ignore-scripts --no-audit --no-fund',
+    env: { MSYS_NO_PATHCONV: '1' },
+  },
   { job: 'checks', name: 'lint', command: 'npm run lint' },
   { job: 'checks', name: 'typecheck', command: 'npx tsc --noEmit' },
   { job: 'checks', name: 'unit tests', command: 'npm test' },
@@ -52,7 +66,7 @@ const steps = [
   {
     job: 'security',
     name: 'gitleaks',
-    command: `docker run --rm -v "${root}:/repo" ${GITLEAKS_IMAGE} git /repo --redact --no-banner`,
+    command: `docker run --rm -v "${root}:/repo" -e GIT_CONFIG_COUNT=1 -e GIT_CONFIG_KEY_0=safe.directory -e GIT_CONFIG_VALUE_0=/repo ${GITLEAKS_IMAGE} git /repo --redact --no-banner`,
     // Git Bash on Windows would otherwise rewrite /repo into a Windows path.
     env: { MSYS_NO_PATHCONV: '1' },
   },

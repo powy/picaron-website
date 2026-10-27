@@ -111,8 +111,8 @@ jobs:
           fetch-depth: 0
       - name: npm audit (production dependencies, high and above)
         run: npm audit --omit=dev --audit-level=high
-      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
-        env:
-          # Same version as scripts/ci-local.mjs; .gitleaks.toml is read from the repo root.
-          GITLEAKS_VERSION: 8.30.1
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Same image and command as scripts/ci-local.mjs (whole history,
+      # .gitleaks.toml read from the repo root). The Docker image needs no
+      # GitHub API access, unlike gitleaks-action on pull requests.
+      - name: gitleaks
+        run: docker run --rm -v "$PWD:/repo" -e GIT_CONFIG_COUNT=1 -e GIT_CONFIG_KEY_0=safe.directory -e GIT_CONFIG_VALUE_0=/repo ghcr.io/gitleaks/gitleaks:v8.30.1 git /repo --redact --no-banner
