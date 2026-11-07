@@ -3,7 +3,9 @@
 // Production: drops the Mondial Relay proof-of-concept page.
 // Elsewhere: adds a Cloudflare _headers file so the site is never indexed
 // (app/robots.ts covers robots.txt).
-// Everywhere: adds the prefetch files under the names the browser asks for.
+// Everywhere: adds the prefetch files under the names the browser asks for, and
+// the 404 pages. Cloudflare serves the closest 404.html, so /en/nope gets the
+// English one; addresses without a language get the French one.
 
 import { copyFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join, sep } from 'node:path';
@@ -30,6 +32,11 @@ function copyPrefetchFiles(dir) {
 }
 
 copyPrefetchFiles(outDir);
+
+for (const locale of ['fr', 'en']) {
+  copyFileSync(join(outDir, locale, 'introuvable.html'), join(outDir, locale, '404.html'));
+}
+copyFileSync(join(outDir, 'fr', '404.html'), join(outDir, '404.html'));
 
 if (process.env.NEXT_PUBLIC_APP_ENV === 'production') {
   for (const locale of ['fr', 'en']) {

@@ -72,6 +72,16 @@ function findFile(root: string, pathname: string): string | null {
   return candidates.find((file) => existsSync(file) && statSync(file).isFile()) ?? null;
 }
 
+// Like Cloudflare: the closest 404.html, going up from the requested path.
+function findNotFoundPage(root: string, pathname: string): string | null {
+  const segments = pathname.split('/').filter(Boolean);
+  for (let depth = segments.length; depth >= 0; depth--) {
+    const file = join(root, ...segments.slice(0, depth), '404.html');
+    if (existsSync(file)) return file;
+  }
+  return null;
+}
+
 function serveStatic(root: string, request: IncomingMessage, response: ServerResponse) {
   const pathname = new URL(request.url ?? '/', 'http://localhost').pathname;
   const redirect = findRedirect(pathname);
@@ -81,8 +91,7 @@ function serveStatic(root: string, request: IncomingMessage, response: ServerRes
     return;
   }
   const file = findFile(root, pathname);
-  const notFoundPage = join(root, '404.html');
-  const served = file ?? (existsSync(notFoundPage) ? notFoundPage : null);
+  const served = file ?? findNotFoundPage(root, pathname);
   if (!served) {
     response.writeHead(404, siteHeaders);
     response.end();

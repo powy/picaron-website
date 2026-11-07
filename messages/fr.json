@@ -36,6 +36,10 @@
       "title": "Politique des Cookies",
       "description": "Informations sur l'utilisation des cookies"
     },
+    "notFound": {
+      "title": "Page introuvable",
+      "description": "Cette page n'existe pas"
+    },
     "commandeSucces": {
       "title": "Commande Confirmée",
       "description": "Votre commande a été confirmée avec succès"
@@ -301,6 +305,12 @@
     "label": "Note des joueurs sur",
     "ariaLabel": "Note de {rating} sur 10 sur BoardGameGeek (nouvel onglet)",
     "checkedAt": "Note BoardGameGeek relevée le {date}"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "text": "Cette page a pris le large, ou n'a jamais existé.",
+    "home": "Retour à l'accueil",
+    "shop": "Voir la boutique"
   },
   "payment": {
     "title": "Paiement",
