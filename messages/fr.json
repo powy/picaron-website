@@ -297,6 +297,11 @@
   "testBanner": {
     "text": "Environnement de test ({env}) — aucun paiement réel"
   },
+  "bgg": {
+    "label": "Note des joueurs sur",
+    "ariaLabel": "Note de {rating} sur 10 sur BoardGameGeek (nouvel onglet)",
+    "checkedAt": "Note BoardGameGeek relevée le {date}"
+  },
   "payment": {
     "title": "Paiement",
     "loading": "Préparation du paiement…",
