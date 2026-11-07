@@ -95,7 +95,7 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         {/* Main Presentation Image - Moved from Top */}
         <div className="max-w-full mx-auto mb-16">
           <div className="w-full">
-            {/* Plain <img>: images are unoptimized, so next/image would not emit this srcset. */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- images are unoptimized, so next/image would not emit this srcset, which keeps this full-width image sharp on large screens. */}
             <img
               src="/presentation/presentation-ks2-2180.webp"
               srcSet="/presentation/presentation-ks2-1080.webp 1080w, /presentation/presentation-ks2-1600.webp 1600w, /presentation/presentation-ks2-2180.webp 2180w"
