@@ -1,0 +1,19 @@
+# Cloudflare redirects: the first matching line wins.
+/ /fr/boucaniers/presentation 301
+/fr /fr/boucaniers/presentation 301
+/en /en/boucaniers/presentation 301
+/fr/boucaniers /fr/boucaniers/presentation 301
+/en/boucaniers /en/boucaniers/presentation 301
+
+# Addresses without a language.
+/boucaniers /fr/boucaniers/presentation 301
+/boucaniers/* /fr/boucaniers/:splat 301
+/boutique /fr/boutique 301
+/panier /fr/panier 301
+/contact /fr/contact 301
+/equipe /fr/equipe 301
+/faq /fr/faq 301
+/cgv /fr/cgv 301
+/cookies /fr/cookies 301
+/mentions-legales /fr/mentions-legales 301
+/politique-confidentialite /fr/politique-confidentialite 301

@@ -1,5 +1,5 @@
 // End-to-end tests of the purchase flow in OFFLINE test mode: mock relay
-// picker, mock payment, real Next.js API + real Postgres. Deterministic, no
+// picker, mock payment, real order API + real Postgres. Deterministic, no
 // Stripe/Mondial Relay/internet needed.
 //
 // Prerequisites: a database at DATABASE_URL with the schema applied
@@ -24,16 +24,17 @@ export default defineConfig({
   },
   projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
   webServer: {
-    // A production build rather than `next dev`: Next.js allows only one dev
-    // server per project folder, so this never clashes with the developer's
-    // own `npm run dev` — and it tests the real production bundle.
-    command: `npx next build && npx next start -p ${PORT}`,
+    // The real static build rather than `next dev`: Next.js allows only one
+    // dev server per project folder, so this never clashes with the
+    // developer's own `npm run dev` — and it tests the files that get deployed.
+    command: 'npm run build && npm start',
     url: `http://localhost:${PORT}/api/health`,
     timeout: 300_000,
     reuseExistingServer: false,
     // Real environment variables win over .env.local: this forces the
     // offline profile whatever the developer's .env.local says.
     env: {
+      API_PORT: String(PORT),
       APP_ENV: 'local',
       NEXT_PUBLIC_APP_ENV: 'local',
       PAYMENT_PROVIDER: 'mock',

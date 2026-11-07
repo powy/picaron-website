@@ -1,7 +1,7 @@
 # Copy to prod.tfvars (git-ignored). Secrets go in TF_VAR_... env vars.
 environment     = "prod"
 site_url        = "https://picaron.fr"
-# Before go-live, temporarily add the picaron-prod *.vercel.app URL (real-payment
+# Before go-live, temporarily add the picaron-prod *.pages.dev URL (real-payment
 # test) and set site_url to it; restore the two picaron.fr origins at go-live.
 allowed_origins = ["https://picaron.fr", "https://www.picaron.fr"]
 smtp_host       = "smtp.tem.scaleway.com"
@@ -18,5 +18,5 @@ emailjs_public_key  = "xxxxxxxxxxxxxxx"
 
 # Colissimo only while there is no real Mondial Relay Brand Id (the BDTEST
 # sandbox brand must never reach customers). Also set
-# NEXT_PUBLIC_SHIPPING_METHODS=colissimo on the picaron-prod Vercel project.
+# NEXT_PUBLIC_SHIPPING_METHODS=colissimo on the picaron-prod Cloudflare project.
 shipping_methods = ["colissimo"]

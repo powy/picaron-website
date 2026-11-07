@@ -18,5 +18,5 @@ emailjs_public_key  = "xxxxxxxxxxxxxxx"
 # team_notify_email = "equipe@exemple.fr"
 
 # Shipping methods accepted by the API. Also set NEXT_PUBLIC_SHIPPING_METHODS
-# on Vercel. Staging can keep both (Mondial Relay uses the BDTEST sandbox brand).
+# on Cloudflare. Staging can keep both (Mondial Relay uses the BDTEST sandbox brand).
 shipping_methods = ["mondial_relay", "colissimo"]

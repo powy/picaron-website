@@ -4,10 +4,11 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev.mjs",
     "dev:stripe": "node scripts/dev-stripe.mjs",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "node --env-file-if-exists=.env.local scripts/finish-static-build.mjs",
+    "start": "node --env-file-if-exists=.env.local --import tsx scripts/local-server.ts out",
     "lint": "eslint .",
     "db:test": "node --env-file-if-exists=.env.local scripts/db/test-connection.mjs",
     "db:setup": "node --env-file-if-exists=.env.local scripts/db/setup.mjs",

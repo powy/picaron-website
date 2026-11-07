@@ -1,5 +1,5 @@
 // Framework-agnostic HTTP layer for the order API. The same routing runs
-// behind the Next.js catch-all route (app/api/[...path]/route.ts, local dev)
+// behind the local server (scripts/local-server.ts, local dev and e2e tests)
 // and behind the Scaleway function (functions/api/handler.ts, staging/prod),
 // so local tests exercise exactly what gets deployed.
 //

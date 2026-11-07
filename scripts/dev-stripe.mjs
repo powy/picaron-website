@@ -1,16 +1,17 @@
 // `npm run dev:stripe` — local site in Stripe TEST mode, without editing
 // .env.local (which stays on the offline profile used by `npm run dev`).
 //
-// Starts two processes and stops both on Ctrl+C:
+// Starts three processes and stops them all on Ctrl+C:
 // 1. `stripe listen`, forwarding Stripe test webhooks to /api/stripe-webhook
-// 2. `next dev` with PAYMENT_PROVIDER=stripe and the real Mondial Relay widget
+// 2. the order API with PAYMENT_PROVIDER=stripe
+// 3. `next dev` with the real Mondial Relay widget
 //
-// Real environment variables take precedence over .env.local in Next.js, so
-// the two overrides below win; everything else (Stripe keys, webhook secret,
-// DATABASE_URL, SMTP...) still comes from .env.local.
+// Real environment variables take precedence over .env.local, so the overrides
+// below win; everything else (Stripe keys, webhook secret, DATABASE_URL,
+// SMTP...) still comes from .env.local.
 
-import { spawn } from 'node:child_process'
 import { readFileSync } from 'node:fs'
+import { API_COMMAND, API_PORT, runTogether } from './run-together.mjs'
 
 const PORT = process.env.PORT ?? '3000'
 
@@ -35,38 +36,22 @@ if (problems.length) {
   process.exit(1)
 }
 
-const children = []
-const run = (label, command, args, extraEnv = {}) => {
-  // One command string (the arguments contain no spaces): shell mode is needed
-  // on Windows to resolve npx/stripe, and Node deprecates shell + args array.
-  const child = spawn([command, ...args].join(' '), { stdio: 'inherit', shell: true, env: { ...process.env, ...extraEnv } })
-  child.on('exit', (code) => {
-    console.log(`[dev:stripe] ${label} exited (${code}) — stopping everything`)
-    shutdown(code ?? 0)
-  })
-  children.push(child)
-}
-
-let stopping = false
-function shutdown(code) {
-  if (stopping) return
-  stopping = true
-  for (const child of children) child.kill()
-  process.exit(code)
-}
-process.on('SIGINT', () => shutdown(0))
-process.on('SIGTERM', () => shutdown(0))
-
 console.log(`[dev:stripe] Stripe TEST mode on http://localhost:${PORT} — .env.local is not modified`)
 
-run('stripe listen', 'stripe', [
-  'listen',
-  '--api-key', env.STRIPE_SECRET_KEY,
-  '--events', 'payment_intent.succeeded,payment_intent.payment_failed',
-  '--forward-to', `localhost:${PORT}/api/stripe-webhook`,
+runTogether('dev:stripe', [
+  {
+    label: 'stripe listen',
+    command: [
+      'stripe listen',
+      `--api-key ${env.STRIPE_SECRET_KEY}`,
+      '--events payment_intent.succeeded,payment_intent.payment_failed',
+      `--forward-to localhost:${API_PORT}/api/stripe-webhook`,
+    ].join(' '),
+  },
+  { label: 'order API', command: API_COMMAND, env: { API_PORT, PAYMENT_PROVIDER: 'stripe' } },
+  {
+    label: 'next dev',
+    command: `npx next dev -p ${PORT}`,
+    env: { API_PORT, NEXT_PUBLIC_RELAY_PICKER: 'mondialrelay' },
+  },
 ])
-
-run('next dev', 'npx', ['next', 'dev', '-p', PORT], {
-  PAYMENT_PROVIDER: 'stripe',
-  NEXT_PUBLIC_RELAY_PICKER: 'mondialrelay',
-})

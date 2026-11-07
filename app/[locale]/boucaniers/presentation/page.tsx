@@ -1,4 +1,6 @@
+import { use } from 'react'
 import { useTranslations } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
 import SocialLinks from '@/components/SocialLinks'
@@ -6,7 +8,8 @@ import BggRatingBadge from '@/components/BggRatingBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function HomePage() {
+export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  setRequestLocale(use(params).locale)
   const t = useTranslations('home')
 
   return (

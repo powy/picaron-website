@@ -1,5 +1,5 @@
-// Front-end calls to the order API. Same origin locally (Next.js /api
-// routes); the Scaleway function URL in staging/prod via
+// Front-end calls to the order API. Same origin locally
+// (scripts/local-server.ts); the Scaleway function URL in staging/prod via
 // NEXT_PUBLIC_API_BASE_URL.
 
 import type {
