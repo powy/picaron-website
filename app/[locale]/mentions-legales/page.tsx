@@ -28,11 +28,11 @@ export default function MentionsLegales() {
             <h2 className="heading-section-on-light">2. Hébergeur</h2>
             <p>Le site est hébergé par :</p>
             <p className="ml-4">
-              Vercel Inc.<br />
-              Adresse : 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis<br />
+              Cloudflare, Inc.<br />
+              Adresse : 101 Townsend St, San Francisco, CA 94107, États-Unis<br />
               Site :{' '}
-              <a href="https://vercel.com/" className="text-pirate-red underline" target="_blank" rel="noopener noreferrer">
-                https://vercel.com/
+              <a href="https://www.cloudflare.com/" className="text-pirate-red underline" target="_blank" rel="noopener noreferrer">
+                https://www.cloudflare.com/
               </a>
             </p>
           </section>

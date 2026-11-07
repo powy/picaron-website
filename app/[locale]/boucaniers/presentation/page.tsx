@@ -1,4 +1,5 @@
-import { useTranslations } from 'next-intl'
+import { use } from 'react'
+import { setRequestLocale } from 'next-intl/server'
 import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
 import SocialLinks from '@/components/SocialLinks'
@@ -6,8 +7,8 @@ import BggRatingBadge from '@/components/BggRatingBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function HomePage() {
-  const t = useTranslations('home')
+export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  setRequestLocale(use(params).locale)
 
   return (
     <div className="relative mt-8">
@@ -94,7 +95,7 @@ export default function HomePage() {
         {/* Main Presentation Image - Moved from Top */}
         <div className="max-w-full mx-auto mb-16">
           <div className="w-full">
-            {/* Plain <img>: images are unoptimized, so next/image would not emit this srcset. */}
+            {/* eslint-disable-next-line @next/next/no-img-element -- images are unoptimized, so next/image would not emit this srcset, which keeps this full-width image sharp on large screens. */}
             <img
               src="/presentation/presentation-ks2-2180.webp"
               srcSet="/presentation/presentation-ks2-1080.webp 1080w, /presentation/presentation-ks2-1600.webp 1600w, /presentation/presentation-ks2-2180.webp 2180w"

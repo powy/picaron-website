@@ -21,7 +21,7 @@ variable "site_url" {
 }
 
 variable "allowed_origins" {
-  description = "Origins allowed to call the API from the browser (the Vercel site(s) of this environment)."
+  description = "Origins allowed to call the API from the browser (the Cloudflare site(s) of this environment)."
   type        = list(string)
 }
 
@@ -52,7 +52,7 @@ variable "team_notify_email" {
 }
 
 variable "shipping_methods" {
-  description = "Shipping methods the API accepts: any of mondial_relay, colissimo. Keep in sync with NEXT_PUBLIC_SHIPPING_METHODS on Vercel."
+  description = "Shipping methods the API accepts: any of mondial_relay, colissimo. Keep in sync with NEXT_PUBLIC_SHIPPING_METHODS on Cloudflare."
   type        = list(string)
   default     = ["mondial_relay", "colissimo"]
 

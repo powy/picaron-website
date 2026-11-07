@@ -1,8 +1,11 @@
+import { use } from 'react'
 import { useTranslations } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 import NewsletterSection from '@/components/NewsletterSection'
 import SocialLinks from '@/components/SocialLinks'
 
-export default function FAQPage() {
+export default function FAQPage({ params }: { params: Promise<{ locale: string }> }) {
+  setRequestLocale(use(params).locale)
   const t = useTranslations('faq')
 
   return (

@@ -115,7 +115,7 @@ export default function Navigation() {
     <nav className="fixed top-0 w-full z-50 nav-bg font-normal shadow-nav">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-12 lg:h-14">
-          <Link href="/" className="flex items-center h-12 lg:h-14 leading-none">
+          <Link href={`/${locale}/boucaniers/presentation`} className="flex items-center h-12 lg:h-14 leading-none">
             <Image
               src="/assets/LogoPICARONJ1Pour_Fond_Sombre3.webp"
               alt="Picaron"

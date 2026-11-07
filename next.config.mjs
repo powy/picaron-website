@@ -1,4 +1,5 @@
 import createNextIntlPlugin from 'next-intl/plugin';
+import { PHASE_DEVELOPMENT_SERVER } from 'next/constants.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -15,11 +16,23 @@ const nextConfig = {
   turbopack: {
     root: __dirname,
   },
-  // Local and staging must never be indexed (app/robots.ts covers robots.txt).
-  async headers() {
-    if (process.env.NEXT_PUBLIC_APP_ENV === 'production') return [];
-    return [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }];
+};
+
+// `next dev` stands in for what Cloudflare (public/_redirects) and the order
+// API (scripts/local-server.ts) do once the site is deployed.
+/** @type {import('next').NextConfig} */
+const devConfig = {
+  ...nextConfig,
+  async redirects() {
+    return [{ source: '/', destination: '/fr/boucaniers/presentation', permanent: false }];
+  },
+  async rewrites() {
+    const apiPort = process.env.API_PORT ?? '3001';
+    return [{ source: '/api/:path*', destination: `http://localhost:${apiPort}/api/:path*` }];
   },
 };
 
-export default withNextIntl(nextConfig);
+// The site is a static export: `next build` writes it to out/.
+export default function config(phase) {
+  return withNextIntl(phase === PHASE_DEVELOPMENT_SERVER ? devConfig : { ...nextConfig, output: 'export' });
+}

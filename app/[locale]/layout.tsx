@@ -2,6 +2,7 @@ import '../globals.css'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { NextIntlClientProvider } from 'next-intl'
+import { setRequestLocale } from 'next-intl/server'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import TestModeBanner from '@/components/TestModeBanner'
@@ -19,6 +20,10 @@ export const metadata: Metadata = {
 // This is the root layout (there is no app/layout.tsx): <html> lives here so
 // that its lang attribute follows the locale.
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -28,7 +33,8 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params
   if (!locales.includes(locale as Locale)) notFound()
-  
+  setRequestLocale(locale)
+
   const messages = (await import(`@/messages/${locale}.json`)).default
 
   return (

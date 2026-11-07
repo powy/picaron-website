@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl'
 import NewsletterSection from '@/components/NewsletterSection'
 import SocialLinks from '@/components/SocialLinks'
 import Link from 'next/link'

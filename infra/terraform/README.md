@@ -77,10 +77,10 @@ Garde-fous :
    Récupérer le `whsec_...`.
 5. Relancer `terraform apply` avec `TF_VAR_database_url` et
    `TF_VAR_stripe_webhook_secret` renseignés.
-6. Vercel : un **projet par environnement** (`picaron-staging` sur
+6. Cloudflare Pages : un **projet par environnement** (`picaron-staging` sur
    `staging.picaron.fr`, `picaron-prod` sur `picaron.fr` au go-live), chacun
    avec ses propres variables (modèles : `.env.staging.example`,
-   `.env.production.example`). Ne pas définir `APP_ENV` côté Vercel. Définir `NEXT_PUBLIC_API_BASE_URL` =
+   `.env.production.example`). Définir `NEXT_PUBLIC_API_BASE_URL` =
    `terraform output api_url`, `NEXT_PUBLIC_APP_ENV` (`staging` /
    `production`), `NEXT_PUBLIC_RELAY_PICKER=mondialrelay`,
    `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` (`pk_test_` / `pk_live_`), puis

@@ -37,28 +37,6 @@ export default function BoutiquePage() {
   // State pour gérer l'image agrandie dans le lightbox
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
-  // Calcul automatique de la date de livraison (mi-décembre)
-  const getDeliveryDate = () => {
-    const today = new Date();
-    const currentYear = today.getFullYear();
-    const december15 = new Date(currentYear, 11, 15); // 15 décembre
-
-    if (today > december15) {
-      // Si on a dépassé le 15 décembre, livraison mi-décembre année suivante
-      return new Date(currentYear + 1, 11, 15);
-    }
-    return december15;
-  };
-
-  const formatDeliveryDate = () => {
-    const deliveryDate = getDeliveryDate();
-    return deliveryDate.toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-US', {
-      month: 'long',
-      year: 'numeric'
-    });
-  };
-
-
   // Gérer la fermeture du lightbox avec la touche Escape
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {

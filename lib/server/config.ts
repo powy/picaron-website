@@ -175,7 +175,7 @@ export function assertSafeConfig(config: ServerConfig, env: Env = process.env): 
     if (!secretKey.startsWith('sk_live_')) {
       throw new ConfigError('la production exige une clé Stripe live (sk_live_...)');
     }
-    // The publishable key only exists where the front end is built (Vercel),
+    // The publishable key only exists where the front end is built (Cloudflare),
     // not in the Scaleway functions — check it when it is there.
     if (publishableKey && !publishableKey.startsWith('pk_live_')) {
       throw new ConfigError('la production exige une clé publique Stripe live (pk_live_...)');

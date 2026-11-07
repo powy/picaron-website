@@ -14,7 +14,7 @@ output "function_namespace_id" {
   value = scaleway_function_namespace.backend.id
 }
 
-# -> NEXT_PUBLIC_API_BASE_URL of the matching Vercel environment.
+# -> NEXT_PUBLIC_API_BASE_URL of the matching Cloudflare project.
 output "api_url" {
   value = "https://${scaleway_function.api.domain_name}"
 }
