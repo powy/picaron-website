@@ -120,6 +120,27 @@ test('Abandon: the order stays pending and the payment can be resumed', async ({
   await expect(page.getByTestId('order-status-paid')).toBeVisible();
 });
 
+test('English: the whole purchase stays in English', async ({ page }) => {
+  await page.goto('/en/boutique');
+  await page.getByRole('button', { name: 'Add to cart' }).first().click();
+  await page.goto('/en/panier');
+  await page.getByRole('button', { name: /Colissimo/ }).click();
+  await page.getByRole('button', { name: 'Proceed to checkout' }).click();
+  await expect(page).toHaveURL(/\/en\/commande\/adresse/);
+
+  await fillAddress(page, 'delivery');
+  await page.getByRole('button', { name: 'Continue to payment' }).click();
+  await expect(page).toHaveURL(/\/en\/commande\/paiement\?order=/);
+  const publicId = new URL(page.url()).searchParams.get('order')!;
+
+  await page.getByRole('button', { name: 'Simulate a successful payment' }).click();
+  await expect(page).toHaveURL(/\/en\/commande\/succes\?order=/);
+  await expect(page.getByRole('heading', { name: 'Order confirmed!' })).toBeVisible();
+  await expect(page.getByText(/Colissimo home delivery/)).toBeVisible();
+  expect(await orderStatus(page, publicId)).toBe('paid');
+  await expectMailpitEmail(page, publicId);
+});
+
 test('the address page shows an error when the API rejects the order', async ({ page }) => {
   await addBoucaniersAndChoose(page, 'Colissimo');
   await fillAddress(page, 'delivery');
