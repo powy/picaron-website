@@ -44,7 +44,7 @@ const NOT_FOUND_PAGES = [
   ['/fr/nope', 'fr', 'Page introuvable', 'Retour à l\'accueil'],
   ['/en/nope', 'en', 'Page not found', 'Back to the home page'],
   ['/en/boucaniers/nope', 'en', 'Page not found', 'Back to the home page'],
-  ['/nope', 'fr', 'Page introuvable', 'Retour à l\'accueil'],
+  ['/nope', 'en', 'Page not found', 'Back to the home page'],
 ];
 
 for (const [path, locale, title, link] of NOT_FOUND_PAGES) {
