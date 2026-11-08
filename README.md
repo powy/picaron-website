@@ -70,6 +70,8 @@ values are written into the files at build time, so redeploy after changing one.
 
 `public/_redirects` holds the redirects. `scripts/finish-static-build.mjs` adds the noindex header
 outside production and leaves the Mondial Relay test page out of production.
+`scripts/check-production-build.mjs` then fails a production build that would ship test content or
+test settings (a `pk_test_` Stripe key, the `BDTEST` relay brand), so Cloudflare does not deploy it.
 
 ## Layout
 
