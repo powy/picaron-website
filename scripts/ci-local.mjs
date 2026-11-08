@@ -57,6 +57,13 @@ const steps = [
   { job: 'checks', name: 'typecheck', command: 'npx tsc --noEmit' },
   { job: 'checks', name: 'unit tests', command: 'npm test' },
   { job: 'checks', name: 'function bundle', command: 'npm run build:functions' },
+  {
+    job: 'checks',
+    name: 'production build',
+    command: 'npm run build',
+    // Empty values win over .env.local, whose test keys a production build refuses.
+    env: { NEXT_PUBLIC_APP_ENV: 'production', NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: '', NEXT_PUBLIC_MONDIAL_RELAY_BRAND_CODE: '' },
+  },
   { job: 'e2e', name: 'start Postgres and Mailpit', command: 'npm run db:local:up' },
   { job: 'e2e', name: 'db schema', command: 'npm run db:setup', env: testEnv },
   { job: 'e2e', name: 'integration tests', command: 'npm run test:integration', env: testEnv },

@@ -37,6 +37,11 @@ jobs:
       - run: npm test
       - name: Build the Scaleway function bundle
         run: npm run build:functions
+      # scripts/check-production-build.mjs fails it on test content.
+      - name: Production build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_APP_ENV: production
 
   e2e:
     name: Integration and e2e tests
