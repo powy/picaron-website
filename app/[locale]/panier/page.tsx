@@ -52,13 +52,6 @@ export default function PanierPage() {
 
       <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 stack-y-10">
-          {items.length === 0 && (
-            <div className="text-center stack-y-2">
-              <p className="text-2xl font-oldstyle text-pirate-red">{t('empty.title')}</p>
-              <p className="text-lg text-ink">{t('empty.message')}</p>
-            </div>
-          )}
-
           <div>
             {rows.map((item) => (
               <CartItemRow key={item.productId} item={item} locale={locale} />

@@ -35,7 +35,6 @@ test('the cart keeps both products, even at 0', async ({ page }) => {
   // Down to 0, the game keeps its row and the order can no longer be placed.
   await page.getByRole('button', { name: 'Diminuer la quantité' }).first().click();
   await page.getByRole('button', { name: 'Diminuer la quantité' }).last().click();
-  await expect(page.getByText('Votre panier est vide')).toBeVisible();
   await expect(page.getByRole('img', { name: 'Boucaniers' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Passer commande' })).toBeDisabled();
 });

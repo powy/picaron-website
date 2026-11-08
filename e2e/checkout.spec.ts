@@ -79,9 +79,10 @@ test('A — Mondial Relay: successful payment', async ({ page }) => {
   expect(await orderStatus(page, publicId)).toBe('paid');
   await expectMailpitEmail(page, publicId);
 
-  // The cart is emptied once the order is paid.
+  // The cart is emptied once the order is paid: products at 0, no checkout.
   await page.goto('/fr/panier');
-  await expect(page.getByText('Votre panier est vide')).toBeVisible();
+  await expect(page.getByTestId('cart-total')).toContainText('0,00');
+  await expect(page.getByRole('button', { name: 'Passer commande' })).toBeDisabled();
 });
 
 test('B — Colissimo: declined, insufficient funds, then retry succeeds', async ({ page }) => {
