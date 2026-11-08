@@ -7,6 +7,8 @@ export interface Product {
   id: ProductId;
   kind: ProductKind;
   priceCents: number;
+  /** 13-digit EAN/GTIN barcode, sent to Google as product data. */
+  gtin13?: string;
   /** Full-size picture (shop zoom, Google product data). */
   image: string;
   /** Small version of `image` for cart thumbnails. */
@@ -18,6 +20,7 @@ export const PRODUCTS: Record<ProductId, Product> = {
     id: 'boucaniers',
     kind: 'game',
     priceCents: 6900,
+    gtin13: '0634240347085',
     image: '/boutique/boucaniers-packshot.webp',
     thumbnail: '/boutique/boucaniers-packshot-thumb.webp',
   },

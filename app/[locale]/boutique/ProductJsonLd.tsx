@@ -2,8 +2,8 @@ import { PRODUCTS } from '@/lib/products'
 
 const SITE_URL = 'https://picaron.fr'
 
-// Schema.org Product data for search engines. Price and image come from
-// lib/products.ts; the description and availability mirror the visible shop page;
+// Schema.org Product data for search engines. Price, barcode and image come
+// from lib/products.ts; the description and availability mirror the visible shop page;
 // the seller and return policy mirror the CGV (sections 1 and 10).
 export default function ProductJsonLd({ locale }: { locale: string }) {
   const product = PRODUCTS.boucaniers
@@ -14,6 +14,7 @@ export default function ProductJsonLd({ locale }: { locale: string }) {
     '@type': 'Product',
     name: 'Boucaniers',
     sku: product.id,
+    gtin13: product.gtin13,
     url,
     category: 'Jeux de société',
     description:
