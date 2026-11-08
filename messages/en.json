@@ -6,7 +6,7 @@
     },
     "boutique": {
       "title": "Shop",
-      "description": "Order Boucaniers - Strategic board game for 2-6 players"
+      "description": "Order Boucaniers - Strategic board game for 2 to 5 players"
     },
     "faq": {
       "title": "FAQ",
@@ -154,6 +154,7 @@
       "itemsSubtotal": "Items subtotal",
       "shipping": "Shipping",
       "shippingPending": "Choose a delivery method",
+      "freeNovels": "{count, plural, one {# novel delivered free with the game} other {# novels delivered free with the games}}",
       "total": "Total"
     },
     "shippingMethod": {

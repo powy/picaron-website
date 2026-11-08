@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useCart } from '@/lib/cart-context';
 import { formatPriceCents } from '@/lib/products';
-import { computeShippingCents } from '@/lib/shipping';
+import { computeShippingCents, countFreeNovels } from '@/lib/shipping';
 import { useShippingMethod, ShippingMethod } from '@/lib/use-shipping-method';
 import CartItemRow from '@/components/cart/CartItemRow';
 import FranceOnlyNotice from '@/components/checkout/FranceOnlyNotice';
@@ -39,6 +39,7 @@ export default function PanierPage() {
   }, [onlyMethod, shippingMethod, setShippingMethod]);
   // Same rule as the server, which bills it (lib/shipping.ts).
   const shippingCents = shippingMethod ? computeShippingCents(items, shippingMethod) : null;
+  const freeNovels = countFreeNovels(items);
 
   if (items.length === 0) {
     return (
@@ -78,12 +79,20 @@ export default function PanierPage() {
                   key={method}
                   type="button"
                   onClick={() => setShippingMethod(method)}
+                  aria-pressed={shippingMethod === method}
                   className={`text-left border-2 rounded-lg p-4 transition-colors ${
-                    shippingMethod === method ? 'border-pirate-red bg-parchment/30' : 'border-wood'
+                    shippingMethod === method
+                      ? 'border-pirate-red bg-pirate-red text-bone'
+                      : 'border-wood text-ink hover:bg-parchment/50'
                   }`}
                 >
-                  <p className="font-oldstyle text-lg text-ink">{t(`shippingMethod.${i18nKey}.name`)}</p>
-                  <p className="text-sm text-ink">{t(`shippingMethod.${i18nKey}.description`)}</p>
+                  <p className="flex justify-between gap-2 font-oldstyle text-lg">
+                    <span>{t(`shippingMethod.${i18nKey}.name`)}</span>
+                    <span data-testid={`shipping-fee-${method}`}>
+                      {formatPriceCents(computeShippingCents(items, method), locale)}
+                    </span>
+                  </p>
+                  <p className="text-sm">{t(`shippingMethod.${i18nKey}.description`)}</p>
                 </button>
               ))}
             </div>
@@ -104,6 +113,11 @@ export default function PanierPage() {
                 <span>{formatPriceCents(shippingCents, locale)}</span>
               )}
             </div>
+            {freeNovels > 0 && (
+              <p className="m-0 text-sm text-ink" data-testid="cart-free-novels">
+                {t('summary.freeNovels', { count: freeNovels })}
+              </p>
+            )}
             <div className="flex justify-between items-center text-2xl font-semibold text-ink border-t border-parchment pt-4">
               <span>{t('summary.total')}</span>
               <span data-testid="cart-total">{formatPriceCents(subtotalCents + (shippingCents ?? 0), locale)}</span>

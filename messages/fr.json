@@ -6,7 +6,7 @@
     },
     "boutique": {
       "title": "Boutique",
-      "description": "Commandez le jeu Boucaniers - Jeu de société stratégique pour 2-6 joueurs"
+      "description": "Commandez le jeu Boucaniers - Jeu de société stratégique pour 2 à 5 joueurs"
     },
     "faq": {
       "title": "FAQ",
@@ -154,6 +154,7 @@
       "itemsSubtotal": "Sous-total articles",
       "shipping": "Livraison",
       "shippingPending": "Choisissez un mode de livraison",
+      "freeNovels": "{count, plural, one {# nouvelle livrée gratuitement avec le jeu} other {# nouvelles livrées gratuitement avec les jeux}}",
       "total": "Total"
     },
     "shippingMethod": {

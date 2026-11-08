@@ -24,10 +24,11 @@ export default async function BoutiqueLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'shop' })
 
   return (
     <>
-      <ProductJsonLd locale={locale} />
+      <ProductJsonLd locale={locale} description={t('gameDescription')} />
       {children}
     </>
   )
