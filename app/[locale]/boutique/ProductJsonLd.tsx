@@ -5,7 +5,7 @@ const SITE_URL = 'https://picaron.fr'
 // Schema.org Product data for search engines. Price, barcode and image come
 // from lib/products.ts; the description and availability mirror the visible shop page;
 // the seller and return policy mirror the CGV (sections 1 and 10).
-export default function ProductJsonLd({ locale }: { locale: string }) {
+export default function ProductJsonLd({ locale, description }: { locale: string; description: string }) {
   const product = PRODUCTS.boucaniers
   const url = `${SITE_URL}/${locale}/boutique`
 
@@ -16,9 +16,8 @@ export default function ProductJsonLd({ locale }: { locale: string }) {
     sku: product.id,
     gtin13: product.gtin13,
     url,
-    category: 'Jeux de société',
-    description:
-      'Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.',
+    category: locale === 'fr' ? 'Jeux de société' : 'Board games',
+    description,
     image: `${SITE_URL}${encodeURI(product.image)}`,
     brand: { '@type': 'Brand', name: 'Picaron' },
     audience: { '@type': 'PeopleAudience', suggestedMinAge: 10 },
