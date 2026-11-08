@@ -154,6 +154,7 @@
       "itemsSubtotal": "Sous-total articles",
       "shipping": "Livraison",
       "shippingPending": "Choisissez un mode de livraison",
+      "freeNovels": "{count, plural, one {# nouvelle livrée gratuitement avec le jeu} other {# nouvelles livrées gratuitement avec les jeux}}",
       "total": "Total"
     },
     "shippingMethod": {

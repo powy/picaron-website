@@ -18,10 +18,14 @@ async function addBoucaniersAndChoose(page: Page, method: 'Mondial Relay' | 'Col
   await page.getByRole('button', { name: 'Ajouter au panier' }).first().click();
   await page.goto('/fr/panier');
   await expect(page.getByTestId('cart-shipping')).toContainText('Choisissez un mode de livraison');
+  // Each carrier shows its fee before it is chosen (placeholders, lib/shipping.ts).
+  await expect(page.getByTestId('shipping-fee-mondial_relay')).toContainText('8,42');
+  await expect(page.getByTestId('shipping-fee-colissimo')).toContainText('9,42');
   await page.getByRole('button', { name: new RegExp(method) }).click();
-  // One game: 69 € + 10 € shipping (placeholder, lib/shipping.ts).
-  await expect(page.getByTestId('cart-shipping')).toContainText('10,00');
-  await expect(page.getByTestId('cart-total')).toContainText('79,00');
+  // One game: 69 € + the chosen carrier's game fee.
+  const [fee, total] = method === 'Mondial Relay' ? ['8,42', '77,42'] : ['9,42', '78,42'];
+  await expect(page.getByTestId('cart-shipping')).toContainText(fee);
+  await expect(page.getByTestId('cart-total')).toContainText(total);
   await page.getByRole('button', { name: 'Passer commande' }).click();
   await expect(page).toHaveURL(/\/fr\/commande\/adresse/);
 }
@@ -139,6 +143,26 @@ test('English: the whole purchase stays in English', async ({ page }) => {
   await expect(page.getByText(/Colissimo home delivery/)).toBeVisible();
   expect(await orderStatus(page, publicId)).toBe('paid');
   await expectMailpitEmail(page, publicId);
+});
+
+test('the shipping fee follows the carrier and the free novel', async ({ page }) => {
+  await page.goto('/fr/boutique');
+  const addButtons = page.getByRole('button', { name: 'Ajouter au panier' });
+  await addButtons.first().click();
+  await addButtons.last().click();
+  await page.goto('/fr/panier');
+  // One game and one novel: the novel ships free with the game.
+  await expect(page.getByTestId('cart-free-novels')).toContainText('1 nouvelle livrée gratuitement');
+  await page.getByRole('button', { name: /Mondial Relay/ }).click();
+  await expect(page.getByTestId('cart-shipping')).toContainText('8,42');
+  await page.getByRole('button', { name: /Colissimo/ }).click();
+  await expect(page.getByTestId('cart-shipping')).toContainText('9,42');
+  await expect(page.getByTestId('cart-total')).toContainText('88,42');
+
+  // A second novel pays the Colissimo novel fee: 9,42 + 3,42.
+  await page.getByRole('button', { name: 'Augmenter la quantité' }).last().click();
+  await expect(page.getByTestId('cart-shipping')).toContainText('12,84');
+  await expect(page.getByTestId('shipping-fee-mondial_relay')).toContainText('10,84');
 });
 
 test('the address page shows an error when the API rejects the order', async ({ page }) => {
