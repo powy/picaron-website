@@ -107,6 +107,11 @@
   },
   "shop": {
     "title": "Shop",
+    "shortcuts": {
+      "title": "Our products",
+      "game": "Board game",
+      "novel": "Illustrated novella"
+    },
     "gameTitle": "Boucaniers",
     "price": "€69.00 incl. VAT",
     "gameDescription": "Simultaneous strategy game. For 2 to 5 players from 10 years old with games lasting 30 to 60 minutes.",

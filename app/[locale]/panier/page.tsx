@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useCart } from '@/lib/cart-context';
-import { formatPriceCents } from '@/lib/products';
+import { PRODUCTS, ProductId, formatPriceCents } from '@/lib/products';
 import { computeShippingCents, countFreeNovels } from '@/lib/shipping';
 import { useShippingMethod, ShippingMethod } from '@/lib/use-shipping-method';
 import CartItemRow from '@/components/cart/CartItemRow';
@@ -30,6 +30,11 @@ export default function PanierPage() {
   const locale = params.locale as string;
   const t = useTranslations('cart');
   const { items, subtotalCents } = useCart();
+  // Every product keeps its row, even at 0, so a visitor who missed the novel
+  // still sees it here as a suggestion.
+  const rows = (Object.keys(PRODUCTS) as ProductId[]).map(
+    (productId) => items.find((item) => item.productId === productId) ?? { productId, quantity: 0 }
+  );
   const [shippingMethod, setShippingMethod] = useShippingMethod();
   // A single enabled method is selected for the customer (also overrides a
   // now-disabled method remembered from an earlier session).
@@ -41,21 +46,6 @@ export default function PanierPage() {
   const shippingCents = shippingMethod ? computeShippingCents(items, shippingMethod) : null;
   const freeNovels = countFreeNovels(items);
 
-  if (items.length === 0) {
-    return (
-      <div className="mt-8">
-        <h1 className="title-page">{t('title')}</h1>
-        <div className="max-w-2xl mx-auto px-4 py-16 text-center stack-y-4">
-          <p className="text-2xl font-oldstyle text-pirate-red">{t('empty.title')}</p>
-          <p className="text-lg text-ink">{t('empty.message')}</p>
-          <Link href={`/${locale}/boutique`} className="btn-primary-rounded inline-block mt-4">
-            {t('empty.cta')}
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="mt-8">
       <h1 className="title-page">{t('title')}</h1>
@@ -63,7 +53,7 @@ export default function PanierPage() {
       <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 stack-y-10">
           <div>
-            {items.map((item) => (
+            {rows.map((item) => (
               <CartItemRow key={item.productId} item={item} locale={locale} />
             ))}
           </div>
@@ -88,9 +78,11 @@ export default function PanierPage() {
                 >
                   <p className="flex justify-between gap-2 font-oldstyle text-lg">
                     <span>{t(`shippingMethod.${i18nKey}.name`)}</span>
-                    <span data-testid={`shipping-fee-${method}`}>
-                      {formatPriceCents(computeShippingCents(items, method), locale)}
-                    </span>
+                    {items.length > 0 && (
+                      <span data-testid={`shipping-fee-${method}`}>
+                        {formatPriceCents(computeShippingCents(items, method), locale)}
+                      </span>
+                    )}
                   </p>
                   <p className="text-sm">{t(`shippingMethod.${i18nKey}.description`)}</p>
                 </button>
@@ -125,7 +117,7 @@ export default function PanierPage() {
 
             <button
               type="button"
-              disabled={shippingMethod === null}
+              disabled={items.length === 0 || shippingMethod === null}
               onClick={() => router.push(`/${locale}/commande/adresse`)}
               className="btn-primary-full block text-center w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
