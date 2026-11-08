@@ -12,6 +12,18 @@ test('server-rendered text follows the page language', async ({ page }) => {
   await expect(page.getByText('Note des joueurs sur')).toBeVisible();
 });
 
+test('the footer follows the page language and shows the current year', async ({ page }) => {
+  const year = new Date().getFullYear();
+
+  await page.goto('/en/equipe');
+  await expect(page.locator('footer')).toContainText(`© ${year} Picaron. All rights reserved.`);
+  await expect(page.locator('footer').getByRole('link', { name: 'Privacy policy' })).toBeVisible();
+
+  await page.goto('/fr/equipe');
+  await expect(page.locator('footer')).toContainText(`© ${year} Picaron. Tous droits réservés.`);
+  await expect(page.locator('footer').getByRole('link', { name: 'Politique de confidentialité' })).toBeVisible();
+});
+
 const REDIRECTS = [
   ['/', '/fr/boucaniers/presentation'],
   ['/en', '/en/boucaniers/presentation'],
@@ -28,10 +40,31 @@ for (const [from, to] of REDIRECTS) {
   });
 }
 
-test('an unknown page answers 404', async ({ request }) => {
-  const response = await request.get('/fr/nope');
-  expect(response.status()).toBe(404);
-});
+const NOT_FOUND_PAGES = [
+  ['/fr/nope', 'fr', 'Page introuvable', 'Retour à l\'accueil'],
+  ['/en/nope', 'en', 'Page not found', 'Back to the home page'],
+  ['/en/boucaniers/nope', 'en', 'Page not found', 'Back to the home page'],
+  ['/nope', 'en', 'Page not found', 'Back to the home page'],
+];
+
+for (const [path, locale, title, link] of NOT_FOUND_PAGES) {
+  test(`${path} shows the 404 page in ${locale}`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+
+    const response = await page.goto(path);
+    expect(response?.status()).toBe(404);
+    await expect(page.locator('html')).toHaveAttribute('lang', locale);
+    await expect(page.getByRole('heading', { name: title })).toBeVisible();
+    // The URL stays as typed: the page must not bounce to /introuvable.
+    await page.waitForLoadState('load');
+    await expect(page).toHaveURL(new RegExp(`${path}$`));
+
+    await page.getByRole('link', { name: link }).click();
+    await expect(page).toHaveURL(new RegExp(`/${locale}/boucaniers/presentation$`));
+    expect(errors).toEqual([]);
+  });
+}
 
 test('robots.txt blocks indexing outside production', async ({ request }) => {
   const response = await request.get('/robots.txt');

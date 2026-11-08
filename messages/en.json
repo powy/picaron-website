@@ -36,6 +36,10 @@
       "title": "Cookie Policy",
       "description": "Information about cookie usage"
     },
+    "notFound": {
+      "title": "Page not found",
+      "description": "This page does not exist"
+    },
     "commandeSucces": {
       "title": "Order Confirmed",
       "description": "Your order has been successfully confirmed"
@@ -301,6 +305,19 @@
     "label": "Player rating on",
     "ariaLabel": "Rated {rating} out of 10 on BoardGameGeek (new tab)",
     "checkedAt": "BoardGameGeek rating checked on {date}"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page has set sail, or never existed.",
+    "home": "Back to the home page",
+    "shop": "Visit the shop"
+  },
+  "footer": {
+    "copyright": "© {year} Picaron. All rights reserved.",
+    "legal": "Legal notice",
+    "terms": "Terms of sale",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies"
   },
   "payment": {
     "title": "Payment",
