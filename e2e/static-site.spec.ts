@@ -12,6 +12,18 @@ test('server-rendered text follows the page language', async ({ page }) => {
   await expect(page.getByText('Note des joueurs sur')).toBeVisible();
 });
 
+test('the footer follows the page language and shows the current year', async ({ page }) => {
+  const year = new Date().getFullYear();
+
+  await page.goto('/en/equipe');
+  await expect(page.locator('footer')).toContainText(`© ${year} Picaron. All rights reserved.`);
+  await expect(page.locator('footer').getByRole('link', { name: 'Privacy policy' })).toBeVisible();
+
+  await page.goto('/fr/equipe');
+  await expect(page.locator('footer')).toContainText(`© ${year} Picaron. Tous droits réservés.`);
+  await expect(page.locator('footer').getByRole('link', { name: 'Politique de confidentialité' })).toBeVisible();
+});
+
 const REDIRECTS = [
   ['/', '/fr/boucaniers/presentation'],
   ['/en', '/en/boucaniers/presentation'],

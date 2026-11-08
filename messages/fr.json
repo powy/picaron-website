@@ -312,6 +312,13 @@
     "home": "Retour à l'accueil",
     "shop": "Voir la boutique"
   },
+  "footer": {
+    "copyright": "© {year} Picaron. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "terms": "CGV",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Cookies"
+  },
   "payment": {
     "title": "Paiement",
     "loading": "Préparation du paiement…",
