@@ -81,8 +81,8 @@ test('Mondial Relay order: pending -> paid, one email', async () => {
   const order = await newOrder(mondialRelayOrder);
   const row = await findOrderByPublicId(pool, order.publicId);
   assert.equal(row!.statut, 'pending');
-  assert.equal(row!.montant_total, '79.00'); // 69 + 10 shipping
-  assert.equal(row!.frais_livraison, '10.00');
+  assert.equal(row!.montant_total, '77.42'); // 69 + 8.42 Mondial Relay game fee
+  assert.equal(row!.frais_livraison, '8.42');
   assert.equal(row!.point_relais_id, RELAY.ID);
   assert.equal(row!.livraison_ligne1, null);
 
@@ -98,19 +98,19 @@ test('Colissimo order stores the delivery address and the server-side total', as
   const order = await newOrder(colissimoOrder);
   const row = (await findOrderByPublicId(pool, order.publicId))!;
   assert.equal(row.mode_livraison, 'colissimo');
-  // 69 + 2 × 10 (novels) + 10 shipping (one game; novels ride along for free)
-  assert.equal(row.montant_total, '99.00');
-  assert.equal(row.frais_livraison, '10.00');
+  // 69 + 2 × 10 (novels) + 9.42 (game) + 3.42 (second novel; the first ships free with the game)
+  assert.equal(row.montant_total, '101.84');
+  assert.equal(row.frais_livraison, '12.84');
   assert.equal(row.livraison_ville, 'Lyon');
   assert.equal(row.point_relais_id, null);
   assert.equal(row.langue, 'en');
 });
 
-test('novels bought alone pay the flat novel-only shipping fee', async () => {
+test('novels bought alone pay the novel fee each', async () => {
   const order = await newOrder({ ...colissimoOrder, items: [{ productId: 'armand', quantity: 2 }] });
   const row = (await findOrderByPublicId(pool, order.publicId))!;
-  assert.equal(row.frais_livraison, '5.00');
-  assert.equal(row.montant_total, '25.00'); // 2 × 10 + 5
+  assert.equal(row.frais_livraison, '6.84');
+  assert.equal(row.montant_total, '26.84'); // 2 × 10 + 2 × 3.42 Colissimo novel fee
 });
 
 test('replaying the same event changes nothing and sends no second email', async () => {
@@ -265,7 +265,7 @@ test('offline HTTP flow: POST /api/orders -> payment-intent -> mock-payment -> G
   const intent = await route({ method: 'POST', path: `/api/orders/${publicId}/payment-intent`, headers: {}, body: '' }, ctx);
   const { paymentIntentId, provider, amountCents } = intent.body as { paymentIntentId: string; provider: string; amountCents: number };
   assert.equal(provider, 'mock');
-  assert.equal(amountCents, 7900); // 69 + 10 shipping
+  assert.equal(amountCents, 7742); // 69 + 8.42 Mondial Relay game fee
 
   const declined = await route(
     { method: 'POST', path: '/api/mock-payment', headers: {}, body: JSON.stringify({ paymentIntentId, outcome: 'declined' }) },

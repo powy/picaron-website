@@ -1,11 +1,10 @@
 // Shipping fees — shared by the cart/checkout pages and the server
 // (lib/server/orders/create-order.ts), which is the one that bills them.
 //
-// Default rule while the real grid (per number of boxes/books and weight)
-// is still undecided — amounts are PLACEHOLDERS:
-// - each copy of the board game adds a full delivery fee;
-// - novels ship for free with at least one game (they go in its box);
-// - novels bought without any game pay one flat "novel only" fee per order.
+// Rule (amounts are PLACEHOLDERS until the real carrier rates are set):
+// - each copy of the board game pays the game fee;
+// - each novel pays the novel fee, except that every game brings one novel
+//   with free delivery.
 
 import type { ShippingMethod } from './checkout/order';
 import { PRODUCTS, type ProductId } from './products';
@@ -13,25 +12,28 @@ import { PRODUCTS, type ProductId } from './products';
 export interface ShippingRate {
   /** Added for each copy of the board game. */
   perGameCents: number;
-  /** Flat fee for an order containing only novels. */
-  novelOnlyCents: number;
+  /** Added for each novel that is not delivered free with a game. */
+  perNovelCents: number;
 }
 
-// Same placeholder amounts for both carriers for now.
 export const SHIPPING_RATES: Record<ShippingMethod, ShippingRate> = {
-  mondial_relay: { perGameCents: 1000, novelOnlyCents: 500 },
-  colissimo: { perGameCents: 1000, novelOnlyCents: 500 },
+  mondial_relay: { perGameCents: 842, perNovelCents: 242 },
+  colissimo: { perGameCents: 942, perNovelCents: 342 },
 };
 
-export function computeShippingCents(
-  items: { productId: ProductId; quantity: number }[],
-  method: ShippingMethod
-): number {
-  const rate = SHIPPING_RATES[method];
-  const count = (kind: 'game' | 'novel') =>
-    items.filter((item) => PRODUCTS[item.productId].kind === kind).reduce((sum, item) => sum + item.quantity, 0);
+type Items = { productId: ProductId; quantity: number }[];
 
-  const games = count('game');
-  if (games > 0) return games * rate.perGameCents;
-  return count('novel') > 0 ? rate.novelOnlyCents : 0;
+function count(items: Items, kind: 'game' | 'novel'): number {
+  return items.filter((item) => PRODUCTS[item.productId].kind === kind).reduce((sum, item) => sum + item.quantity, 0);
+}
+
+/** Novels delivered free: one per copy of the game. */
+export function countFreeNovels(items: Items): number {
+  return Math.min(count(items, 'novel'), count(items, 'game'));
+}
+
+export function computeShippingCents(items: Items, method: ShippingMethod): number {
+  const rate = SHIPPING_RATES[method];
+  const paidNovels = count(items, 'novel') - countFreeNovels(items);
+  return count(items, 'game') * rate.perGameCents + paidNovels * rate.perNovelCents;
 }
