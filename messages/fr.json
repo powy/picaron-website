@@ -107,6 +107,11 @@
   },
   "shop": {
     "title": "Boutique",
+    "shortcuts": {
+      "title": "Nos produits",
+      "game": "Jeu de société",
+      "novel": "Nouvelle illustrée"
+    },
     "gameTitle": "Boucaniers",
     "price": "69,00 € TTC",
     "gameDescription": "Jeu de stratégie en simultané. Pour 2 à 5 joueurs à partir de 10 ans et des parties de 30 à 60 minutes.",

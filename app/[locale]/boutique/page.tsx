@@ -9,6 +9,7 @@ import { PRODUCTS, ProductId, formatPriceCents } from '@/lib/products';
 import CartPreview from '@/components/cart/CartPreview';
 import CartPreviewBar from '@/components/cart/CartPreviewBar';
 import FranceOnlyNotice from '@/components/checkout/FranceOnlyNotice';
+import ProductShortcuts from '@/components/shop/ProductShortcuts';
 
 const ADDED_FEEDBACK_MS = 1500;
 
@@ -55,7 +56,11 @@ export default function BoutiquePage() {
           preview becomes a bottom bar (CartPreviewBar). */}
       <div className="max-w-7xl mx-auto px-4 py-8 lg:grid lg:grid-cols-[1fr_22rem] lg:gap-10 lg:items-start">
       <div className="min-w-0">
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="lg:hidden mb-8">
+          <ProductShortcuts locale={locale} compact />
+        </div>
+
+        <div id="boucaniers" className="flex flex-col md:flex-row gap-8 scroll-mt-24">
           {/* Galerie d'images - Deuxième sur mobile, gauche sur desktop */}
           <div className="order-2 md:order-1 md:w-1/2 stack-y-4">
             {/* Boîte du jeu */}
@@ -144,7 +149,7 @@ export default function BoutiquePage() {
         </div>
 
         {/* Deuxième produit - Armand */}
-        <div className="flex flex-col md:flex-row gap-8 mt-8 pt-8 border-t-2 border-parchment">
+        <div id="armand" className="flex flex-col md:flex-row gap-8 mt-8 pt-8 border-t-2 border-parchment scroll-mt-24">
           {/* Galerie d'images - Armand - Deuxième sur mobile, gauche sur desktop */}
           <div className="order-2 md:order-1 md:w-1/2 stack-y-4">
             <div className="relative cursor-pointer hover:opacity-90 transition-opacity">
@@ -227,8 +232,9 @@ export default function BoutiquePage() {
 
       </div>
 
-        <div className="hidden lg:block lg:sticky lg:top-20">
+        <div className="hidden lg:block lg:sticky lg:top-20 stack-y-6">
           <CartPreview locale={locale} highlightId={justAdded} />
+          <ProductShortcuts locale={locale} />
         </div>
       </div>
 
