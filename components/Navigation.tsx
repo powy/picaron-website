@@ -45,17 +45,22 @@ const ShoppingBagIcon = ({ isActive }: { isActive: boolean }) => (
 // Number of items in the cart, shown on the "Boutique" link (the cart itself
 // is previewed on the shop page — there is no separate cart icon in the menu).
 // Sits right after the label, vertically centered (the menu links are heavily
-// padded, so an absolutely positioned badge would end up clipped).
-const CartCountBadge = ({ count }: { count: number }) =>
-  count > 0 ? (
-    <span
-      aria-hidden="true"
-      data-testid="nav-cart-badge"
-      className="cart-badge static ml-2 self-center text-sm min-w-[1.4rem] h-[1.4rem]"
-    >
-      {count}
-    </span>
-  ) : null
+// padded, so an absolutely positioned badge would end up clipped). Its slot is
+// always there, wide enough for two digits, so the menu never shifts when the
+// badge appears or changes.
+const CartCountBadge = ({ count }: { count: number }) => (
+  <span className="ml-2 self-center flex w-8 h-[1.4rem]">
+    {count > 0 && (
+      <span
+        aria-hidden="true"
+        data-testid="nav-cart-badge"
+        className="cart-badge static text-sm min-w-[1.4rem] h-[1.4rem]"
+      >
+        {count}
+      </span>
+    )}
+  </span>
+)
 
 export default function Navigation() {
   const t = useTranslations('nav')
