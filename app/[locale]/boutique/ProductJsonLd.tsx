@@ -49,6 +49,12 @@ export default function ProductJsonLd({ locale, description }: { locale: string;
           currency: 'EUR',
         },
         shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'FR' },
+        // Upper bounds kept generous on purpose.
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 15, unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 7, unitCode: 'DAY' },
+        },
       })),
     },
   }
