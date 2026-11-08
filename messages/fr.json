@@ -301,6 +301,9 @@
   "testBanner": {
     "text": "Environnement de test ({env}) — aucun paiement réel"
   },
+  "video": {
+    "play": "Lire la vidéo : {title}"
+  },
   "bgg": {
     "label": "Note des joueurs sur",
     "ariaLabel": "Note de {rating} sur 10 sur BoardGameGeek (nouvel onglet)",
