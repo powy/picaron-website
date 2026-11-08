@@ -79,17 +79,20 @@ export default function PanierPage() {
                   key={method}
                   type="button"
                   onClick={() => setShippingMethod(method)}
+                  aria-pressed={shippingMethod === method}
                   className={`text-left border-2 rounded-lg p-4 transition-colors ${
-                    shippingMethod === method ? 'border-pirate-red bg-parchment/30' : 'border-wood'
+                    shippingMethod === method
+                      ? 'border-pirate-red bg-pirate-red text-bone'
+                      : 'border-wood text-ink hover:bg-parchment/50'
                   }`}
                 >
-                  <p className="flex justify-between gap-2 font-oldstyle text-lg text-ink">
+                  <p className="flex justify-between gap-2 font-oldstyle text-lg">
                     <span>{t(`shippingMethod.${i18nKey}.name`)}</span>
                     <span data-testid={`shipping-fee-${method}`}>
                       {formatPriceCents(computeShippingCents(items, method), locale)}
                     </span>
                   </p>
-                  <p className="text-sm text-ink">{t(`shippingMethod.${i18nKey}.description`)}</p>
+                  <p className="text-sm">{t(`shippingMethod.${i18nKey}.description`)}</p>
                 </button>
               ))}
             </div>
