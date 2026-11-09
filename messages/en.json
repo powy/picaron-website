@@ -307,6 +307,9 @@
   "testBanner": {
     "text": "Test environment ({env}) — no real payment"
   },
+  "video": {
+    "play": "Play the video: {title}"
+  },
   "bgg": {
     "label": "Player rating on",
     "ariaLabel": "Rated {rating} out of 10 on BoardGameGeek (new tab)",

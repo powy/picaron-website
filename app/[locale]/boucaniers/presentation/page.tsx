@@ -4,6 +4,7 @@ import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
 import SocialLinks from '@/components/SocialLinks'
 import BggRatingBadge from '@/components/BggRatingBadge'
+import YoutubeVideo from '@/components/YoutubeVideo'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -71,18 +72,11 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
         {/* YouTube Video - Center */}
         <section className="text-center mb-6 md:mb-12 relative z-20">
           <div className="mb-8 mx-auto w-full">
-            <div className="relative aspect-video rounded-lg overflow-hidden ">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/mgGl2aW1Lug"
-                title="Picaron Game Video"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0"
-              ></iframe>
-            </div>
+            <YoutubeVideo
+              videoId="mgGl2aW1Lug"
+              poster="/presentation/video-presentation-poster.webp"
+              title="Picaron Game Video"
+            />
           </div>
 
         </section>
