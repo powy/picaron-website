@@ -307,8 +307,12 @@
   "testBanner": {
     "text": "Environnement de test ({env}) — aucun paiement réel"
   },
+  "presentation": {
+    "pageTitle": "Boucaniers, le jeu de société",
+    "orderButton": "Commander Boucaniers"
+  },
   "bgg": {
-    "label": "Note des joueurs sur",
+    "label": "{rating}/10 sur BoardGameGeek",
     "ariaLabel": "Note de {rating} sur 10 sur BoardGameGeek (nouvel onglet)",
     "checkedAt": "Note BoardGameGeek relevée le {date}"
   },
