@@ -60,20 +60,20 @@ export default function BggRatingBadge() {
   const t = useTranslations('bgg')
   const format = useFormatter()
   const rating = Math.round(BGG_RATING * 10) / 10
-  const spokenRating = format.number(rating, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
+  const localRating = format.number(rating, { minimumFractionDigits: 1, maximumFractionDigits: 1 })
 
   return (
     <a
       href={BGG_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={t('ariaLabel', { rating: spokenRating })}
+      aria-label={t('ariaLabel', { rating: localRating })}
       title={t('checkedAt', { date: BGG_RATING_CHECKED_AT })}
       className="inline-flex flex-col items-center gap-x-3 sm:flex-row text-ink no-underline transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-pirate-red"
     >
       <StarRow rating={rating} />
       <span className="text-sm whitespace-nowrap" aria-hidden="true">
-        {t('label', { rating: rating.toFixed(1) })}
+        {t('label', { rating: localRating })}
       </span>
     </a>
   )

@@ -307,6 +307,10 @@
   "testBanner": {
     "text": "Test environment ({env}) — no real payment"
   },
+  "presentation": {
+    "pageTitle": "Boucaniers, the board game",
+    "orderButton": "Order Boucaniers"
+  },
   "bgg": {
     "label": "{rating}/10 on BoardGameGeek",
     "ariaLabel": "Rated {rating} out of 10 on BoardGameGeek (new tab)",
