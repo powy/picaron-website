@@ -6,10 +6,10 @@ import { expect, test } from '@playwright/test';
 
 test('server-rendered text follows the page language', async ({ page }) => {
   await page.goto('/en/boucaniers/presentation');
-  await expect(page.getByText('Player rating on')).toBeVisible();
+  await expect(page.getByText(/^\d+\.\d\/10 on BoardGameGeek$/)).toBeVisible();
 
   await page.goto('/fr/boucaniers/presentation');
-  await expect(page.getByText('Note des joueurs sur')).toBeVisible();
+  await expect(page.getByText(/^\d+,\d\/10 sur BoardGameGeek$/)).toBeVisible();
 });
 
 test('the footer follows the page language and shows the current year', async ({ page }) => {
