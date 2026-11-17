@@ -1,4 +1,5 @@
 import { use } from 'react'
+import { useTranslations } from 'next-intl'
 import { setRequestLocale } from 'next-intl/server'
 import NewsletterSection from '@/components/NewsletterSection'
 import CardCarousel from '@/components/CardCarousel'
@@ -8,7 +9,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  setRequestLocale(use(params).locale)
+  const { locale } = use(params)
+  setRequestLocale(locale)
+  const t = useTranslations('presentation')
 
   return (
     <div className="relative mt-8">
@@ -34,17 +37,19 @@ export default function HomePage({ params }: { params: Promise<{ locale: string 
 
         {/* Title section */}
         <section className="text-center pb-4 mb-2 md:py-8 md:mb-2">
-        <Link href="/fr/boutique" className="block mb-2 md:mb-2">
-          <h1 className="title-page">
-            Le jeu Boucaniers disponible !
-          </h1>
-        </Link>
+        {/* No visible title: the order button leads the page. The h1 stays for screen readers and search engines. */}
+        <h1 className="sr-only">{t('pageTitle')}</h1>
+        {/* Empty space where the old title was, so the monkey keeps its place next to the button.
+            The old title is laid out invisibly so the space wraps exactly as it did, at every width. */}
+        <div className="title-page invisible mb-2" aria-hidden="true">
+          Le jeu Boucaniers disponible !
+        </div>
         <Link
-          href="/fr/boutique"
+          href={`/${locale}/boutique`}
           className="btn-primary-rounded"
       style={{boxShadow: "0px 30px 5px 0px rgba(0, 0, 0, 0.18)" }}
         >
-          Commander
+          {t('orderButton')}
         </Link>
       </section>
 
